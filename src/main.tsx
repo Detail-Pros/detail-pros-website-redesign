@@ -5,7 +5,7 @@ import './index.css'
 import { ThemeProvider } from './components/ThemeProvider'
 
 createRoot(document.getElementById("root")!).render(
-  <ThemeProvider defaultTheme="system" storageKey="detailpros-theme">
+  <ThemeProvider>
     <App />
   </ThemeProvider>
 );

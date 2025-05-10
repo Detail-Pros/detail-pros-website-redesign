@@ -1,8 +1,8 @@
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -37,29 +37,29 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 md:top-9 left-0 right-0 z-40 transition-all duration-300 bg-white dark:bg-gray-900 ${isScrolled ? 'shadow-sm dark:shadow-gray-800' : ''}`}>
+    <header className={`fixed top-0 md:top-9 left-0 right-0 z-40 transition-all duration-300 bg-white ${isScrolled ? 'shadow-sm' : ''}`}>
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-bold text-detailpros-black dark:text-white">
+          <span className="text-2xl font-bold text-detailpros-black">
             Detail<span className="text-detailpros-pink">Pros</span>
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
-          <Link to="/" className="font-medium text-detailpros-black dark:text-white hover:text-detailpros-pink transition-colors px-1">
+          <Link to="/" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
             Home
           </Link>
           
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-medium text-detailpros-black dark:text-white hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent dark:hover:bg-transparent px-1">Company</NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-white dark:bg-gray-900">
+                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">Company</NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-white">
                   <ul className="grid w-[200px] gap-2 p-4">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/about" className="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">
+                        <Link to="/about" className="block p-2 hover:bg-gray-100 rounded-md">
                           About Us
                         </Link>
                       </NavigationMenuLink>
@@ -172,17 +172,15 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <ThemeToggle />
           <Button className="bg-detailpros-pink hover:bg-opacity-90 text-white px-6 py-2 rounded-[5px]">
             Book Us
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-2">
-          <ThemeToggle />
+        <div className="md:hidden flex items-center">
           <button
-            className="text-detailpros-black dark:text-white"
+            className="text-detailpros-black"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
@@ -193,17 +191,17 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg animate-fade-in">
+        <div className="md:hidden bg-white shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <Link to="/" className="font-medium text-detailpros-black dark:text-white hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100 dark:border-gray-800" onClick={toggleMenu}>
+            <Link to="/" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
               Home
             </Link>
             
             {/* Company Dropdown */}
-            <div className="py-2 border-b border-gray-100 dark:border-gray-800">
-              <div className="font-medium text-detailpros-black dark:text-white mb-2">Company</div>
+            <div className="py-2 border-b border-gray-100">
+              <div className="font-medium text-detailpros-black mb-2">Company</div>
               <div className="pl-4">
-                <Link to="/about" className="block py-1 text-sm text-detailpros-black dark:text-white hover:text-detailpros-pink" onClick={toggleMenu}>
+                <Link to="/about" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   About Us
                 </Link>
               </div>
@@ -214,22 +212,22 @@ const Navbar = () => {
             </Link>
             
             {/* Ceramic Coating Dropdown */}
-            <div className="py-2 border-b border-gray-100 dark:border-gray-800">
-              <div className="font-medium text-detailpros-black dark:text-white mb-2">Ceramic Coating</div>
+            <div className="py-2 border-b border-gray-100">
+              <div className="font-medium text-detailpros-black mb-2">Ceramic Coating</div>
               <div className="pl-4">
-                <Link to="/ceramic-coating/automotive" className="block py-1 text-sm text-detailpros-black dark:text-white hover:text-detailpros-pink" onClick={toggleMenu}>
+                <Link to="/ceramic-coating/automotive" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Automotive
                 </Link>
-                <Link to="/ceramic-coating/marine" className="block py-1 text-sm text-detailpros-black dark:text-white hover:text-detailpros-pink" onClick={toggleMenu}>
+                <Link to="/ceramic-coating/marine" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Marine
                 </Link>
-                <Link to="/ceramic-coating/aviation" className="block py-1 text-sm text-detailpros-black dark:text-white hover:text-detailpros-pink" onClick={toggleMenu}>
+                <Link to="/ceramic-coating/aviation" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Aviation
                 </Link>
-                <Link to="/ceramic-coating/industrial" className="block py-1 text-sm text-detailpros-black dark:text-white hover:text-detailpros-pink" onClick={toggleMenu}>
+                <Link to="/ceramic-coating/industrial" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Industrial
                 </Link>
-                <Link to="/ceramic-coating/signage" className="block py-1 text-sm text-detailpros-black dark:text-white hover:text-detailpros-pink" onClick={toggleMenu}>
+                <Link to="/ceramic-coating/signage" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Signage
                 </Link>
               </div>
@@ -240,16 +238,16 @@ const Navbar = () => {
             </Link>
             
             {/* Window Tinting Dropdown */}
-            <div className="py-2 border-b border-gray-100 dark:border-gray-800">
-              <div className="font-medium text-detailpros-black dark:text-white mb-2">Window Tinting</div>
+            <div className="py-2 border-b border-gray-100">
+              <div className="font-medium text-detailpros-black mb-2">Window Tinting</div>
               <div className="pl-4">
-                <Link to="/window-tinting/automotive" className="block py-1 text-sm text-detailpros-black dark:text-white hover:text-detailpros-pink" onClick={toggleMenu}>
+                <Link to="/window-tinting/automotive" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Automotive
                 </Link>
-                <Link to="/window-tinting/commercial" className="block py-1 text-sm text-detailpros-black dark:text-white hover:text-detailpros-pink" onClick={toggleMenu}>
+                <Link to="/window-tinting/commercial" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Commercial
                 </Link>
-                <Link to="/window-tinting/residential" className="block py-1 text-sm text-detailpros-black dark:text-white hover:text-detailpros-pink" onClick={toggleMenu}>
+                <Link to="/window-tinting/residential" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Residential
                 </Link>
               </div>
