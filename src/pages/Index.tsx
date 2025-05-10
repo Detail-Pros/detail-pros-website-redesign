@@ -8,11 +8,11 @@ import Testimonials from "@/components/home/Testimonials";
 import CallToAction from "@/components/home/CallToAction";
 
 const Index = () => {
-  return (
+  return (<>
         <Hero />
         <Services />
         <Testimonials />
-        <CallToAction />
+        <CallToAction /></>
   );
 };
 
