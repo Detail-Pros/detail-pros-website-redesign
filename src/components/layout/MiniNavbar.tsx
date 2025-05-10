@@ -26,7 +26,7 @@ const MiniNavbar = () => {
         <div className="flex space-x-6">
           <div className="flex items-center">
             <Phone className="text-detailpros-pink h-4 w-4 mr-2" />
-            <span className="text-xs">+1 (345) 929-9840</span>
+            <span className="text-xs">(345) 929-9840</span>
           </div>
           
           <div className="flex items-center">
