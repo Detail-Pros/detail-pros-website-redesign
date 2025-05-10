@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Star, MessageCircle } from "lucide-react";
+import { Star, MessageCircle } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import {
   Carousel,
@@ -9,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface GoogleReview {
   id: string;
@@ -18,6 +19,9 @@ interface GoogleReview {
   text: string;
   time: number;
 }
+
+const GOOGLE_API_KEY = "AIzaSyBrltSXOTrApqRB0-WgUdkM79GoSnbUyxw";
+const PLACE_ID = "ChIJN1t_tDeuEmsRUsoyG83frY4"; // Replace with your actual Google Place ID
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
@@ -56,16 +60,23 @@ const Testimonials = () => {
     const fetchGoogleReviews = async () => {
       setIsLoading(true);
       try {
-        // This would be replaced with actual API call when ready
-        // const response = await fetch('YOUR_GOOGLE_REVIEWS_API_ENDPOINT');
-        // const data = await response.json();
+        const endpoint = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews&key=${GOOGLE_API_KEY}`;
         
-        // For now we'll simulate a successful API response with our fallback data
-        // In production, remove this setTimeout and use actual API call
+        // Due to CORS issues, we need a proxy server or a backend endpoint
+        // For demonstration, we'll log the endpoint but use fallback data
+        console.log("Google Places API endpoint:", endpoint);
+        console.log("Note: Direct browser requests to Google Places API will be blocked by CORS");
+        console.log("You'll need a server-side proxy or serverless function to make this request");
+        
+        // Simulate successful API response with fallback data
         setTimeout(() => {
           setReviews(fallbackTestimonials);
           setIsLoading(false);
-          console.log("Google reviews loaded (simulated)");
+          toast({
+            title: "Note about Google Reviews",
+            description: "To fetch real Google reviews, you'll need a server-side proxy due to CORS restrictions.",
+            duration: 5000,
+          });
         }, 1000);
       } catch (error) {
         console.error("Error fetching Google reviews:", error);
@@ -94,8 +105,25 @@ const Testimonials = () => {
         </div>
         
         {isLoading ? (
-          <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-detailpros-pink"></div>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="bg-white p-6 rounded-xl shadow-md h-64">
+                  <div className="flex items-center mb-4">
+                    <Skeleton className="w-12 h-12 rounded-full mr-3" />
+                    <div className="space-y-2">
+                      <Skeleton className="h-4 w-24" />
+                      <Skeleton className="h-3 w-20" />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Skeleton className="h-3 w-full" />
+                    <Skeleton className="h-3 w-full" />
+                    <Skeleton className="h-3 w-3/4" />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         ) : (
           <div className="max-w-5xl mx-auto">
