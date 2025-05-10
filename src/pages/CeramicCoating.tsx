@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import CallToAction from "@/components/home/CallToAction";
-import { CheckCircle, Wrench } from "lucide-react";
+import { CheckCircle, Droplets, Diamond, CircleDashed, TestTube } from "lucide-react";
 
 const CeramicCoating = () => {
   return (
@@ -54,7 +54,7 @@ const CeramicCoating = () => {
             <div className="flex justify-center">
               <div className="relative">
                 <img 
-                  src="/placeholder.svg" 
+                  src="/lovable-uploads/5fd62ae9-5f89-4ae9-b537-a170491bb7e1.png" 
                   alt="Ceramic Pro ION" 
                   className="max-w-[300px] h-auto"
                 />
@@ -95,8 +95,8 @@ const CeramicCoating = () => {
             </div>
             <div>
               <img 
-                src="/placeholder.svg" 
-                alt="Ceramic Coated Wheel" 
+                src="/lovable-uploads/a5a1ab08-d604-4d23-a45b-67f47f6f883e.png" 
+                alt="Ceramic Pro Application" 
                 className="rounded-lg shadow-lg w-full h-auto"
               />
             </div>
@@ -199,6 +199,13 @@ const CeramicCoating = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-8">
             <div className="text-center">
+              <div className="mb-6">
+                <img 
+                  src="/lovable-uploads/c55a3379-71dc-43fa-8ea3-247b8b19a688.png" 
+                  alt="ION Base Coat" 
+                  className="mx-auto h-20"
+                />
+              </div>
               <h3 className="text-2xl font-bold mb-3">ION TOP COAT</h3>
               <p className="text-gray-600 mb-4">
                 The outermost layer provides exceptional gloss, hydrophobicity, and scratch resistance.
@@ -207,6 +214,13 @@ const CeramicCoating = () => {
             </div>
             
             <div className="text-center">
+              <div className="mb-6">
+                <img 
+                  src="/lovable-uploads/ae812a04-c792-4b7e-96f7-93faa6fe4cb2.png" 
+                  alt="ION Top Coat" 
+                  className="mx-auto h-20"
+                />
+              </div>
               <h3 className="text-2xl font-bold mb-3">ION BASE COAT</h3>
               <p className="text-gray-600 mb-4">
                 Forms the foundation of the coating system with strong adhesion properties.
@@ -215,7 +229,13 @@ const CeramicCoating = () => {
             </div>
             
             <div className="text-center">
-              <Wrench className="mx-auto text-detailpros-pink mb-4" size={48} />
+              <div className="mb-6">
+                <img 
+                  src="/lovable-uploads/8f535325-abf2-434c-aed0-61cd812383aa.png" 
+                  alt="ION Products" 
+                  className="mx-auto h-40 object-cover"
+                />
+              </div>
               <p className="text-gray-600">
                 Professional installation ensures optimal performance and warranty coverage.
               </p>
@@ -229,8 +249,12 @@ const CeramicCoating = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
-                <span className="text-detailpros-pink">Icon</span>
+              <div className="w-24 h-24 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                <img 
+                  src="/lovable-uploads/83ec7181-a1fa-422c-99f1-d9fb843d897a.png" 
+                  alt="Application Icon" 
+                  className="w-16 h-16"
+                />
               </div>
               <h3 className="font-bold mb-2">EASIER WASHING</h3>
               <p className="text-sm text-gray-400">
@@ -239,8 +263,12 @@ const CeramicCoating = () => {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
-                <span className="text-detailpros-pink">Icon</span>
+              <div className="w-24 h-24 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                <img 
+                  src="/lovable-uploads/eff88072-8e95-4cea-a9c1-b89f33e18aca.png" 
+                  alt="Gloss Icon" 
+                  className="w-16 h-16"
+                />
               </div>
               <h3 className="font-bold mb-2">CHEMICAL RESISTANCE</h3>
               <p className="text-sm text-gray-400">
@@ -249,8 +277,12 @@ const CeramicCoating = () => {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
-                <span className="text-detailpros-pink">Icon</span>
+              <div className="w-24 h-24 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                <img 
+                  src="/lovable-uploads/b7471894-d0a9-41ef-8727-f785d9521f03.png" 
+                  className="w-16 h-16"
+                  alt="Structure Icon" 
+                />
               </div>
               <h3 className="font-bold mb-2">PERMANENCE</h3>
               <p className="text-sm text-gray-400">
@@ -259,8 +291,12 @@ const CeramicCoating = () => {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
-                <span className="text-detailpros-pink">Icon</span>
+              <div className="w-24 h-24 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                <img 
+                  src="/lovable-uploads/67541d11-eda9-40ec-b83b-b2ef62a98d71.png" 
+                  className="w-16 h-16"
+                  alt="Compression Icon" 
+                />
               </div>
               <h3 className="font-bold mb-2">SCRATCH RESISTANT</h3>
               <p className="text-sm text-gray-400">
@@ -269,8 +305,12 @@ const CeramicCoating = () => {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
-                <span className="text-detailpros-pink">Icon</span>
+              <div className="w-24 h-24 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                <img 
+                  src="/lovable-uploads/3ec55c13-c6df-4f4e-a230-1e7bfa59d3f6.png" 
+                  className="w-16 h-16"
+                  alt="Perfume Icon" 
+                />
               </div>
               <h3 className="font-bold mb-2">ENHANCED GLOSS</h3>
               <p className="text-sm text-gray-400">
@@ -279,12 +319,16 @@ const CeramicCoating = () => {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
-                <span className="text-detailpros-pink">Icon</span>
+              <div className="w-24 h-24 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                <img 
+                  src="/lovable-uploads/2ea135a4-6bba-41aa-8f9d-4f5537cfc701.png" 
+                  className="w-16 h-16"
+                  alt="Water Drops Icon" 
+                />
               </div>
-              <h3 className="font-bold mb-2">GLOSSY</h3>
+              <h3 className="font-bold mb-2">HYDROPHOBIC</h3>
               <p className="text-sm text-gray-400">
-                Creates a glass-like shine that enhances your vehicle's appearance
+                Creates a water-repelling surface that prevents water spots
               </p>
             </div>
           </div>

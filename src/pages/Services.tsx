@@ -1,6 +1,8 @@
 
 import CallToAction from "@/components/home/CallToAction";
 import { Car, Brush, DropletIcon, Check } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   return (
@@ -86,7 +88,7 @@ const Services = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 relative h-96 rounded-lg overflow-hidden shadow-xl">
-                <img src="/placeholder.svg" alt="Ceramic Pro Coating" className="w-full h-full object-cover" />
+                <img src="/lovable-uploads/8f535325-abf2-434c-aed0-61cd812383aa.png" alt="Ceramic Pro Coating" className="w-full h-full object-cover" />
               </div>
               <div className="order-1 lg:order-2">
                 <div className="flex items-center mb-4">
@@ -136,6 +138,12 @@ const Services = () => {
                     </div>
                   </div>
                 </div>
+                
+                <Link to="/ceramic-coating/automotive">
+                  <Button className="bg-detailpros-pink hover:bg-opacity-90">
+                    Learn More About ION
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
