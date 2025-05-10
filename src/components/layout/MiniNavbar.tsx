@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const TikTokIcon = () => (
@@ -15,25 +16,6 @@ const TikTokIcon = () => (
     className="h-4 w-4"
   >
     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-  </svg>
-);
-
-// WhatsApp icon component 
-const WhatsAppIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="h-4 w-4"
-  >
-    <path d="M17.4 14.25l-4-4-4 4" />
-    <path d="M12 3a9 9 0 1 0 9 9c0-4.95-4.05-9-9-9zm-.05 4c-2.75 0-5 2.25-5 5 0 1.07.32 2.05.92 2.82l-1.07 3.18 3.25-1.02c.75.55 1.65.85 2.6.85 2.77 0 5.02-2.23 5.02-5 0-2.72-2.25-4.95-5-4.95l.28.12z" />
   </svg>
 );
 
@@ -65,8 +47,8 @@ const MiniNavbar = () => {
           <Link to="https://instagram.com" aria-label="Instagram" className="text-black hover:text-detailpros-pink transition-colors">
             <Instagram className="h-4 w-4" />
           </Link>
-          <Link to="https://whatsapp.com" aria-label="WhatsApp" className="text-black hover:text-detailpros-pink transition-colors">
-            <WhatsAppIcon />
+          <Link to="https://wa.me/13459299840" aria-label="WhatsApp" className="text-black hover:text-detailpros-pink transition-colors">
+            <MessageSquare className="h-4 w-4" />
           </Link>
           <Link to="https://tiktok.com" aria-label="TikTok" className="text-black hover:text-detailpros-pink transition-colors">
             <TikTokIcon />
