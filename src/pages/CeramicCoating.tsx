@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -20,29 +21,29 @@ const CeramicCoating = () => {
             <div>
               <h2 className="text-6xl font-bold text-white mb-8">ION</h2>
               <p className="text-gray-300 mb-6">
-                Ceramic Pro ION is a revolutionary ceramic coating for automotive surfaces
+                Ceramic Pro ION is the next evolution in surface protection technology.
               </p>
               
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
                   <CheckCircle className="text-detailpros-pink mr-3 mt-1 flex-shrink-0" size={18} />
-                  <p className="text-gray-300">Super hydrophobic effect - extreme water repellency</p>
+                  <p className="text-gray-300">Superior Abrasive Resistance.</p>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="text-detailpros-pink mr-3 mt-1 flex-shrink-0" size={18} />
-                  <p className="text-gray-300">Anti-graffiti effect - highly resistant to chemicals</p>
+                  <p className="text-gray-300">Improved Chemical Resistance.</p>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="text-detailpros-pink mr-3 mt-1 flex-shrink-0" size={18} />
-                  <p className="text-gray-300">UV resistance - protection against harmful rays</p>
+                  <p className="text-gray-300">A single layer of ION provides the same protection as two layers of traditional nanoceramic coatings.</p>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="text-detailpros-pink mr-3 mt-1 flex-shrink-0" size={18} />
-                  <p className="text-gray-300">Thermal resistance from -50°C to +750°C</p>
+                  <p className="text-gray-300">Allows professional detailing shops to complete more coating installations in less time.</p>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="text-detailpros-pink mr-3 mt-1 flex-shrink-0" size={18} />
-                  <p className="text-gray-300">Advanced hardness - long-lasting protection</p>
+                  <p className="text-gray-300">Designed specifically for the Elite Dealer Program.</p>
                 </li>
               </ul>
 
@@ -106,9 +107,13 @@ const CeramicCoating = () => {
       {/* Packages Section */}
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-6">
             Ceramic Pro ION Coating Packages
           </h2>
+          
+          <p className="text-gray-700 text-center mb-12">
+            This premium-grade ceramic coating is exclusively sold and installed by Ceramic Pro's approved elite dealer, Detail Pros.
+          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* ION Package */}
