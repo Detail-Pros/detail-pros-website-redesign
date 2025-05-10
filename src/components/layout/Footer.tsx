@@ -1,79 +1,184 @@
 
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Separator } from "@/components/ui/separator";
+
+const TikTokIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="h-4 w-4"
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+  </svg>
+);
 
 const Footer = () => {
   return (
-    <footer className="bg-detailpros-black text-white pt-16 pb-8">
+    <footer className="bg-black text-white py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Get in Touch Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div>
-            <h3 className="text-2xl font-bold mb-6">
-              Detail<span className="text-detailpros-pink">Pros</span>
-            </h3>
-            <p className="mb-6">
-              Premium mobile car and boat detailing services in the Cayman Islands. 
-              Specializing in Ceramic Pro coating, STEK PPF, and window installation.
+            <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
+            <p className="text-gray-300 mb-8">
+              Reach out to us for all your detailing and surface protection needs and inquiries.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://facebook.com" className="text-white hover:text-detailpros-pink transition-colors" aria-label="Facebook">
-                <Facebook size={20} />
-              </a>
-              <a href="https://instagram.com" className="text-white hover:text-detailpros-pink transition-colors" aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
+            
+            {/* Map */}
+            <div className="w-full h-[500px] bg-gray-200 rounded-md overflow-hidden">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.597187423721!2d-81.37641432412949!3d19.329869381913888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f258738d905adf3%3A0xc711ca9486afc56c!2sKingbird%20Dr%2C%20Cayman%20Islands!5e0!3m2!1sen!2sus!4v1715443037042!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Detail Pros Location"
+              />
             </div>
           </div>
           
-          <div>
-            <h3 className="text-xl font-bold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-detailpros-pink transition-colors">Home</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-300 hover:text-detailpros-pink transition-colors">Services</Link>
-              </li>
-              <li>
-                <Link to="/gallery" className="text-gray-300 hover:text-detailpros-pink transition-colors">Gallery</Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-gray-300 hover:text-detailpros-pink transition-colors">About</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-300 hover:text-detailpros-pink transition-colors">Contact</Link>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-bold mb-6">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-center">
-                <Phone size={18} className="mr-3 text-detailpros-pink" />
-                <span>+1 345-555-1234</span>
-              </li>
-              <li className="flex items-center">
-                <Mail size={18} className="mr-3 text-detailpros-pink" />
-                <span>info@detailproscayman.com</span>
-              </li>
-              <li className="flex items-start">
-                <MapPin size={18} className="mr-3 text-detailpros-pink mt-1" />
-                <span>123 West Bay Road, Grand Cayman, Cayman Islands</span>
-              </li>
-            </ul>
+          <div className="md:pl-8">
+            {/* Contact Information */}
+            <div className="mb-8">
+              <div className="mb-6">
+                <h3 className="text-xl font-medium mb-2">Email</h3>
+                <a href="mailto:contact@detailpros.ky" className="text-gray-300 hover:text-detailpros-pink">
+                  contact@detailpros.ky
+                </a>
+              </div>
+              
+              <div className="mb-6">
+                <h3 className="text-xl font-medium mb-2">Phone</h3>
+                <a href="tel:+13459299840" className="text-gray-300 hover:text-detailpros-pink">
+                  +1 (345) 929-9840
+                </a>
+              </div>
+              
+              <div className="mb-6">
+                <h3 className="text-xl font-medium mb-2">Office</h3>
+                <p className="text-gray-300">
+                  Unit E33 Kingbird Warehouses, 64 Kingbird Drive, George Town
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between">
-            <p className="text-sm text-gray-400">
-              &copy; {new Date().getFullYear()} Detail Pros. All rights reserved.
-            </p>
-            <div className="mt-4 md:mt-0">
-              <a href="#" className="text-sm text-gray-400 hover:text-detailpros-pink mr-4">Privacy Policy</a>
-              <a href="#" className="text-sm text-gray-400 hover:text-detailpros-pink">Terms of Service</a>
+        {/* Footer Links */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
+          {/* Logo */}
+          <div className="md:col-span-1">
+            <Link to="/" className="block mb-4">
+              <img 
+                src="/placeholder.svg" 
+                alt="Detail Pros Logo" 
+                className="h-12"
+                style={{ filter: 'brightness(0) invert(1)' }} 
+              />
+            </Link>
+          </div>
+          
+          {/* Company Links */}
+          <div className="md:col-span-1">
+            <h3 className="text-lg font-semibold mb-4">Company</h3>
+            <ul className="space-y-3">
+              <li><Link to="/" className="text-gray-300 hover:text-detailpros-pink">Home</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-detailpros-pink">About Us</Link></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-detailpros-pink">Contact Us</Link></li>
+              <li><Link to="/careers" className="text-gray-300 hover:text-detailpros-pink">Careers</Link></li>
+              <li><Link to="/faq" className="text-gray-300 hover:text-detailpros-pink">FAQ</Link></li>
+            </ul>
+          </div>
+          
+          {/* Detailing Links */}
+          <div className="md:col-span-1">
+            <h3 className="text-lg font-semibold mb-4">Detailing</h3>
+            <ul className="space-y-3">
+              <li><Link to="/services" className="text-gray-300 hover:text-detailpros-pink">Automotive</Link></li>
+              <li><Link to="/services" className="text-gray-300 hover:text-detailpros-pink">Marine</Link></li>
+              <li><Link to="/services" className="text-gray-300 hover:text-detailpros-pink">Aviation</Link></li>
+            </ul>
+          </div>
+          
+          {/* Ceramic Coating */}
+          <div className="md:col-span-1">
+            <h3 className="text-lg font-semibold mb-4">Ceramic Coating</h3>
+            <ul className="space-y-3">
+              <li><Link to="/ceramic-coating/automotive" className="text-gray-300 hover:text-detailpros-pink">Automotive</Link></li>
+              <li><Link to="/ceramic-coating/marine" className="text-gray-300 hover:text-detailpros-pink">Marine</Link></li>
+              <li><Link to="/ceramic-coating/aviation" className="text-gray-300 hover:text-detailpros-pink">Aviation</Link></li>
+              <li><Link to="/ceramic-coating/industrial" className="text-gray-300 hover:text-detailpros-pink">Industrial</Link></li>
+              <li><Link to="/ceramic-coating/signage" className="text-gray-300 hover:text-detailpros-pink">Signage</Link></li>
+            </ul>
+          </div>
+          
+          {/* Paint Protection & Apps */}
+          <div className="md:col-span-1">
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold mb-4">Paint Protection Film</h3>
+              <ul className="space-y-3">
+                <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Automotive</Link></li>
+                <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Marine</Link></li>
+                <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Aviation</Link></li>
+              </ul>
             </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Download Our App</h3>
+              <div className="flex flex-col space-y-3">
+                <a href="https://apps.apple.com" className="inline-block" target="_blank" rel="noopener noreferrer">
+                  <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on App Store" className="h-10" />
+                </a>
+                <a href="https://play.google.com" className="inline-block" target="_blank" rel="noopener noreferrer">
+                  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-12" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Footer Bottom */}
+        <Separator className="bg-gray-800 mb-8" />
+        
+        <div className="flex flex-col md:flex-row md:justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <p className="text-sm text-gray-400">
+              © 2025 Wetworx Ltd. All rights reserved. Made with ❤️ and lots of 🍸 by Kevin Ramirez
+            </p>
+          </div>
+          
+          <div className="flex space-x-4 items-center">
+            <Link to="/privacy-policy" className="text-sm text-gray-400 hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link to="/terms-of-service" className="text-sm text-gray-400 hover:text-white">
+              Terms of Service
+            </Link>
+            <Link to="/service-agreement" className="text-sm text-gray-400 hover:text-white">
+              Service Agreement
+            </Link>
+          </div>
+          
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
+              <Facebook size={20} />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
+              <Instagram size={20} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
+              <Linkedin size={20} />
+            </a>
           </div>
         </div>
       </div>
