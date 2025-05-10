@@ -5,9 +5,11 @@ const ServiceAgreement = () => {
   return (
     <div className="min-h-screen bg-white pt-24 pb-20">
       {/* Header Section */}
-      <div className="container mx-auto px-4 pt-10 pb-8 text-center">
-        <h1 className="text-5xl font-bold text-black mb-4">Service Agreement</h1>
-        <p className="text-xl">Please Read Our Service Agreement Below.</p>
+      <div className="container mx-auto px-4 flex items-center min-h-[200px]">
+        <div className="w-full">
+          <h1 className="text-5xl font-bold text-black mb-4">Service Agreement</h1>
+          <p className="text-xl">Please Read Our Service Agreement Below.</p>
+        </div>
       </div>
       
       {/* Content Section */}
