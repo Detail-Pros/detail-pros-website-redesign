@@ -30,7 +30,6 @@ const App = () => (
       <BrowserRouter>
         <MiniNavbar />
         <Navbar />
-        {/* <main className="pt-[72px] md:pt-[120px]"> */}
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
@@ -54,7 +53,6 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        {/* </main> */}
         <Footer />
       </BrowserRouter>
     </TooltipProvider>
