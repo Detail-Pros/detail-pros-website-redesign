@@ -15,6 +15,7 @@ import WindowTinting from "./pages/WindowTinting";
 import Careers from "./pages/Careers";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
+import MiniNavbar from "./components/layout/MiniNavbar";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <MiniNavbar />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
