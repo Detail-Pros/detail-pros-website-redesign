@@ -46,15 +46,15 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors">
+        <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
+          <Link to="/" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
             Home
           </Link>
           
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent">Company <ChevronDown className="h-4 w-4" /></NavigationMenuTrigger>
+                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">Company</NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-white">
                   <ul className="grid w-[200px] gap-2 p-4">
                     <li>
@@ -70,14 +70,14 @@ const Navbar = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <Link to="/services" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors">
+          <Link to="/services" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
             Detailing
           </Link>
           
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent">Ceramic Coating <ChevronDown className="h-4 w-4" /></NavigationMenuTrigger>
+                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">Ceramic Coating</NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-white">
                   <ul className="grid w-[200px] gap-2 p-4">
                     <li>
@@ -121,14 +121,14 @@ const Navbar = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <Link to="/paint-protection" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors">
+          <Link to="/paint-protection" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
             Paint Protection Film
           </Link>
           
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent">Window Tinting <ChevronDown className="h-4 w-4" /></NavigationMenuTrigger>
+                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">Window Tinting</NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-white">
                   <ul className="grid w-[200px] gap-2 p-4">
                     <li>
@@ -158,15 +158,15 @@ const Navbar = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <Link to="/contact" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors">
+          <Link to="/contact" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
             Contact
           </Link>
           
-          <Link to="/careers" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors">
+          <Link to="/careers" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
             Careers
           </Link>
           
-          <Link to="/faq" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors">
+          <Link to="/faq" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
             FAQ
           </Link>
         </nav>
