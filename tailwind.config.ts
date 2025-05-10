@@ -53,11 +53,11 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				detailpros: {
-					pink: '#FF2D73',
+					pink: '#E20882',
 					black: '#000000',
 					white: '#FFFFFF',
 					gray: '#F5F5F5',
-					lightpink: '#FFE6F0'
+					lightpink: '#FFDBEF'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
