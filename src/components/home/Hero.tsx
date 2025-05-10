@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen flex items-center bg-cover bg-center bg-[url('/lovable-uploads/608aa328-f454-4334-9b13-c0218ebc121a.png')] overflow-hidden">
+    <div className="relative min-h-screen flex items-center bg-cover bg-center bg-[url('/lovable-uploads/793cb934-f23d-4c7a-8fc1-9efee95045a6.png')] overflow-hidden">
       <div className="container mx-auto px-4 relative z-10 text-center">
         <p className="text-xl md:text-2xl text-black mb-4 font-medium">
           Get a 5-Star Service at Home or at Our Shop
