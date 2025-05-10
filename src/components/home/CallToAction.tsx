@@ -19,9 +19,14 @@ const CallToAction = () => {
             our team is ready to provide premium service throughout Grand Cayman.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button className="bg-detailpros-pink hover:bg-opacity-90 text-white px-8 py-6 text-lg rounded-[5px]">
+            <a 
+              href="https://book.detailpros.ky/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-[5px] text-sm font-medium bg-detailpros-pink hover:bg-opacity-90 text-white px-8 py-6 text-lg"
+            >
               Book Now
-            </Button>
+            </a>
             <Link to="/contact">
               <Button variant="outline" className="text-gray-900 border-gray-900 hover:bg-gray-900/10 px-8 py-6 text-lg rounded-[5px]">
                 Contact Us

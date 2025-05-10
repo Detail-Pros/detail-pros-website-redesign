@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -192,9 +191,14 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button className="bg-detailpros-pink hover:bg-opacity-90 text-white px-6 py-2 rounded-[5px]">
+          <a 
+            href="https://book.detailpros.ky/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[5px] text-sm font-medium bg-detailpros-pink hover:bg-opacity-90 text-white px-6 py-2"
+          >
             Book Us
-          </Button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -285,9 +289,14 @@ const Navbar = () => {
               FAQ
             </Link>
             
-            <Button href="https://book.detailpros.ky/" target="_blank" className="bg-detailpros-pink hover:bg-opacity-90 w-full rounded-[5px]" onClick={toggleMenu}>
+            <a 
+              href="https://book.detailpros.ky/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-[5px] text-sm font-medium bg-detailpros-pink hover:bg-opacity-90 text-white w-full py-2"
+            >
               Book Us
-            </Button>
+            </a>
           </div>
         </div>
       )}
