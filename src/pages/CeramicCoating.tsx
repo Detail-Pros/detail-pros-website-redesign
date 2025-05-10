@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -183,14 +182,11 @@ const CeramicCoating = () => {
             <div className="text-center">
               <div className="mb-6">
                 <img 
-                  src="/lovable-uploads/8f535325-abf2-434c-aed0-61cd812383aa.png" 
-                  alt="ION Products" 
-                  className="mx-auto h-40 object-cover"
+                  src="/lovable-uploads/5f008ea8-ecf8-41e0-ab49-90ee96b9c780.png" 
+                  alt="Authorized Dealer" 
+                  className="mx-auto h-40 object-contain"
                 />
               </div>
-              <p className="text-gray-600">
-                Professional installation ensures optimal performance and warranty coverage.
-              </p>
             </div>
           </div>
         </div>
