@@ -1,15 +1,34 @@
 
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Printer } from "lucide-react";
+import { useEffect } from "react";
 
 const ServiceAgreement = () => {
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
+  
+  const handlePrint = () => {
+    window.print();
+  };
+  
   return (
     <div className="min-h-screen bg-white pt-24 pb-20">
       {/* Header Section */}
-      <div className="container mx-auto px-4 flex items-center min-h-[200px]">
-        <div className="w-full">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between min-h-[200px]">
+        <div className="mb-4 md:mb-0">
           <h1 className="text-5xl font-bold text-black mb-4">Thank You For Booking!</h1>
           <p className="text-xl">Please Read Our Service Agreement Below.</p>
         </div>
+        <Button 
+          onClick={handlePrint} 
+          variant="outline" 
+          className="flex items-center gap-2 print:hidden"
+        >
+          <Printer className="w-4 h-4" /> Print Agreement
+        </Button>
       </div>
       
       {/* Content Section */}
