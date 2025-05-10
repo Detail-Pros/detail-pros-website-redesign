@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -158,8 +159,8 @@ const CeramicCoating = () => {
                 />
               </div>
               <p className="text-gray-600 mb-4">
-                The outermost layer provides exceptional gloss, hydrophobicity, and scratch resistance.
-                Creates a slick surface that repels water, dirt, and contaminants.
+                Forms the foundation of the coating system with strong adhesion properties.
+                Creates a permanent bond with the vehicle's clear coat for long-lasting durability.
               </p>
             </div>
             
@@ -172,8 +173,8 @@ const CeramicCoating = () => {
                 />
               </div>
               <p className="text-gray-600 mb-4">
-                Forms the foundation of the coating system with strong adhesion properties.
-                Creates a permanent bond with the vehicle's clear coat for long-lasting durability.
+                The outermost layer provides exceptional gloss, hydrophobicity, and scratch resistance.
+                Creates a slick surface that repels water, dirt, and contaminants.
               </p>
             </div>
             
