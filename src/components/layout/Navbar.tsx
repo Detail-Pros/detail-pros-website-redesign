@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -172,7 +171,7 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:block">
-          <Button className="bg-detailpros-pink hover:bg-opacity-90 text-white px-6 py-2 rounded-full">
+          <Button className="bg-detailpros-pink hover:bg-opacity-90 text-white px-6 py-2 rounded-[5px]">
             Book Us
           </Button>
         </div>
@@ -263,7 +262,7 @@ const Navbar = () => {
               FAQ
             </Link>
             
-            <Button className="bg-detailpros-pink hover:bg-opacity-90 w-full rounded-full" onClick={toggleMenu}>
+            <Button className="bg-detailpros-pink hover:bg-opacity-90 w-full rounded-[5px]" onClick={toggleMenu}>
               Book Us
             </Button>
           </div>
