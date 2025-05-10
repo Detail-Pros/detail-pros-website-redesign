@@ -16,6 +16,7 @@ import Careers from "./pages/Careers";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 import MiniNavbar from "./components/layout/MiniNavbar";
+import ServiceAgreement from "./pages/ServiceAgreement";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ const App = () => (
           <Route path="/window-tinting/residential" element={<WindowTinting />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/service-agreement" element={<ServiceAgreement />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
