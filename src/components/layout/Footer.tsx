@@ -1,8 +1,8 @@
+
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Apple, MessageSquare, LockKeyhole } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
 import { useEffect } from 'react';
-import { Beer } from 'lucide-react'; // Importing Beer icon from lucide-react
 
 // Custom link component that scrolls to top on navigation
 const ScrollToTopLink = ({ to, children, className }) => {
@@ -209,7 +209,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-sm text-gray-400">
-              © 2025 Wetworx Ltd. All rights reserved. Made with ❤️ and lots of <Beer className="inline w-4 h-4" /> by <a href="https://kevinramirez.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-detailpros-pink">Kevin Ramirez</a>
+              © 2025 Wetworx Ltd. All rights reserved. Made with ❤️ and lots of 🍺 by <a href="https://kevinramirez.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-detailpros-pink">Kevin Ramirez</a>
             </p>
           </div>
           
