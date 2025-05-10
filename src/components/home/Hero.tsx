@@ -7,11 +7,11 @@ const Hero = () => {
     <div className="relative min-h-screen flex items-center bg-cover bg-center bg-[url('/lovable-uploads/793cb934-f23d-4c7a-8fc1-9efee95045a6.png')] overflow-hidden">
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="mt-[-50px] md:mt-[-75px] lg:mt-[-100px]">
-          <p className="text-xl md:text-2xl text-black mb-4 font-medium">
+          <p className="text-xl md:text-2xl text-black dark:text-white mb-4 font-medium hero-text">
             Get a 5-Star Service at Home or at Our Shop
           </p>
           
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-black leading-tight mb-10 max-w-5xl mx-auto">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-black dark:text-white leading-tight mb-10 max-w-5xl mx-auto hero-text">
             Welcome To The Premier Detailing<br />
             Company Of The Cayman Islands
           </h1>

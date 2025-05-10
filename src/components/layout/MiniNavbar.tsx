@@ -1,6 +1,7 @@
 
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const TikTokIcon = () => (
   <svg
@@ -21,7 +22,7 @@ const TikTokIcon = () => (
 
 const MiniNavbar = () => {
   return (
-    <div className="bg-white h-9 flex items-center text-black text-xs hidden md:flex fixed top-0 left-0 right-0 z-50 shadow-sm">
+    <div className="bg-white dark:bg-gray-900 h-9 flex items-center text-black dark:text-white text-xs hidden md:flex fixed top-0 left-0 right-0 z-50 shadow-sm dark:shadow-gray-800">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex space-x-6">
           <div className="flex items-center">
@@ -41,16 +42,16 @@ const MiniNavbar = () => {
         </div>
         
         <div className="flex items-center space-x-4">
-          <Link to="https://facebook.com" aria-label="Facebook" className="text-black hover:text-detailpros-pink transition-colors">
+          <Link to="https://facebook.com" aria-label="Facebook" className="text-black dark:text-white hover:text-detailpros-pink transition-colors">
             <Facebook className="h-4 w-4" />
           </Link>
-          <Link to="https://instagram.com" aria-label="Instagram" className="text-black hover:text-detailpros-pink transition-colors">
+          <Link to="https://instagram.com" aria-label="Instagram" className="text-black dark:text-white hover:text-detailpros-pink transition-colors">
             <Instagram className="h-4 w-4" />
           </Link>
-          <Link to="https://linkedin.com" aria-label="LinkedIn" className="text-black hover:text-detailpros-pink transition-colors">
+          <Link to="https://linkedin.com" aria-label="LinkedIn" className="text-black dark:text-white hover:text-detailpros-pink transition-colors">
             <Linkedin className="h-4 w-4" />
           </Link>
-          <Link to="https://tiktok.com" aria-label="TikTok" className="text-black hover:text-detailpros-pink transition-colors">
+          <Link to="https://tiktok.com" aria-label="TikTok" className="text-black dark:text-white hover:text-detailpros-pink transition-colors">
             <TikTokIcon />
           </Link>
         </div>
