@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -11,6 +11,17 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+  DropdownMenuGroup,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,6 +64,7 @@ const Navbar = () => {
             Home
           </Link>
           
+          {/* Company Dropdown */}
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -66,6 +78,13 @@ const Navbar = () => {
                         </Link>
                       </NavigationMenuLink>
                     </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link to="/careers" className="block p-2 hover:bg-gray-100 rounded-md">
+                          Careers
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -76,10 +95,11 @@ const Navbar = () => {
             Detailing
           </Link>
           
+          {/* Ceramic Pro Dropdown */}
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">Ceramic Coating</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">Ceramic Pro</NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-white">
                   <ul className="grid w-[200px] gap-2 p-4">
                     <li>
@@ -123,36 +143,46 @@ const Navbar = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <Link to="/paint-protection" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
-            Paint Protection Film
-          </Link>
-          
+          {/* STEK Dropdown */}
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">Window Tinting</NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-white">
-                  <ul className="grid w-[200px] gap-2 p-4">
+                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">STEK</NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-white z-50">
+                  <ul className="grid w-[250px] gap-2 p-4">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/window-tinting/automotive" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Automotive
+                        <Link to="/paint-protection" className="block p-2 hover:bg-gray-100 rounded-md">
+                          Paint Protection Film
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/window-tinting/commercial" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Commercial
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/window-tinting/residential" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Residential
-                        </Link>
-                      </NavigationMenuLink>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger className="w-full text-left p-2 hover:bg-gray-100 rounded-md flex items-center justify-between">
+                          <span>Window Tinting</span>
+                          <ChevronDown className="h-4 w-4 ml-2" />
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="bg-white">
+                          <DropdownMenuGroup>
+                            <DropdownMenuItem asChild>
+                              <Link to="/window-tinting/automotive" className="cursor-pointer">
+                                Automotive
+                              </Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem asChild>
+                              <Link to="/window-tinting/residential" className="cursor-pointer">
+                                Residential
+                              </Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem asChild>
+                              <Link to="/window-tinting/commercial" className="cursor-pointer">
+                                Commercial
+                              </Link>
+                            </DropdownMenuItem>
+                          </DropdownMenuGroup>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
                     </li>
                   </ul>
                 </NavigationMenuContent>
@@ -162,10 +192,6 @@ const Navbar = () => {
 
           <Link to="/contact" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
             Contact
-          </Link>
-          
-          <Link to="/careers" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
-            Careers
           </Link>
           
           <Link to="/faq" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
@@ -206,6 +232,9 @@ const Navbar = () => {
                 <Link to="/about" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   About Us
                 </Link>
+                <Link to="/careers" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                  Careers
+                </Link>
               </div>
             </div>
             
@@ -213,9 +242,9 @@ const Navbar = () => {
               Detailing
             </Link>
             
-            {/* Ceramic Coating Dropdown */}
+            {/* Ceramic Pro Dropdown */}
             <div className="py-2 border-b border-gray-100">
-              <div className="font-medium text-detailpros-black mb-2">Ceramic Coating</div>
+              <div className="font-medium text-detailpros-black mb-2">Ceramic Pro</div>
               <div className="pl-4">
                 <Link to="/ceramic-coating/automotive" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Automotive
@@ -235,32 +264,32 @@ const Navbar = () => {
               </div>
             </div>
             
-            <Link to="/paint-protection" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
-              Paint Protection Film
-            </Link>
-            
-            {/* Window Tinting Dropdown */}
+            {/* STEK Dropdown */}
             <div className="py-2 border-b border-gray-100">
-              <div className="font-medium text-detailpros-black mb-2">Window Tinting</div>
+              <div className="font-medium text-detailpros-black mb-2">STEK</div>
               <div className="pl-4">
-                <Link to="/window-tinting/automotive" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
-                  Automotive
+                <Link to="/paint-protection" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                  Paint Protection Film
                 </Link>
-                <Link to="/window-tinting/commercial" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
-                  Commercial
-                </Link>
-                <Link to="/window-tinting/residential" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
-                  Residential
-                </Link>
+                <div className="py-1">
+                  <div className="text-sm text-detailpros-black mb-1">Window Tinting</div>
+                  <div className="pl-4">
+                    <Link to="/window-tinting/automotive" className="block py-1 text-xs text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                      Automotive
+                    </Link>
+                    <Link to="/window-tinting/residential" className="block py-1 text-xs text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                      Residential
+                    </Link>
+                    <Link to="/window-tinting/commercial" className="block py-1 text-xs text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                      Commercial
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
             
             <Link to="/contact" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
               Contact
-            </Link>
-            
-            <Link to="/careers" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
-              Careers
             </Link>
             
             <Link to="/faq" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
