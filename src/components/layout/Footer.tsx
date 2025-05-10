@@ -45,9 +45,9 @@ const AppStoreBadge = ({ store, link, children }) => (
     >
       {children}
     </div>
-    <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm rounded-lg">
-      <div className="flex flex-col items-center">
-        <LockKeyhole className="w-6 h-6 text-white mb-1" />
+    <div className="absolute inset-0 flex items-center justify-start px-4 bg-black/60 backdrop-blur-[2px] rounded-lg">
+      <div className="flex items-center">
+        <LockKeyhole className="w-5 h-5 text-white mr-2" />
         <span className="text-sm font-medium text-white">Coming Soon</span>
       </div>
     </div>
