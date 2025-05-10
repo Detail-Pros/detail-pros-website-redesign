@@ -7,7 +7,7 @@ const ServiceAgreement = () => {
       {/* Header Section */}
       <div className="container mx-auto px-4 flex items-center min-h-[200px]">
         <div className="w-full">
-          <h1 className="text-5xl font-bold text-black mb-4">Service Agreement</h1>
+          <h1 className="text-5xl font-bold text-black mb-4">Thank You For Booking!</h1>
           <p className="text-xl">Please Read Our Service Agreement Below.</p>
         </div>
       </div>
