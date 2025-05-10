@@ -79,25 +79,26 @@ const CeramicCoating = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-700 mb-6">
-                Ceramic Pro ION uses advanced nanotechnology to create a permanent protective layer on your vehicle's surfaces. 
-                Unlike traditional waxes and sealants that break down over time, Ceramic Pro ION chemically bonds with the factory paint.
+                Ceramic Pro created the original 9H ceramic coating that permitted installers to stack multiple layers to provide maximum protection and longevity. Advancements in manufacturing technology have allowed Ceramic Pro to once again revolutionize the ceramic coating industry with the launch of Ceramic Pro ION and ION Top Coat.
               </p>
               
               <p className="text-gray-700 mb-6">
-                The liquid nano-ceramic forms an extremely durable shield against environmental contaminants, UV rays, bird droppings, 
-                tree sap, and road salt. It also creates a hydrophobic surface that repels water and makes cleaning your vehicle effortless.
+                Ceramic Pro ION is a two-component ceramic coating system that utilizes revolutionary ION Exchange Technology to fuse multiple coating layers into a single, durable, and robust protected surface. This coating technology increases the strength of the atomic bond within the two coatings, and the original substrate once applied.
+              </p>
+              
+              <p className="text-gray-700 mb-6">
+                The result is a ceramic coating that produces twice the durability, integrity, and longevity of traditional nanoceramic coatings.
               </p>
               
               <p className="text-gray-700">
-                After application, the coating needs time to cure, creating a hard, glass-like finish that provides years of protection 
-                depending on the package selected. The high gloss appearance enhances the vehicle's color depth and clarity.
+                This Next Generation Ceramic Coating is exclusively available at Ceramic Pro Elite Dealers.
               </p>
             </div>
-            <div>
+            <div className="flex items-center justify-center">
               <img 
-                src="/lovable-uploads/a5a1ab08-d604-4d23-a45b-67f47f6f883e.png" 
-                alt="Ceramic Pro Application" 
-                className="rounded-lg shadow-lg w-full h-auto"
+                src="/lovable-uploads/d7d4978f-db4c-4dc8-94b9-38a9d434f67b.png" 
+                alt="Ceramic Pro ION Products" 
+                className="rounded-lg shadow-lg w-full max-w-md h-auto"
               />
             </div>
           </div>
