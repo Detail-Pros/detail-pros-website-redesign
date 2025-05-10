@@ -38,7 +38,7 @@ const Navbar = () => {
 
   return (
     <header className={`fixed top-0 md:top-9 left-0 right-0 z-40 transition-all duration-300 bg-white ${isScrolled ? 'shadow-sm' : ''}`}>
-      <div className="container mx-auto px-4 flex justify-between items-center py-4">
+      <div className="container mx-auto px-4 flex justify-between items-center h-[72px]">
         <Link to="/" className="flex items-center">
           <img 
             src="/lovable-uploads/89a8fbde-5964-45bd-baef-acd17f6d418a.png" 

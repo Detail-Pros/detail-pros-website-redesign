@@ -30,7 +30,7 @@ const App = () => (
       <BrowserRouter>
         <MiniNavbar />
         <Navbar />
-        <main className="pt-9 md:pt-[120px]">
+        <main className="pt-[72px] md:pt-[120px]">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
