@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,6 +10,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import CeramicCoating from "./pages/CeramicCoating";
+import CeramicCoatingMarine from "./pages/CeramicCoatingMarine";
 import PaintProtection from "./pages/PaintProtection";
 import WindowTinting from "./pages/WindowTinting";
 import Careers from "./pages/Careers";
@@ -25,7 +25,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
-// ScrollToTop component that handles scrolling to top on route change
+// ScrollToAction component that handles scrolling to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -53,7 +53,7 @@ const App = () => (
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/ceramic-coating/*" element={<CeramicCoating />} />
             <Route path="/ceramic-coating/automotive" element={<CeramicCoating />} />
-            <Route path="/ceramic-coating/marine" element={<CeramicCoating />} />
+            <Route path="/ceramic-coating/marine" element={<CeramicCoatingMarine />} />
             <Route path="/ceramic-coating/aviation" element={<CeramicCoating />} />
             <Route path="/ceramic-coating/industrial" element={<CeramicCoating />} />
             <Route path="/ceramic-coating/signage" element={<CeramicCoating />} />
