@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center bg-cover bg-center bg-[url('/lovable-uploads/793cb934-f23d-4c7a-8fc1-9efee95045a6.png')] overflow-hidden">
       <div className="container mx-auto px-4 relative z-10 text-center">
-        <div className="mt-[-100px] md:mt-[-150px] lg:mt-[-200px]">
+        <div className="mt-[-50px] md:mt-[-75px] lg:mt-[-100px]">
           <p className="text-xl md:text-2xl text-black mb-4 font-medium">
             Get a 5-Star Service at Home or at Our Shop
           </p>
