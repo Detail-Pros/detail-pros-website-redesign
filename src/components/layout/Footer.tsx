@@ -24,11 +24,11 @@ const TikTok = () => (
 const AppStoreBadge = ({ store, link, children }) => (
   <div className="relative">
     <div 
-      className="flex items-center justify-center bg-black/50 text-white/70 rounded-lg px-4 py-2 w-full cursor-not-allowed"
+      className="flex items-center justify-center bg-black/40 text-white/80 rounded-lg px-4 py-2 w-full cursor-not-allowed"
     >
       {children}
     </div>
-    <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm rounded-lg">
+    <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm rounded-lg">
       <div className="flex flex-col items-center">
         <LockKeyhole className="w-6 h-6 text-white mb-1" />
         <span className="text-sm font-medium text-white">Coming Soon</span>
