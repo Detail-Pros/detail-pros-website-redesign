@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Map } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
 
 // TikTok icon component since it's not directly available in lucide-react
@@ -24,20 +24,6 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-16">
       <div className="container mx-auto px-4">
-        {/* Map spanning across the component */}
-        <div className="w-full h-[400px] bg-gray-200 rounded-md overflow-hidden mb-16">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.597187423721!2d-81.37641432412949!3d19.329869381913888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f258738d905adf3%3A0xc711ca9486afc56c!2sKingbird%20Dr%2C%20Cayman%20Islands!5e0!3m2!1sen!2sus!4v1715443037042!5m2!1sen!2sus" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Detail Pros Location"
-          />
-        </div>
-
         {/* Get in Touch Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div>
@@ -76,17 +62,34 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        {/* Map spanning across the component */}
+        <div className="w-full h-[400px] bg-gray-200 rounded-md overflow-hidden mb-16">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.597187423721!2d-81.37641432412949!3d19.329869381913888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f258738d905adf3%3A0xc711ca9486afc56c!2sKingbird%20Dr%2C%20Cayman%20Islands!5e0!3m2!1sen!2sus!4v1715443037042!5m2!1sen!2sus" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Detail Pros Location"
+          />
+        </div>
         
         {/* Footer Links */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           {/* Logo */}
           <div className="md:col-span-1">
             <Link to="/" className="block mb-4">
-              <img 
-                src="/lovable-uploads/608aa328-f454-4334-9b13-c0218ebc121a.png" 
-                alt="Detail Pros Logo" 
-                className="h-12"
-              />
+              <div className="flex items-center">
+                <img 
+                  src="/lovable-uploads/608aa328-f454-4334-9b13-c0218ebc121a.png" 
+                  alt="Detail Pros Logo" 
+                  className="h-12"
+                />
+                <span className="text-white font-bold text-xl ml-2">DetailPros</span>
+              </div>
             </Link>
           </div>
           
@@ -124,7 +127,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Paint Protection & Apps - now inline with other columns */}
+          {/* Paint Protection & Download App in the same column */}
           <div className="md:col-span-1">
             <div className="mb-8">
               <h3 className="text-lg font-semibold mb-4">Paint Protection Film</h3>
