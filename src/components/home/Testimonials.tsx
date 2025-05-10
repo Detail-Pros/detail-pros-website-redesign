@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Star, MessageCircle } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
@@ -20,7 +19,6 @@ interface GoogleReview {
   time: number;
 }
 
-const GOOGLE_API_KEY = "AIzaSyBrltSXOTrApqRB0-WgUdkM79GoSnbUyxw";
 const PLACE_ID = "ChIJERqF6vKHJY8RKVn-N2hfI70"; // Replace with your actual Google Place ID
 
 const Testimonials = () => {
@@ -60,32 +58,63 @@ const Testimonials = () => {
     const fetchGoogleReviews = async () => {
       setIsLoading(true);
       try {
-        const endpoint = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews&key=${GOOGLE_API_KEY}`;
+        // Try to use the server-side proxy
+        const isNetlify = window.location.hostname.includes('netlify.app');
+        const isVercel = window.location.hostname.includes('vercel.app');
         
-        // Due to CORS issues, we need a proxy server or a backend endpoint
-        // For demonstration, we'll log the endpoint but use fallback data
-        console.log("Google Places API endpoint:", endpoint);
-        console.log("Note: Direct browser requests to Google Places API will be blocked by CORS");
-        console.log("You'll need a server-side proxy or serverless function to make this request");
+        let proxyUrl;
         
-        // Simulate successful API response with fallback data
-        setTimeout(() => {
+        if (isNetlify) {
+          proxyUrl = '/.netlify/functions/google-places';
+        } else if (isVercel) {
+          proxyUrl = '/api/google-places';
+        } else {
+          // For local development or other platforms
+          proxyUrl = '/api/google-places'; // Default to Vercel-style path
+        }
+        
+        // Make the request to our serverless function
+        const response = await fetch(proxyUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ placeId: PLACE_ID }),
+        });
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch reviews');
+        }
+        
+        const data = await response.json();
+        
+        // Check if we have valid reviews data
+        if (data.result && data.result.reviews && data.result.reviews.length > 0) {
+          // Transform the Google reviews to match our interface
+          const googleReviews = data.result.reviews.map((review: any) => ({
+            id: review.time.toString(),
+            author_name: review.author_name,
+            profile_photo_url: review.profile_photo_url,
+            rating: review.rating,
+            text: review.text,
+            time: review.time,
+          }));
+          
+          setReviews(googleReviews);
+        } else {
+          // If no reviews found, use fallback
+          console.log("No reviews found in API response, using fallbacks");
           setReviews(fallbackTestimonials);
-          setIsLoading(false);
-          toast({
-            title: "Note about Google Reviews",
-            description: "To fetch real Google reviews, you'll need a server-side proxy due to CORS restrictions.",
-            duration: 5000,
-          });
-        }, 1000);
+        }
       } catch (error) {
         console.error("Error fetching Google reviews:", error);
         toast({
-          title: "Unable to load reviews",
+          title: "Unable to load Google reviews",
           description: "Showing our featured testimonials instead.",
           variant: "destructive",
         });
         setReviews(fallbackTestimonials);
+      } finally {
         setIsLoading(false);
       }
     };
