@@ -93,7 +93,6 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
       <main className="flex-grow pt-16">
         {/* Gallery Header */}
         <section className="relative py-24 bg-detailpros-black">
@@ -221,7 +220,6 @@ const Gallery = () => {
         
         <CallToAction />
       </main>
-      <Footer />
     </div>
   );
 };

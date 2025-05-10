@@ -1,14 +1,9 @@
 
-import Navbar from "@/components/layout/Navbar";
-import MiniNavbar from "@/components/layout/MiniNavbar";
-import Footer from "@/components/layout/Footer";
 import CallToAction from "@/components/home/CallToAction";
 
 const FAQ = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <MiniNavbar />
-      <Navbar />
       <main className="flex-grow pt-24 md:pt-32">
         <section className="py-16">
           <div className="container mx-auto px-4">
@@ -23,7 +18,6 @@ const FAQ = () => {
         </section>
         <CallToAction />
       </main>
-      <Footer />
     </div>
   );
 };

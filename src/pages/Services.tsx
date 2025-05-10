@@ -1,13 +1,10 @@
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import CallToAction from "@/components/home/CallToAction";
 import { Car, Brush, DropletIcon, Check } from "lucide-react";
 
 const Services = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
       <main className="flex-grow pt-16">
         {/* Services Header */}
         <section className="relative py-24 bg-detailpros-black">
@@ -207,7 +204,6 @@ const Services = () => {
 
         <CallToAction />
       </main>
-      <Footer />
     </div>
   );
 };

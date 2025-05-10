@@ -1,6 +1,4 @@
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -40,7 +38,6 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
       <main className="flex-grow pt-16">
         {/* Contact Header */}
         <section className="relative py-24 bg-detailpros-black">
@@ -233,7 +230,6 @@ const Contact = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
