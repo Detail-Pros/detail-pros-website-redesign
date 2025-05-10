@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
         
         {/* Footer Links */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-8 mb-12">
           {/* Logo */}
           <div className="md:col-span-1">
             <Link to="/" className="block mb-4">
@@ -122,27 +122,26 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Paint Protection & Download App in the same column */}
+          {/* Paint Protection Film - now in its own column */}
           <div className="md:col-span-1">
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold mb-4">Paint Protection Film</h3>
-              <ul className="space-y-3">
-                <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Automotive</Link></li>
-                <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Marine</Link></li>
-                <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Aviation</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Download Our App</h3>
-              <div className="flex flex-col space-y-3">
-                <a href="https://apps.apple.com" className="inline-block" target="_blank" rel="noopener noreferrer">
-                  <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on App Store" className="h-10" />
-                </a>
-                <a href="https://play.google.com" className="inline-block" target="_blank" rel="noopener noreferrer">
-                  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-12" />
-                </a>
-              </div>
+            <h3 className="text-lg font-semibold mb-4">Paint Protection Film</h3>
+            <ul className="space-y-3">
+              <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Automotive</Link></li>
+              <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Marine</Link></li>
+              <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Aviation</Link></li>
+            </ul>
+          </div>
+          
+          {/* Download App - now in its own column */}
+          <div className="md:col-span-1">
+            <h3 className="text-lg font-semibold mb-4">Download Our App</h3>
+            <div className="flex flex-col space-y-3">
+              <a href="https://apps.apple.com" className="inline-block" target="_blank" rel="noopener noreferrer">
+                <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on App Store" className="h-10" />
+              </a>
+              <a href="https://play.google.com" className="inline-block" target="_blank" rel="noopener noreferrer">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-12" />
+              </a>
             </div>
           </div>
         </div>
