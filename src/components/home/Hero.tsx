@@ -18,11 +18,11 @@ const Hero = () => {
             Serving all of Grand Cayman with exceptional service and quality.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-            <Button className="bg-detailpros-pink hover:bg-opacity-90 text-white px-8 py-6 text-lg rounded-full">
+            <Button className="bg-detailpros-pink hover:bg-opacity-90 text-white px-8 py-6 text-lg rounded-[5px]">
               Book Now
             </Button>
             <Link to="/services">
-              <Button variant="outline" className="text-white border-white hover:bg-white/10 px-8 py-6 text-lg rounded-full">
+              <Button variant="outline" className="text-white border-white hover:bg-white/10 px-8 py-6 text-lg rounded-[5px]">
                 Our Services
               </Button>
             </Link>
