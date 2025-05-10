@@ -9,14 +9,10 @@ import CallToAction from "@/components/home/CallToAction";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-grow">
         <Hero />
         <Services />
         <Testimonials />
         <CallToAction />
-      </main>
-    </div>
   );
 };
 
