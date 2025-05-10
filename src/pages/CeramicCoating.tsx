@@ -169,7 +169,7 @@ const CeramicCoating = () => {
               <div className="w-24 h-24 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-4">
                 <img src="/lovable-uploads/83ec7181-a1fa-422c-99f1-d9fb843d897a.png" alt="Application Icon" className="w-16 h-16" />
               </div>
-              <h3 className="font-bold mb-2">EASIER WASHING</h3>
+              <h3 className="font-bold mb-2">THICK &amp; DURABLE</h3>
               <p className="text-sm text-gray-400">
                 Super hydrophobic effect makes cleaning simple and quick
               </p>
