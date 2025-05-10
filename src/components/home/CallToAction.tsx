@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 
 const CallToAction = () => {
   return (
-    <section className="relative py-24 overflow-hidden">
-      {/* Background with overlay */}
-      <div className="absolute inset-0 bg-black">
-        <div className="absolute inset-0 bg-gradient-to-r from-black to-black/80 z-10"></div>
-        <div className="absolute inset-0 bg-[url('/images/cta-bg.jpg')] bg-cover bg-center opacity-40"></div>
+    <section className="relative py-24 overflow-hidden bg-gray-100">
+      {/* Background with overlay - changed from black to light grey */}
+      <div className="absolute inset-0 bg-gray-100">
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-100/80 z-10"></div>
+        <div className="absolute inset-0 bg-[url('/images/cta-bg.jpg')] bg-cover bg-center opacity-20"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Transform Your Vehicle?</h2>
-          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Ready to Transform Your Vehicle?</h2>
+          <p className="text-gray-700 text-lg mb-8 max-w-2xl mx-auto">
             Whether it's a full detail, ceramic coating, paint protection film, or window tinting, 
             our team is ready to provide premium service throughout Grand Cayman.
           </p>
@@ -23,7 +23,7 @@ const CallToAction = () => {
               Book Now
             </Button>
             <Link to="/contact">
-              <Button variant="outline" className="text-white border-white hover:bg-white/10 px-8 py-6 text-lg rounded-[5px]">
+              <Button variant="outline" className="text-gray-900 border-gray-900 hover:bg-gray-900/10 px-8 py-6 text-lg rounded-[5px]">
                 Contact Us
               </Button>
             </Link>
