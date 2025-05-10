@@ -111,13 +111,13 @@ const CeramicCoating = () => {
             Ceramic Pro ION Coating Packages
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* ION Package */}
             <div className="flex justify-center">
               <img 
                 src="/lovable-uploads/f319da16-825f-4ae5-9dce-a16feecc0ef1.png" 
                 alt="ION Package" 
-                className="w-full max-w-xs h-auto rounded-lg shadow-lg"
+                className="w-full max-w-xs h-auto"
               />
             </div>
             
@@ -126,7 +126,7 @@ const CeramicCoating = () => {
               <img 
                 src="/lovable-uploads/f60a8d3f-bdad-4bb0-a272-cf9fd039f979.png" 
                 alt="Diamond ION Package" 
-                className="w-full max-w-xs h-auto rounded-lg shadow-lg"
+                className="w-full max-w-xs h-auto"
               />
             </div>
             
@@ -135,7 +135,7 @@ const CeramicCoating = () => {
               <img 
                 src="/lovable-uploads/0e4212a8-f19b-41f2-9964-659a65b5197e.png" 
                 alt="Ultimate ION Package" 
-                className="w-full max-w-xs h-auto rounded-lg shadow-lg"
+                className="w-full max-w-xs h-auto"
               />
             </div>
           </div>
