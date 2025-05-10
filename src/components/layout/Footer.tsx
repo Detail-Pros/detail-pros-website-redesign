@@ -1,5 +1,6 @@
+
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Apple, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Apple, MessageSquare, LockKeyhole } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
 
 // TikTok icon component since it's not directly available in lucide-react
@@ -21,14 +22,19 @@ const TikTok = () => (
 
 // App store badge component for consistent styling
 const AppStoreBadge = ({ store, link, children }) => (
-  <a 
-    href={link} 
-    className="flex items-center justify-center bg-black text-white rounded-lg px-4 py-2 w-full hover:bg-gray-800 transition-colors" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    {children}
-  </a>
+  <div className="relative">
+    <div 
+      className="flex items-center justify-center bg-black/50 text-white/70 rounded-lg px-4 py-2 w-full cursor-not-allowed"
+    >
+      {children}
+    </div>
+    <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm rounded-lg">
+      <div className="flex flex-col items-center">
+        <LockKeyhole className="w-6 h-6 text-white mb-1" />
+        <span className="text-sm font-medium text-white">Coming Soon</span>
+      </div>
+    </div>
+  </div>
 );
 
 const Footer = () => {
@@ -149,7 +155,7 @@ const Footer = () => {
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold mb-4">Download Our App</h3>
             <div className="flex flex-col space-y-3">
-              <AppStoreBadge store="apple" link="https://apps.apple.com">
+              <AppStoreBadge store="apple" link="#">
                 <div className="flex items-center">
                   <Apple className="w-6 h-6 mr-2" />
                   <div className="flex flex-col">
@@ -159,7 +165,7 @@ const Footer = () => {
                 </div>
               </AppStoreBadge>
               
-              <AppStoreBadge store="android" link="https://play.google.com">
+              <AppStoreBadge store="android" link="#">
                 <div className="flex items-center">
                   <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5ZM16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12ZM20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.53 12.9 20.18 13.18L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81ZM6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z" fill="currentColor" />
