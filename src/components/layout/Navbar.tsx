@@ -285,7 +285,7 @@ const Navbar = () => {
               FAQ
             </Link>
             
-            <Button className="bg-detailpros-pink hover:bg-opacity-90 w-full rounded-[5px]" onClick={toggleMenu}>
+            <Button href="https://book.detailpros.ky/" target="_blank" className="bg-detailpros-pink hover:bg-opacity-90 w-full rounded-[5px]" onClick={toggleMenu}>
               Book Us
             </Button>
           </div>
