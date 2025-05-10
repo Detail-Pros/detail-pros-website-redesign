@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Apple, MessageSquare } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
@@ -94,9 +93,11 @@ const Footer = () => {
           {/* Logo */}
           <div className="md:col-span-1">
             <Link to="/" className="block mb-4">
-              <div className="flex items-center">
-                <span className="text-white font-bold text-xl ml-2">DetailPros</span>
-              </div>
+              <img 
+                src="/lovable-uploads/05466d3a-5852-4182-9dd3-5ab926af61e4.png" 
+                alt="DetailPros Logo" 
+                className="h-14 w-auto"
+              />
             </Link>
           </div>
           

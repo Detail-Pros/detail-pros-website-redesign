@@ -40,9 +40,11 @@ const Navbar = () => {
     <header className={`fixed top-0 md:top-9 left-0 right-0 z-40 transition-all duration-300 bg-white ${isScrolled ? 'shadow-sm' : ''}`}>
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-bold text-detailpros-black">
-            Detail<span className="text-detailpros-pink">Pros</span>
-          </span>
+          <img 
+            src="/lovable-uploads/05466d3a-5852-4182-9dd3-5ab926af61e4.png" 
+            alt="DetailPros Logo" 
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}
