@@ -60,21 +60,7 @@ const Navbar = () => {
                     <li>
                       <NavigationMenuLink asChild>
                         <Link to="/about" className="block p-2 hover:bg-gray-100 rounded-md">
-                          About Our Company
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/careers" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Careers
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/gallery" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Gallery
+                          About Us
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -96,15 +82,36 @@ const Navbar = () => {
                   <ul className="grid w-[200px] gap-2 p-4">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/ceramic-coating" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Overview
+                        <Link to="/ceramic-coating/automotive" className="block p-2 hover:bg-gray-100 rounded-md">
+                          Automotive
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/ceramic-coating/packages" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Packages
+                        <Link to="/ceramic-coating/marine" className="block p-2 hover:bg-gray-100 rounded-md">
+                          Marine
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link to="/ceramic-coating/aviation" className="block p-2 hover:bg-gray-100 rounded-md">
+                          Aviation
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link to="/ceramic-coating/industrial" className="block p-2 hover:bg-gray-100 rounded-md">
+                          Industrial
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link to="/ceramic-coating/signage" className="block p-2 hover:bg-gray-100 rounded-md">
+                          Signage
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -126,15 +133,22 @@ const Navbar = () => {
                   <ul className="grid w-[200px] gap-2 p-4">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/window-tinting" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Overview
+                        <Link to="/window-tinting/automotive" className="block p-2 hover:bg-gray-100 rounded-md">
+                          Automotive
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/window-tinting/options" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Tint Options
+                        <Link to="/window-tinting/commercial" className="block p-2 hover:bg-gray-100 rounded-md">
+                          Commercial
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link to="/window-tinting/residential" className="block p-2 hover:bg-gray-100 rounded-md">
+                          Residential
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -186,13 +200,7 @@ const Navbar = () => {
               <div className="font-medium text-detailpros-black mb-2">Company</div>
               <div className="pl-4">
                 <Link to="/about" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
-                  About Our Company
-                </Link>
-                <Link to="/careers" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
-                  Careers
-                </Link>
-                <Link to="/gallery" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
-                  Gallery
+                  About Us
                 </Link>
               </div>
             </div>
@@ -205,11 +213,20 @@ const Navbar = () => {
             <div className="py-2 border-b border-gray-100">
               <div className="font-medium text-detailpros-black mb-2">Ceramic Coating</div>
               <div className="pl-4">
-                <Link to="/ceramic-coating" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
-                  Overview
+                <Link to="/ceramic-coating/automotive" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                  Automotive
                 </Link>
-                <Link to="/ceramic-coating/packages" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
-                  Packages
+                <Link to="/ceramic-coating/marine" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                  Marine
+                </Link>
+                <Link to="/ceramic-coating/aviation" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                  Aviation
+                </Link>
+                <Link to="/ceramic-coating/industrial" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                  Industrial
+                </Link>
+                <Link to="/ceramic-coating/signage" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                  Signage
                 </Link>
               </div>
             </div>
@@ -222,11 +239,14 @@ const Navbar = () => {
             <div className="py-2 border-b border-gray-100">
               <div className="font-medium text-detailpros-black mb-2">Window Tinting</div>
               <div className="pl-4">
-                <Link to="/window-tinting" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
-                  Overview
+                <Link to="/window-tinting/automotive" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                  Automotive
                 </Link>
-                <Link to="/window-tinting/options" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
-                  Tint Options
+                <Link to="/window-tinting/commercial" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                  Commercial
+                </Link>
+                <Link to="/window-tinting/residential" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
+                  Residential
                 </Link>
               </div>
             </div>

@@ -30,9 +30,17 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/ceramic-coating" element={<CeramicCoating />} />
+          <Route path="/ceramic-coating/*" element={<CeramicCoating />} />
+          <Route path="/ceramic-coating/automotive" element={<CeramicCoating />} />
+          <Route path="/ceramic-coating/marine" element={<CeramicCoating />} />
+          <Route path="/ceramic-coating/aviation" element={<CeramicCoating />} />
+          <Route path="/ceramic-coating/industrial" element={<CeramicCoating />} />
+          <Route path="/ceramic-coating/signage" element={<CeramicCoating />} />
           <Route path="/paint-protection" element={<PaintProtection />} />
-          <Route path="/window-tinting" element={<WindowTinting />} />
+          <Route path="/window-tinting/*" element={<WindowTinting />} />
+          <Route path="/window-tinting/automotive" element={<WindowTinting />} />
+          <Route path="/window-tinting/commercial" element={<WindowTinting />} />
+          <Route path="/window-tinting/residential" element={<WindowTinting />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/faq" element={<FAQ />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
