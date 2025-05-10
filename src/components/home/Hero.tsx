@@ -10,7 +10,7 @@ const Hero = () => {
           Get a 5-Star Service at Home or at Our Shop
         </p>
         
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-black leading-tight mb-40 max-w-5xl mx-auto">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-black leading-tight mb-40 max-w-5xl mx-auto">
           Welcome To The Premier Detailing<br />
           Company Of The Cayman Islands
         </h1>
