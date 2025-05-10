@@ -1,13 +1,10 @@
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import CallToAction from "@/components/home/CallToAction";
 import { Check, CircleCheck } from "lucide-react";
 
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
       <main className="flex-grow pt-16">
         {/* About Header */}
         <section className="relative py-24 bg-detailpros-black">
@@ -218,7 +215,6 @@ const About = () => {
 
         <CallToAction />
       </main>
-      <Footer />
     </div>
   );
 };
