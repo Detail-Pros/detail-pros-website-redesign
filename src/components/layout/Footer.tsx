@@ -2,6 +2,23 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Apple, MessageSquare, LockKeyhole } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
+import { useEffect } from 'react';
+
+// Custom link component that scrolls to top on navigation
+const ScrollToTopLink = ({ to, children, className }) => {
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
+  return (
+    <Link to={to} className={className} onClick={handleClick}>
+      {children}
+    </Link>
+  );
+};
 
 // TikTok icon component since it's not directly available in lucide-react
 const TikTok = () => (
@@ -38,6 +55,12 @@ const AppStoreBadge = ({ store, link, children }) => (
 );
 
 const Footer = () => {
+  // Add effect to handle navigation from other pages
+  useEffect(() => {
+    // If coming from a different page, scroll to top
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <footer className="bg-black text-white py-16">
       <div className="container mx-auto px-4">
@@ -98,24 +121,24 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-6 gap-8 mb-12">
           {/* Logo */}
           <div className="md:col-span-1">
-            <Link to="/" className="block mb-4">
+            <ScrollToTopLink to="/" className="block mb-4">
               <img 
                 src="/lovable-uploads/05466d3a-5852-4182-9dd3-5ab926af61e4.png" 
                 alt="DetailPros Logo" 
                 className="h-14 w-auto"
               />
-            </Link>
+            </ScrollToTopLink>
           </div>
           
           {/* Company Links */}
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><Link to="/" className="text-gray-300 hover:text-detailpros-pink">Home</Link></li>
-              <li><Link to="/about" className="text-gray-300 hover:text-detailpros-pink">About Us</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-detailpros-pink">Contact Us</Link></li>
-              <li><Link to="/careers" className="text-gray-300 hover:text-detailpros-pink">Careers</Link></li>
-              <li><Link to="/faq" className="text-gray-300 hover:text-detailpros-pink">FAQ</Link></li>
+              <li><ScrollToTopLink to="/" className="text-gray-300 hover:text-detailpros-pink">Home</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/about" className="text-gray-300 hover:text-detailpros-pink">About Us</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/contact" className="text-gray-300 hover:text-detailpros-pink">Contact Us</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/careers" className="text-gray-300 hover:text-detailpros-pink">Careers</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/faq" className="text-gray-300 hover:text-detailpros-pink">FAQ</ScrollToTopLink></li>
             </ul>
           </div>
           
@@ -123,9 +146,9 @@ const Footer = () => {
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold mb-4">Detailing</h3>
             <ul className="space-y-3">
-              <li><Link to="/services" className="text-gray-300 hover:text-detailpros-pink">Automotive</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-detailpros-pink">Marine</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-detailpros-pink">Aviation</Link></li>
+              <li><ScrollToTopLink to="/services" className="text-gray-300 hover:text-detailpros-pink">Automotive</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/services" className="text-gray-300 hover:text-detailpros-pink">Marine</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/services" className="text-gray-300 hover:text-detailpros-pink">Aviation</ScrollToTopLink></li>
             </ul>
           </div>
           
@@ -133,11 +156,11 @@ const Footer = () => {
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold mb-4">Ceramic Coating</h3>
             <ul className="space-y-3">
-              <li><Link to="/ceramic-coating/automotive" className="text-gray-300 hover:text-detailpros-pink">Automotive</Link></li>
-              <li><Link to="/ceramic-coating/marine" className="text-gray-300 hover:text-detailpros-pink">Marine</Link></li>
-              <li><Link to="/ceramic-coating/aviation" className="text-gray-300 hover:text-detailpros-pink">Aviation</Link></li>
-              <li><Link to="/ceramic-coating/industrial" className="text-gray-300 hover:text-detailpros-pink">Industrial</Link></li>
-              <li><Link to="/ceramic-coating/signage" className="text-gray-300 hover:text-detailpros-pink">Signage</Link></li>
+              <li><ScrollToTopLink to="/ceramic-coating/automotive" className="text-gray-300 hover:text-detailpros-pink">Automotive</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/ceramic-coating/marine" className="text-gray-300 hover:text-detailpros-pink">Marine</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/ceramic-coating/aviation" className="text-gray-300 hover:text-detailpros-pink">Aviation</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/ceramic-coating/industrial" className="text-gray-300 hover:text-detailpros-pink">Industrial</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/ceramic-coating/signage" className="text-gray-300 hover:text-detailpros-pink">Signage</ScrollToTopLink></li>
             </ul>
           </div>
           
@@ -145,9 +168,9 @@ const Footer = () => {
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold mb-4">Paint Protection Film</h3>
             <ul className="space-y-3">
-              <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Automotive</Link></li>
-              <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Marine</Link></li>
-              <li><Link to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Aviation</Link></li>
+              <li><ScrollToTopLink to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Automotive</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Marine</ScrollToTopLink></li>
+              <li><ScrollToTopLink to="/paint-protection" className="text-gray-300 hover:text-detailpros-pink">Aviation</ScrollToTopLink></li>
             </ul>
           </div>
           
@@ -191,15 +214,15 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-4 items-center">
-            <Link to="/privacy-policy" className="text-sm text-gray-400 hover:text-white">
+            <ScrollToTopLink to="/privacy-policy" className="text-sm text-gray-400 hover:text-white">
               Privacy Policy
-            </Link>
-            <Link to="/terms-of-service" className="text-sm text-gray-400 hover:text-white">
+            </ScrollToTopLink>
+            <ScrollToTopLink to="/terms-of-service" className="text-sm text-gray-400 hover:text-white">
               Terms of Service
-            </Link>
-            <Link to="/service-agreement" className="text-sm text-gray-400 hover:text-white">
+            </ScrollToTopLink>
+            <ScrollToTopLink to="/service-agreement" className="text-sm text-gray-400 hover:text-white">
               Service Agreement
-            </Link>
+            </ScrollToTopLink>
           </div>
           
           <div className="flex space-x-4 mt-4 md:mt-0">
