@@ -113,79 +113,31 @@ const CeramicCoating = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* ION Package */}
-            <Card className="bg-black text-white">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-center">ION PACKAGE</h3>
-                <ul className="space-y-2 mb-4">
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>1 Layer of Ceramic Pro ION</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>Professional Application</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>2-Year Warranty</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>High Gloss Finish</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/f319da16-825f-4ae5-9dce-a16feecc0ef1.png" 
+                alt="ION Package" 
+                className="w-full max-w-xs h-auto rounded-lg shadow-lg"
+              />
+            </div>
             
             {/* Diamond ION Package */}
-            <Card className="bg-black text-white">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-center">DIAMOND ION PACKAGE</h3>
-                <ul className="space-y-2 mb-4">
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>2 Layers of Ceramic Pro ION</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>Professional Application</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>5-Year Warranty</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>Enhanced Durability</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/f60a8d3f-bdad-4bb0-a272-cf9fd039f979.png" 
+                alt="Diamond ION Package" 
+                className="w-full max-w-xs h-auto rounded-lg shadow-lg"
+              />
+            </div>
             
             {/* Ultimate ION Package */}
-            <Card className="bg-black text-white">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-center">ULTIMATE ION PACKAGE</h3>
-                <ul className="space-y-2 mb-4">
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>4 Layers of Ceramic Pro ION</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>Professional Application</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>Lifetime Warranty</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="inline-block w-3 h-3 rounded-full bg-detailpros-pink"></span>
-                    <span>Maximum Protection</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/0e4212a8-f19b-41f2-9964-659a65b5197e.png" 
+                alt="Ultimate ION Package" 
+                className="w-full max-w-xs h-auto rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
