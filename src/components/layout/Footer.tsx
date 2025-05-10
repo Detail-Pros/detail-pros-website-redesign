@@ -1,6 +1,5 @@
-
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Map, Apple } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Apple, MessageSquare } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
 
 // TikTok icon component since it's not directly available in lucide-react
@@ -17,6 +16,27 @@ const TikTok = () => (
     strokeLinejoin="round"
   >
     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+  </svg>
+);
+
+// WhatsApp icon component 
+const WhatsAppIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M17.5 14.1666L13.5833 10.25L17.5 6.33332" />
+    <path d="M6.5 19.8333C8.98218 19.8333 10.9167 17.8989 10.9167 15.4167C10.9167 12.9345 8.98218 11 6.5 11C4.01782 11 2.08334 12.9345 2.08334 15.4167C2.08334 16.4136 2.4253 17.339 3 18.0833L2.5 21.5L6 20.9167C6.72136 21.4648 7.61662 21.8333 8.58334 21.8333" />
+    <path d="M14.6667 6.33332H21.5" />
+    <path d="M14.6667 10.25H21.5" />
+    <path d="M14.6667 14.1666H21.5" />
   </svg>
 );
 
@@ -202,11 +222,14 @@ const Footer = () => {
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
               <Instagram size={20} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
-              <Linkedin size={20} />
+            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
+              <WhatsAppIcon />
             </a>
             <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
               <TikTok />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
+              <Linkedin size={20} />
             </a>
           </div>
         </div>
