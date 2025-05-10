@@ -83,11 +83,6 @@ const Footer = () => {
           <div className="md:col-span-1">
             <Link to="/" className="block mb-4">
               <div className="flex items-center">
-                <img 
-                  src="/lovable-uploads/608aa328-f454-4334-9b13-c0218ebc121a.png" 
-                  alt="Detail Pros Logo" 
-                  className="h-12"
-                />
                 <span className="text-white font-bold text-xl ml-2">DetailPros</span>
               </div>
             </Link>
