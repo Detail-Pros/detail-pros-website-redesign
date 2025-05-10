@@ -1,7 +1,23 @@
 
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { TikTok } from 'lucide-react';
+
+const TikTokIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="h-4 w-4"
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+  </svg>
+);
 
 const MiniNavbar = () => {
   return (
@@ -38,7 +54,7 @@ const MiniNavbar = () => {
             <Linkedin className="h-4 w-4" />
           </Link>
           <Link to="https://tiktok.com" aria-label="TikTok" className="text-black hover:text-detailpros-pink transition-colors">
-            <TikTok className="h-4 w-4" />
+            <TikTokIcon />
           </Link>
         </div>
       </div>
