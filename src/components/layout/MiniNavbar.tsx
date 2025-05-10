@@ -21,7 +21,7 @@ const TikTokIcon = () => (
 
 const MiniNavbar = () => {
   return (
-    <div className="bg-white py-2 px-4 text-black text-sm hidden md:block fixed top-0 left-0 right-0 z-50 shadow-sm">
+    <div className="bg-white h-9 flex items-center text-black text-xs hidden md:flex fixed top-0 left-0 right-0 z-50 shadow-sm">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex space-x-6">
           <div className="flex items-center">
