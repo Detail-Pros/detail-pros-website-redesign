@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -184,7 +185,7 @@ const CeramicCoating = () => {
                 <img 
                   src="/lovable-uploads/5f008ea8-ecf8-41e0-ab49-90ee96b9c780.png" 
                   alt="Authorized Dealer" 
-                  className="mx-auto h-40 object-contain"
+                  className="mx-auto h-60 object-contain"
                 />
               </div>
             </div>
