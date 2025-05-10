@@ -3,6 +3,7 @@ import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import Testimonials from "@/components/home/Testimonials";
 import CallToAction from "@/components/home/CallToAction";
+import { Car, Brush, DropletIcon, Check } from "lucide-react";
 
 const Index = () => {
   return (
