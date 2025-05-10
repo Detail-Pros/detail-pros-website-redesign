@@ -71,6 +71,32 @@ const Footer = () => {
             <p className="text-gray-300 mb-8">
               Reach out to us for all your detailing and surface protection needs and inquiries.
             </p>
+            
+            {/* Download App - Moved to the left column under the "Get in Touch" section */}
+            <h3 className="text-xl font-medium mb-4 mt-8">Download Our App</h3>
+            <div className="flex flex-col space-y-3 max-w-xs">
+              <AppStoreBadge store="apple" link="#">
+                <div className="flex items-center">
+                  <Apple className="w-6 h-6 mr-2" />
+                  <div className="flex flex-col">
+                    <span className="text-xs">Download on the</span>
+                    <span className="text-sm font-semibold">App Store</span>
+                  </div>
+                </div>
+              </AppStoreBadge>
+              
+              <AppStoreBadge store="android" link="#">
+                <div className="flex items-center">
+                  <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5ZM16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12ZM20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.53 12.9 20.18 13.18L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81ZM6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z" fill="currentColor" />
+                  </svg>
+                  <div className="flex flex-col">
+                    <span className="text-xs">Get it on</span>
+                    <span className="text-sm font-semibold">Google Play</span>
+                  </div>
+                </div>
+              </AppStoreBadge>
+            </div>
           </div>
           
           <div className="md:pl-8">
@@ -99,36 +125,6 @@ const Footer = () => {
               <p className="text-gray-300 ml-7">
                 Unit E33 Kingbird Warehouses, 64 Kingbird Drive, George Town
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Download App Section - Restored to original position, but left-aligned within column */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-6">Download Our App</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="flex flex-col space-y-3">
-              <AppStoreBadge store="apple" link="#">
-                <div className="flex items-center">
-                  <Apple className="w-6 h-6 mr-2" />
-                  <div className="flex flex-col">
-                    <span className="text-xs">Download on the</span>
-                    <span className="text-sm font-semibold">App Store</span>
-                  </div>
-                </div>
-              </AppStoreBadge>
-              
-              <AppStoreBadge store="android" link="#">
-                <div className="flex items-center">
-                  <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5ZM16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12ZM20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.53 12.9 20.18 13.18L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81ZM6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z" fill="currentColor" />
-                  </svg>
-                  <div className="flex flex-col">
-                    <span className="text-xs">Get it on</span>
-                    <span className="text-sm font-semibold">Google Play</span>
-                  </div>
-                </div>
-              </AppStoreBadge>
             </div>
           </div>
         </div>
