@@ -26,20 +26,17 @@ const MiniNavbar = () => {
         <div className="flex space-x-6">
           <div className="flex items-center">
             <Phone className="text-detailpros-pink h-4 w-4 mr-2" />
-            <span>Call Us</span>
-            <span className="ml-2">+1 (345) 929-9840</span>
+            <span>+1 (345) 929-9840</span>
           </div>
           
           <div className="flex items-center">
             <Mail className="text-detailpros-pink h-4 w-4 mr-2" />
-            <span>Email Us</span>
-            <span className="ml-2">contact@detailpros.ky</span>
+            <span>contact@detailpros.ky</span>
           </div>
           
           <div className="flex items-center">
             <MapPin className="text-detailpros-pink h-4 w-4 mr-2" />
-            <span>Our Address</span>
-            <span className="ml-2">E33 Kingbird Warehouses, 64 Kingbird Drive, George Town</span>
+            <span>E33 Kingbird Warehouses, 64 Kingbird Drive, George Town</span>
           </div>
         </div>
         
