@@ -1,8 +1,9 @@
+
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
 import CallToAction from "@/components/home/CallToAction";
-import { Play, Anchor, Shield, Droplet, Sun, Umbrella, CircleCheck } from "lucide-react";
+import { Play, Anchor, Shield, Droplet, Sun, Umbrella, CircleCheck, Image } from "lucide-react";
 import { Link } from "react-router-dom";
 const CeramicCoatingMarine = () => {
   return <div className="min-h-screen flex flex-col">
@@ -29,9 +30,9 @@ const CeramicCoatingMarine = () => {
                 <img src="/lovable-uploads/384ffb1a-2aa0-4dbe-940d-34dd72b25512.png" alt="Marine vessel on water" className="absolute inset-0 w-full h-full object-cover opacity-70" />
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="rounded-full bg-detailpros-pink/90 p-4 text-white hover:bg-detailpros-pink transition-colors">
-                    <Play size={40} className="ml-1" />
-                  </button>
+                  <div className="bg-detailpros-pink/90 p-4 rounded-full text-white hover:bg-detailpros-pink transition-colors">
+                    <Image size={40} />
+                  </div>
                 </div>
               </div>
             </div>
