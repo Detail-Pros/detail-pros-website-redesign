@@ -19,6 +19,7 @@ import MiniNavbar from "./components/layout/MiniNavbar";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import ServiceAgreement from "./pages/ServiceAgreement";
+import TermsOfService from "./pages/TermsOfService";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
             <Route path="/careers" element={<Careers />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/service-agreement" element={<ServiceAgreement />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
