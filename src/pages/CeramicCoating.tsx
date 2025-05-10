@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -150,42 +149,40 @@ const CeramicCoating = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-8">
-            <div className="text-center">
+            <div className="text-left">
               <div className="mb-6">
                 <img 
                   src="/lovable-uploads/c55a3379-71dc-43fa-8ea3-247b8b19a688.png" 
-                  alt="ION Base Coat" 
-                  className="mx-auto h-20"
+                  alt="ION Top Coat" 
+                  className="h-40 w-auto"
                 />
               </div>
-              <h3 className="text-2xl font-bold mb-3">ION TOP COAT</h3>
               <p className="text-gray-600 mb-4">
                 The outermost layer provides exceptional gloss, hydrophobicity, and scratch resistance.
                 Creates a slick surface that repels water, dirt, and contaminants.
               </p>
             </div>
             
-            <div className="text-center">
+            <div className="text-left">
               <div className="mb-6">
                 <img 
                   src="/lovable-uploads/ae812a04-c792-4b7e-96f7-93faa6fe4cb2.png" 
-                  alt="ION Top Coat" 
-                  className="mx-auto h-20"
+                  alt="ION Base Coat" 
+                  className="h-40 w-auto"
                 />
               </div>
-              <h3 className="text-2xl font-bold mb-3">ION BASE COAT</h3>
               <p className="text-gray-600 mb-4">
                 Forms the foundation of the coating system with strong adhesion properties.
                 Creates a permanent bond with the vehicle's clear coat for long-lasting durability.
               </p>
             </div>
             
-            <div className="text-center">
+            <div className="text-left">
               <div className="mb-6">
                 <img 
                   src="/lovable-uploads/5f008ea8-ecf8-41e0-ab49-90ee96b9c780.png" 
                   alt="Authorized Dealer" 
-                  className="mx-auto h-60 object-contain"
+                  className="h-60 object-contain"
                 />
               </div>
             </div>
