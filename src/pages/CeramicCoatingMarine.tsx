@@ -1,14 +1,11 @@
-
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
 import CallToAction from "@/components/home/CallToAction";
 import { Play, Anchor, Shield, Droplet, Sun, Umbrella, CircleCheck } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const CeramicCoatingMarine = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
       <section className="bg-black text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -29,11 +26,7 @@ const CeramicCoatingMarine = () => {
             </div>
             <div className="lg:w-1/3 relative">
               <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden relative">
-                <img 
-                  src="/lovable-uploads/384ffb1a-2aa0-4dbe-940d-34dd72b25512.png" 
-                  alt="Marine vessel on water" 
-                  className="absolute inset-0 w-full h-full object-cover opacity-70"
-                />
+                <img src="/lovable-uploads/384ffb1a-2aa0-4dbe-940d-34dd72b25512.png" alt="Marine vessel on water" className="absolute inset-0 w-full h-full object-cover opacity-70" />
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <button className="rounded-full bg-detailpros-pink/90 p-4 text-white hover:bg-detailpros-pink transition-colors">
@@ -52,11 +45,7 @@ const CeramicCoatingMarine = () => {
           <h2 className="text-4xl font-bold mb-16 text-center uppercase">THE CERAMIC PRO SYSTEM</h2>
           
           <div className="flex justify-center mb-16">
-            <img 
-              src="/lovable-uploads/1aa7089b-0993-429f-aec1-a63ff96d38a5.png" 
-              alt="Ceramic Pro System Layers" 
-              className="max-w-full h-auto"
-            />
+            <img alt="Ceramic Pro System Layers" className="max-w-full h-auto" src="/lovable-uploads/89207da3-0b9e-46cf-bf3e-dd6d7e1a14a0.jpg" />
           </div>
         </div>
       </section>
@@ -67,11 +56,7 @@ const CeramicCoatingMarine = () => {
           <h2 className="text-4xl font-bold mb-16 text-center uppercase">CERAMIC PRO COMPARED TO THE REST</h2>
           
           <div className="overflow-x-auto mb-16">
-            <img 
-              src="/lovable-uploads/a144dd89-bd62-40e5-bf7e-1a81aa671af5.png" 
-              alt="Comparison Table" 
-              className="max-w-full h-auto mx-auto"
-            />
+            <img alt="Comparison Table" className="max-w-full h-auto mx-auto" src="/lovable-uploads/7454da2f-c271-4bb5-a45a-102d8fb9ff75.jpg" />
           </div>
         </div>
       </section>
@@ -176,7 +161,7 @@ const CeramicCoatingMarine = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
               <div className="mb-4">
-                <img src="/lovable-uploads/6f41bfe0-7647-4676-97ee-b409e593e7a1.png" alt="Scratch Resistance" className="w-full h-48 object-cover" />
+                <img alt="Scratch Resistance" className="w-full h-48 object-cover" src="/lovable-uploads/f2898798-522a-4f58-9c64-ee844fae00f4.jpg" />
               </div>
               <h3 className="text-xl font-bold uppercase mb-4">Scratch and Resistance</h3>
               <p className="text-sm">
@@ -186,7 +171,7 @@ const CeramicCoatingMarine = () => {
             
             <div className="text-center">
               <div className="mb-4">
-                <img src="/lovable-uploads/6f41bfe0-7647-4676-97ee-b409e593e7a1.png" alt="Flexibility" className="w-full h-48 object-cover" />
+                <img alt="Flexibility" className="w-full h-48 object-cover" src="/lovable-uploads/0674c937-ef04-4c28-bd14-8079ae10822b.jpg" />
               </div>
               <h3 className="text-xl font-bold uppercase mb-4">Flexibility</h3>
               <p className="text-sm">
@@ -196,7 +181,7 @@ const CeramicCoatingMarine = () => {
             
             <div className="text-center">
               <div className="mb-4">
-                <img src="/lovable-uploads/6f41bfe0-7647-4676-97ee-b409e593e7a1.png" alt="Durability" className="w-full h-48 object-cover" />
+                <img alt="Durability" className="w-full h-48 object-cover" src="/lovable-uploads/48e157d7-e82e-4a0f-8c96-a8bbbdff1442.jpg" />
               </div>
               <h3 className="text-xl font-bold uppercase mb-4">Durability</h3>
               <p className="text-sm">
@@ -208,7 +193,7 @@ const CeramicCoatingMarine = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
               <div className="mb-4">
-                <img src="/lovable-uploads/5cd9875f-2e18-4857-a930-5c08e8a52534.png" alt="Ultimate Gloss" className="w-full h-48 object-cover" />
+                <img alt="Ultimate Gloss" className="w-full h-48 object-cover" src="/lovable-uploads/145c28a8-c6c2-4297-b391-39186146a4fa.jpg" />
               </div>
               <h3 className="text-xl font-bold uppercase mb-4">Ultimate Gloss & Shine - Keep the Clean Look</h3>
               <p className="text-sm">
@@ -218,7 +203,7 @@ const CeramicCoatingMarine = () => {
             
             <div className="text-center">
               <div className="mb-4">
-                <img src="/lovable-uploads/5cd9875f-2e18-4857-a930-5c08e8a52534.png" alt="Less Maintenance" className="w-full h-48 object-cover" />
+                <img alt="Less Maintenance" className="w-full h-48 object-cover" src="/lovable-uploads/69c4da11-73fc-4e84-abf3-b35b815ff06b.jpg" />
               </div>
               <h3 className="text-xl font-bold uppercase mb-4">Less Maintenance</h3>
               <p className="text-sm">
@@ -228,7 +213,7 @@ const CeramicCoatingMarine = () => {
             
             <div className="text-center">
               <div className="mb-4">
-                <img src="/lovable-uploads/5cd9875f-2e18-4857-a930-5c08e8a52534.png" alt="Increased Speed" className="w-full h-48 object-cover" />
+                <img alt="Increased Speed" className="w-full h-48 object-cover" src="/lovable-uploads/5446ba83-985d-434d-a70e-cfff43bd8e87.jpg" />
               </div>
               <h3 className="text-xl font-bold uppercase mb-4">Bottom Line - Increased Top Speed & Fuel Economy</h3>
               <p className="text-sm">
@@ -240,7 +225,7 @@ const CeramicCoatingMarine = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="mb-4">
-                <img src="/lovable-uploads/427aff3a-f98a-4404-afab-30d1ba1eac00.png" alt="Hydrophobicity" className="w-full h-48 object-cover" />
+                <img alt="Hydrophobicity" className="w-full h-48 object-cover" src="/lovable-uploads/6112293b-69a0-4e32-b386-e6a6667b8aec.jpg" />
               </div>
               <h3 className="text-xl font-bold uppercase mb-4">Hydrophobicity</h3>
               <p className="text-sm">
@@ -250,7 +235,7 @@ const CeramicCoatingMarine = () => {
             
             <div className="text-center">
               <div className="mb-4">
-                <img src="/lovable-uploads/427aff3a-f98a-4404-afab-30d1ba1eac00.png" alt="UV Protection" className="w-full h-48 object-cover" />
+                <img alt="UV Protection" className="w-full h-48 object-cover" src="/lovable-uploads/e20f5cec-bc63-49b8-a07c-33c611974fa8.jpg" />
               </div>
               <h3 className="text-xl font-bold uppercase mb-4">UV Protection</h3>
               <p className="text-sm">
@@ -260,7 +245,7 @@ const CeramicCoatingMarine = () => {
             
             <div className="text-center">
               <div className="mb-4">
-                <img src="/lovable-uploads/427aff3a-f98a-4404-afab-30d1ba1eac00.png" alt="Barrier against Saltwater" className="w-full h-48 object-cover" />
+                <img alt="Barrier against Saltwater" className="w-full h-48 object-cover" src="/lovable-uploads/e7846c22-9102-4702-91c0-3ed787cfa685.jpg" />
               </div>
               <h3 className="text-xl font-bold uppercase mb-4">Barrier against Saltwater, Scum, Oxidation, Exhaust, Stains & Chemicals</h3>
               <p className="text-sm">
@@ -299,8 +284,6 @@ const CeramicCoatingMarine = () => {
 
       {/* CTA Section */}
       <CallToAction />
-    </div>
-  );
+    </div>;
 };
-
 export default CeramicCoatingMarine;
