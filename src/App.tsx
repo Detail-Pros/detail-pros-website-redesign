@@ -9,6 +9,11 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
+import CeramicCoating from "./pages/CeramicCoating";
+import PaintProtection from "./pages/PaintProtection";
+import WindowTinting from "./pages/WindowTinting";
+import Careers from "./pages/Careers";
+import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +30,11 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/ceramic-coating" element={<CeramicCoating />} />
+          <Route path="/paint-protection" element={<PaintProtection />} />
+          <Route path="/window-tinting" element={<WindowTinting />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/faq" element={<FAQ />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
