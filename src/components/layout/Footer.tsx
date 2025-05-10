@@ -3,23 +3,6 @@ import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
 
-const TikTokIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="h-4 w-4"
-  >
-    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-  </svg>
-);
-
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-16">
@@ -49,27 +32,30 @@ const Footer = () => {
           
           <div className="md:pl-8">
             {/* Contact Information */}
-            <div className="mb-8">
-              <div className="mb-6">
-                <h3 className="text-xl font-medium mb-2">Email</h3>
-                <a href="mailto:contact@detailpros.ky" className="text-gray-300 hover:text-detailpros-pink">
-                  contact@detailpros.ky
-                </a>
+            <div className="mb-8 mt-0">
+              <div className="flex items-center mb-6">
+                <Mail className="w-5 h-5 mr-2" />
+                <h3 className="text-xl font-medium">Email</h3>
               </div>
+              <a href="mailto:contact@detailpros.ky" className="text-gray-300 hover:text-detailpros-pink block ml-7">
+                contact@detailpros.ky
+              </a>
               
-              <div className="mb-6">
-                <h3 className="text-xl font-medium mb-2">Phone</h3>
-                <a href="tel:+13459299840" className="text-gray-300 hover:text-detailpros-pink">
-                  +1 (345) 929-9840
-                </a>
+              <div className="flex items-center mb-6 mt-8">
+                <Phone className="w-5 h-5 mr-2" />
+                <h3 className="text-xl font-medium">Phone</h3>
               </div>
+              <a href="tel:+13459299840" className="text-gray-300 hover:text-detailpros-pink block ml-7">
+                +1 (345) 929-9840
+              </a>
               
-              <div className="mb-6">
-                <h3 className="text-xl font-medium mb-2">Office</h3>
-                <p className="text-gray-300">
-                  Unit E33 Kingbird Warehouses, 64 Kingbird Drive, George Town
-                </p>
+              <div className="flex items-center mb-6 mt-8">
+                <MapPin className="w-5 h-5 mr-2" />
+                <h3 className="text-xl font-medium">Office</h3>
               </div>
+              <p className="text-gray-300 ml-7">
+                Unit E33 Kingbird Warehouses, 64 Kingbird Drive, George Town
+              </p>
             </div>
           </div>
         </div>
@@ -80,10 +66,9 @@ const Footer = () => {
           <div className="md:col-span-1">
             <Link to="/" className="block mb-4">
               <img 
-                src="/placeholder.svg" 
+                src="/lovable-uploads/608aa328-f454-4334-9b13-c0218ebc121a.png" 
                 alt="Detail Pros Logo" 
                 className="h-12"
-                style={{ filter: 'brightness(0) invert(1)' }} 
               />
             </Link>
           </div>
