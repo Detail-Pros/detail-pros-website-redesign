@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -279,18 +278,6 @@ const CeramicCoating = () => {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Booking Section */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Book Your Ceramic Pro Coating
-          </h2>
-          <Button className="bg-detailpros-pink hover:bg-opacity-90 px-8">
-            Contact Us
-          </Button>
         </div>
       </section>
 
