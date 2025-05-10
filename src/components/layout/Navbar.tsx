@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -37,7 +36,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-9 left-0 right-0 z-40 transition-all duration-300 bg-white ${isScrolled ? 'shadow-sm' : ''}`}>
+    <header className={`fixed top-0 md:top-[36px] left-0 right-0 z-40 transition-all duration-300 bg-white ${isScrolled ? 'shadow-sm' : ''}`}>
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
         <Link to="/" className="flex items-center">
           <span className="text-2xl font-bold text-detailpros-black">
