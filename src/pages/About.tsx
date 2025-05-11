@@ -5,7 +5,7 @@ import { Check, CircleCheck } from "lucide-react";
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow pt-16">
+      <main className="flex-grow">
         {/* About Header */}
         <section className="relative py-24 bg-detailpros-black">
           <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-20"></div>
