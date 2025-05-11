@@ -2,7 +2,7 @@
 import CallToAction from "@/components/home/CallToAction";
 import { Check, Smartphone } from "lucide-react";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const WindowTinting = () => {
   // Update document title and meta description when component mounts
