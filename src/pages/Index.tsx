@@ -3,7 +3,8 @@ import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import Testimonials from "@/components/home/Testimonials";
 import CallToAction from "@/components/home/CallToAction";
-import { Car, Brush, DropletIcon, Check, Shield, Tint } from "lucide-react";
+import { Car, Brush, DropletIcon, Check, Shield, Smartphone } from "lucide-react";
+
 const Index = () => {
   return <>
       <Hero />
@@ -204,7 +205,7 @@ const Index = () => {
             </div>
             <div className="order-1 lg:order-2">
               <div className="flex items-center mb-4">
-                <Tint className="text-detailpros-pink mr-3" size={28} />
+                <Smartphone className="text-detailpros-pink mr-3" size={28} />
                 <h2 className="text-3xl font-bold">Window Tinting</h2>
               </div>
               <p className="text-gray-600 mb-6">
