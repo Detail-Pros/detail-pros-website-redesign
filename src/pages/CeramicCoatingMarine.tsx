@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
@@ -51,17 +52,6 @@ const CeramicCoatingMarine = () => {
           
           <div className="flex justify-center mb-16">
             <img alt="Ceramic Pro System Layers" className="max-w-full h-auto" src="/lovable-uploads/89207da3-0b9e-46cf-bf3e-dd6d7e1a14a0.jpg" />
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Table */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-16 text-center uppercase">CERAMIC PRO COMPARED TO THE REST</h2>
-          
-          <div className="overflow-x-auto mb-16">
-            <img alt="Comparison Table" className="max-w-full h-auto mx-auto" src="/lovable-uploads/7454da2f-c271-4bb5-a45a-102d8fb9ff75.jpg" />
           </div>
         </div>
       </section>
@@ -234,6 +224,7 @@ const CeramicCoatingMarine = () => {
             </div>
           </div>
 
+          {/* Comparison Table - Moved 3 sections down */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="mb-4">
@@ -264,6 +255,17 @@ const CeramicCoatingMarine = () => {
                 Based on the "lotus-effect," this nano-ceramic allows us to create a smooth hydrophobic surface. This creates a consistent anti-stick factor making it easy to clean away fish gunk or other contaminants.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table Section - Moved down 3 sections */}
+      <section className="py-16 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-16 text-center uppercase">CERAMIC PRO COMPARED TO THE REST</h2>
+          
+          <div className="overflow-x-auto mb-16">
+            <img alt="Comparison Table" className="max-w-full h-auto mx-auto" src="/lovable-uploads/7454da2f-c271-4bb5-a45a-102d8fb9ff75.jpg" />
           </div>
         </div>
       </section>
