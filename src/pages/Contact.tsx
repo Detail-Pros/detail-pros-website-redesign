@@ -59,7 +59,8 @@ const Contact = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Information */}
-              <div>
+              <fieldd-lead-form code="EhQ16O"></fieldd-lead-form>
+              {/* <div>
                 <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
                 <p className="text-gray-600 mb-8">
                   We're available to answer your questions about our services, provide quotes, or schedule appointments 
@@ -99,7 +100,7 @@ const Contact = () => {
                       <p className="text-gray-600">Main Office: 123 West Bay Road, Grand Cayman</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 
                 <div className="mt-12">
                   <h3 className="font-bold text-lg mb-4">Business Hours</h3>
