@@ -26,12 +26,26 @@ const MiniNavbar = () => {
         <div className="flex space-x-4 md:space-x-6">
           <div className="flex items-center">
             <Phone className="text-detailpros-pink h-4 w-4 mr-2" />
+            <a 
+              tel="+1 (345) 929-9840" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hidden md:inline hover:text-detailpros-pink transition-colors"
+            >
             <span className="hidden md:inline">(345) 929-9840</span>
           </div>
           
           <div className="flex items-center">
             <Mail className="text-detailpros-pink h-4 w-4 mr-2" />
-            <span className="hidden md:inline">contact@detailpros.ky</span>
+            <span className="hidden md:inline">
+              <a 
+              mailto="contact@detailpros.ky" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hidden md:inline hover:text-detailpros-pink transition-colors"
+            >
+                contact@detailpros.ky</span>
+            </a>
           </div>
           
           <div className="flex items-center">
