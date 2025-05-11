@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
@@ -6,14 +5,13 @@ import { Separator } from "@/components/ui/separator";
 import CallToAction from "@/components/home/CallToAction";
 import { Anchor, Shield, Droplet, CircleCheck } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const CeramicCoatingMarine = () => {
   return <div className="min-h-screen flex flex-col">
       {/* Header Banner */}
       <section className="w-full bg-black text-white py-16 relative z-10 mt-[-72px] md:mt-[-108px] pt-[100px] md:pt-[140px]">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">Marine Surface Protection</h1>
-          <p className="text-xl md:text-2xl max-w-2xl">
+          <h1 className="text-5xl font-bold mb-4 md:text-5xl">Marine Surface Protection</h1>
+          <p className="text-xl max-w-2xl md:text-base">
             Ceramic Pro Marine provides excellent surface protection for your boat.
           </p>
         </div>
@@ -24,7 +22,7 @@ const CeramicCoatingMarine = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             <div className="lg:w-2/3">
-              <h1 className="text-4xl md:text-6xl font-bold mb-2 uppercase text-black">
+              <h1 className="text-4xl font-bold mb-2 uppercase text-black md:text-4xl">
                 THE MOST COMPLETE PROTECTIVE COATING FOR THE MARINE INDUSTRY
               </h1>
               <p className="mb-8 text-xl uppercase text-gray-700">NO OTHER COATING SYSTEM COMES CLOSE</p>
