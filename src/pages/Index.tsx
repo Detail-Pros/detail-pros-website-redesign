@@ -10,8 +10,8 @@ const Index = () => {
       <Hero />
       <Services />
       <section className="text-white py-16 relative flex justify-center items-center">
-        {/* Gif Background with Border */}
-        <div className="relative max-w-6xl mx-auto border-4 border-detailpros-pink rounded-lg overflow-hidden">
+        {/* Gif Background */}
+        <div className="relative max-w-6xl mx-auto overflow-hidden">
           <img 
             src="https://red-extensive-lungfish-931.mypinata.cloud/ipfs/bafybeigf5vkcxyqosbj2mmwwpqbvcrnxvbyuvnqjjcrizdqunfqjhiouye" 
             alt="Ceramic Pro ION Background" 
@@ -19,7 +19,8 @@ const Index = () => {
           />
         </div>
       </section>
-       {/* Mobile Detailing */}
+      
+      {/* Mobile Detailing */}
         <section id="detailing" className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
