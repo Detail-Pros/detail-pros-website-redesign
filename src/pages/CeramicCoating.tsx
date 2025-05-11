@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -12,7 +11,7 @@ const CeramicCoating = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-2">
             Automotive Paint Protection
           </h1>
-          <p className="text-gray-400">Industry leading solutions by Ceramic Pro</p>
+          <p className="text-gray-400 text-sm">Industry leading solutions by Ceramic Pro</p>
         </div>
       </section>
 
