@@ -1,6 +1,7 @@
 
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const TikTokIcon = () => (
   <svg
@@ -20,44 +21,85 @@ const TikTokIcon = () => (
 );
 
 const MiniNavbar = () => {
+  const isMobile = useIsMobile();
+
   return (
     <div className="bg-white h-9 flex items-center text-black text-xs z-50 shadow-sm">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex space-x-4 md:space-x-6">
           <div className="flex items-center">
-            <Phone className="text-detailpros-pink h-4 w-4 mr-2" />
-            <a 
-              href="tel:+13459299840" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hidden md:inline hover:text-detailpros-pink transition-colors"
-            >
-              <span className="hidden md:inline">(345) 929-9840</span>
-            </a>
+            {isMobile ? (
+              <a 
+                href="tel:+13459299840" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-detailpros-pink transition-colors"
+              >
+                <Phone className="text-detailpros-pink h-4 w-4" />
+              </a>
+            ) : (
+              <>
+                <Phone className="text-detailpros-pink h-4 w-4 mr-2" />
+                <a 
+                  href="tel:+13459299840" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hidden md:inline hover:text-detailpros-pink transition-colors"
+                >
+                  <span className="hidden md:inline">(345) 929-9840</span>
+                </a>
+              </>
+            )}
           </div>
           
           <div className="flex items-center">
-            <Mail className="text-detailpros-pink h-4 w-4 mr-2" />
-            <a 
-              href="mailto:contact@detailpros.ky" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hidden md:inline hover:text-detailpros-pink transition-colors"
-            >
-              contact@detailpros.ky
-            </a>
+            {isMobile ? (
+              <a 
+                href="mailto:contact@detailpros.ky" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-detailpros-pink transition-colors"
+              >
+                <Mail className="text-detailpros-pink h-4 w-4" />
+              </a>
+            ) : (
+              <>
+                <Mail className="text-detailpros-pink h-4 w-4 mr-2" />
+                <a 
+                  href="mailto:contact@detailpros.ky" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hidden md:inline hover:text-detailpros-pink transition-colors"
+                >
+                  contact@detailpros.ky
+                </a>
+              </>
+            )}
           </div>
           
           <div className="flex items-center">
-            <MapPin className="text-detailpros-pink h-4 w-4 mr-2" />
-            <a 
-              href="https://maps.app.goo.gl/igDHZFcRsJhJnp8E7" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hidden md:inline hover:text-detailpros-pink transition-colors"
-            >
-              E33 Kingbird Warehouses, 64 Kingbird Drive, George Town
-            </a>
+            {isMobile ? (
+              <a 
+                href="https://maps.app.goo.gl/igDHZFcRsJhJnp8E7" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-detailpros-pink transition-colors"
+              >
+                <MapPin className="text-detailpros-pink h-4 w-4" />
+              </a>
+            ) : (
+              <>
+                <MapPin className="text-detailpros-pink h-4 w-4 mr-2" />
+                <a 
+                  href="https://maps.app.goo.gl/igDHZFcRsJhJnp8E7" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hidden md:inline hover:text-detailpros-pink transition-colors"
+                >
+                  E33 Kingbird Warehouses, 64 Kingbird Drive, George Town
+                </a>
+              </>
+            )}
           </div>
         </div>
         
