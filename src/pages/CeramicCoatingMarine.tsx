@@ -21,6 +21,7 @@ const CeramicCoatingMarine = () => {
       <section className="bg-black py-0">
         <div className="w-full overflow-hidden">
           <video 
+            src=(https://ceramicpro.com/wp-content/uploads/2019/02/ceramic_pro_marine_bg_cover_19.jpg)
             className="w-full h-auto object-cover"
             autoPlay
             loop
