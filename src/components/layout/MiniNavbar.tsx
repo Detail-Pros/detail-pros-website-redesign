@@ -21,26 +21,26 @@ const TikTokIcon = () => (
 
 const MiniNavbar = () => {
   return (
-    <div className="bg-white h-9 flex items-center text-black text-xs hidden md:flex fixed top-0 left-0 right-0 z-50 shadow-sm">
+    <div className="bg-white h-9 flex items-center text-black text-xs fixed top-0 left-0 right-0 z-50 shadow-sm">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex space-x-6">
+        <div className="flex space-x-4 md:space-x-6">
           <div className="flex items-center">
             <Phone className="text-detailpros-pink h-4 w-4 mr-2" />
-            <span className="text-xs">(345) 929-9840</span>
+            <span className="hidden md:inline">(345) 929-9840</span>
           </div>
           
           <div className="flex items-center">
             <Mail className="text-detailpros-pink h-4 w-4 mr-2" />
-            <span className="text-xs">contact@detailpros.ky</span>
+            <span className="hidden md:inline">contact@detailpros.ky</span>
           </div>
           
           <div className="flex items-center">
             <MapPin className="text-detailpros-pink h-4 w-4 mr-2" />
-            <span className="text-xs">E33 Kingbird Warehouses, 64 Kingbird Drive, George Town</span>
+            <span className="hidden md:inline">E33 Kingbird Warehouses, 64 Kingbird Drive, George Town</span>
           </div>
         </div>
         
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-3 md:space-x-4">
           <Link to="https://facebook.com" aria-label="Facebook" className="text-black hover:text-detailpros-pink transition-colors">
             <Facebook className="h-4 w-4" />
           </Link>
