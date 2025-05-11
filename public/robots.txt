@@ -3,6 +3,18 @@
 User-agent: *
 Allow: /
 
+# Specific high-priority pages
+Allow: /services
+Allow: /ceramic-coating
+Allow: /paint-protection
+Allow: /window-tinting
+Allow: /contact
+
+# Disallow access to certain files
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /api/
+
 # Sitemap location
 Sitemap: https://detailpros.ky/sitemap.xml
 
@@ -18,3 +30,6 @@ Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
+
+# Crawl delay for better server performance
+Crawl-delay: 10
