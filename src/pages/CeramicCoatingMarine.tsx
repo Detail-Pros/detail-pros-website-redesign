@@ -6,7 +6,6 @@ import { Separator } from "@/components/ui/separator";
 import CallToAction from "@/components/home/CallToAction";
 import { Anchor, Shield, Droplet, CircleCheck } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const CeramicCoatingMarine = () => {
   return <div className="min-h-screen flex flex-col">
       {/* Header Banner */}
@@ -16,22 +15,6 @@ const CeramicCoatingMarine = () => {
           <p className="text-xl max-w-2xl text-gray-400 md:text-sm">
             Ceramic Pro Marine provides excellent surface protection for your boat.
           </p>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="bg-black py-0">
-        <div className="w-full overflow-hidden">
-          <video 
-            className="w-full h-auto object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-white-yacht-sailing-in-the-sea-4809-large.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
         </div>
       </section>
 
@@ -58,17 +41,6 @@ const CeramicCoatingMarine = () => {
                 <img src="/lovable-uploads/384ffb1a-2aa0-4dbe-940d-34dd72b25512.png" alt="Marine vessel on water" className="w-full h-full object-cover" />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Ceramic Pro System - Moved up 2 positions */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-16 text-center uppercase">THE CERAMIC PRO SYSTEM</h2>
-          
-          <div className="flex justify-center mb-16">
-            <img alt="Ceramic Pro System Layers" className="max-w-full h-auto" src="/lovable-uploads/89207da3-0b9e-46cf-bf3e-dd6d7e1a14a0.jpg" />
           </div>
         </div>
       </section>
@@ -158,6 +130,17 @@ const CeramicCoatingMarine = () => {
                 We offer proven and reliable warranties because we believe your experience with Ceramic Pro Marine should be the same on day one as years down the line.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+       {/* The Ceramic Pro System - Moved up 2 positions */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-16 text-center uppercase">THE CERAMIC PRO SYSTEM</h2>
+          
+          <div className="flex justify-center mb-16">
+            <img alt="Ceramic Pro System Layers" className="max-w-full h-auto" src="/lovable-uploads/89207da3-0b9e-46cf-bf3e-dd6d7e1a14a0.jpg" />
           </div>
         </div>
       </section>
