@@ -22,7 +22,7 @@ const CeramicCoating = () => {
         <div className="absolute inset-0 w-full h-full z-0">
           <div className="absolute inset-0 bg-black/70 z-10"></div> {/* Overlay to ensure text is readable */}
           <img 
-            src="https://red-extensive-lungfish-931.mypinata.cloud/ipfs/bafybeiepxsfpdfp65ulzrg5lfszuib2wdmn2g3vspi7oiolep3led7o4ki" 
+            src="https://www.youtube.com/embed/1FRI6LQhHtE?playlist=1FRI6LQhHtE&iv_load_policy=3&enablejsapi=1&disablekb=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&origin=https%3A%2F%2Fceramicpro.com&widgetid=1&forigin=https%3A%2F%2Fceramicpro.com%2Fion%2F&aoriginsup=1&gporigin=https%3A%2F%2Fceramicpro.com%2F&vf=2" 
             alt="Ceramic Pro ION Background" 
             className="w-full h-full object-cover object-center z-0"
           />
