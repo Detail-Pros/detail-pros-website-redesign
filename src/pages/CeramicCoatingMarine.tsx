@@ -66,6 +66,13 @@ const CeramicCoatingMarine = () => {
         </div>
       </section>
 
+      {/* Unmatched Protection Title - Moved up 5 sections */}
+      <section className="py-10 bg-detailpros-pink text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center uppercase">UNMATCHED PROTECTION</h2>
+        </div>
+      </section>
+
       {/* Features Section 1 - Gold Background */}
       <section className="py-16 bg-amber-300">
         <div className="container mx-auto px-4">
@@ -261,11 +268,9 @@ const CeramicCoatingMarine = () => {
         </div>
       </section>
 
-      {/* Unmatched Protection */}
-      <section className="py-16 bg-detailpros-pink text-white">
+      {/* Protection Content Section - Now separate from title */}
+      <section className="py-16 bg-white text-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-16 text-center uppercase">UNMATCHED PROTECTION</h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             <div>
               <p className="mb-4">
