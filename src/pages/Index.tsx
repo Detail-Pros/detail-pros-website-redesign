@@ -1,10 +1,8 @@
-
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import Testimonials from "@/components/home/Testimonials";
 import CallToAction from "@/components/home/CallToAction";
 import { Car, Brush, DropletIcon, Check, Shield, Smartphone } from "lucide-react";
-
 const Index = () => {
   return <>
       <Hero />
@@ -201,7 +199,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative h-96 rounded-lg overflow-hidden shadow-xl">
-              <img alt="Window Tinting" className="w-full h-full object-cover" src="/lovable-uploads/f4129986-fbcd-4495-9278-0cb990a75fb3.jpg" />
+              <img alt="Window Tinting" className="w-full h-full object-cover" src="/lovable-uploads/dc259f99-0601-403f-bc0e-57f3a848dc97.jpg" />
             </div>
             <div className="order-1 lg:order-2">
               <div className="flex items-center mb-4">
