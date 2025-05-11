@@ -1,18 +1,16 @@
 import CallToAction from "@/components/home/CallToAction";
 import { Check, CircleCheck } from "lucide-react";
-
 const About = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         {/* About Header */}
         <section className="py-20 bg-detailpros-black">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              <h1 className="text-5xl font-bold text-white mb-6 md:text-5xl">
                 About Us
               </h1>
-              <p className="text-xl text-white/90">
+              <p className="text-sm text-gray-400">
                 Detail Pros is the premier choice for luxury car and boat detailing in the Cayman Islands.
               </p>
             </div>
@@ -212,8 +210,6 @@ const About = () => {
 
         <CallToAction />
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
