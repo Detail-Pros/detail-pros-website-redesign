@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { Button } from "@/components/ui/button";
+import { Menu, X } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,17 +9,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-  DropdownMenuGroup,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,7 +35,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-9 left-0 right-0 z-40 transition-all duration-300 bg-white ${isScrolled ? 'shadow-sm' : ''}`}>
+    <nav className={`bg-white transition-all duration-300 ${isScrolled ? 'shadow-sm' : ''}`}>
       <div className="container mx-auto px-4 flex justify-between items-center h-[72px]">
         <Link to="/" className="flex items-center">
           <img 
@@ -59,7 +46,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
+        <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
           <Link to="/" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
             Home
           </Link>
@@ -189,7 +176,7 @@ const Navbar = () => {
           <Link to="/faq" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
             FAQ
           </Link>
-        </nav>
+        </div>
 
         <div className="hidden md:flex items-center gap-3">
           <a 
@@ -301,7 +288,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </header>
+    </nav>
   );
 };
 

@@ -1,5 +1,4 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -55,7 +54,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter pt-[72px] md:pt-[108px];
+    @apply bg-background text-foreground font-inter m-0 p-0;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -83,4 +82,3 @@
 .hero-text {
   @apply text-black;
 }
-

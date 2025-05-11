@@ -45,9 +45,11 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen">
-          <MiniNavbar />
-          <Navbar />
-          <main className="flex-grow pt-[108px]"> {/* Combined height of MiniNavbar (36px) and Navbar (72px) */}
+          <header className="fixed top-0 left-0 right-0 z-50">
+            <MiniNavbar />
+            <Navbar />
+          </header>
+          <main className="flex-grow mt-[108px]"> {/* Combined height of MiniNavbar (36px) and Navbar (72px) */}
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<Services />} />
