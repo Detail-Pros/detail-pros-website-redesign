@@ -74,7 +74,7 @@ const Index = () => {
         {/* Gif Background */}
         <div className="absolute inset-0 w-full h-full z-0">
           <img 
-            src="https://red-extensive-lungfish-931.mypinata.cloud/ipfs/bafybeiepxsfpdfp65ulzrg5lfszuib2wdmn2g3vspi7oiolep3led7o4ki" 
+            src="https://red-extensive-lungfish-931.mypinata.cloud/ipfs/bafybeigf5vkcxyqosbj2mmwwpqbvcrnxvbyuvnqjjcrizdqunfqjhiouye" 
             alt="Ceramic Pro ION Background" 
             className="w-full h-full object-cover object-center z-0"
           />
