@@ -3,20 +3,14 @@ import Services from "@/components/home/Services";
 import Testimonials from "@/components/home/Testimonials";
 import CallToAction from "@/components/home/CallToAction";
 import { Car, Brush, DropletIcon, Check } from "lucide-react";
-
 const Index = () => {
-  return (
-    <>
+  return <>
       <Hero />
       <Services />
       <section className="text-white py-16 relative flex justify-center items-center">
         {/* Gif Background */}
         <div className="relative max-w-6xl mx-auto overflow-hidden">
-          <img 
-            src="https://red-extensive-lungfish-931.mypinata.cloud/ipfs/bafybeigf5vkcxyqosbj2mmwwpqbvcrnxvbyuvnqjjcrizdqunfqjhiouye" 
-            alt="Ceramic Pro ION Background" 
-            className="w-auto h-auto object-contain z-0"
-          />
+          <img src="https://red-extensive-lungfish-931.mypinata.cloud/ipfs/bafybeigf5vkcxyqosbj2mmwwpqbvcrnxvbyuvnqjjcrizdqunfqjhiouye" alt="Ceramic Pro ION Background" className="w-auto h-auto object-contain z-0" />
         </div>
       </section>
       
@@ -74,7 +68,7 @@ const Index = () => {
                 </div>
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
-                <img src="/placeholder.svg" alt="Mobile Detailing" className="w-full h-full object-cover" />
+                <img alt="Mobile Detailing" className="w-full h-full object-cover" src="/lovable-uploads/61a5aa4d-4fae-4d25-9dcf-0e7c8607e610.jpg" />
               </div>
             </div>
           </div>
@@ -85,7 +79,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 relative h-96 rounded-lg overflow-hidden shadow-xl">
-                <img src="/placeholder.svg" alt="Ceramic Pro Coating" className="w-full h-full object-cover" />
+                <img alt="Ceramic Pro Coating" className="w-full h-full object-cover" src="/lovable-uploads/330b2ea0-95a4-4935-a574-609c45f2789b.jpg" />
               </div>
               <div className="order-1 lg:order-2">
                 <div className="flex items-center mb-4">
@@ -194,15 +188,13 @@ const Index = () => {
                 </div>
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
-                <img src="/placeholder.svg" alt="PPF and Window Tinting" className="w-full h-full object-cover" />
+                <img alt="PPF and Window Tinting" className="w-full h-full object-cover" src="/lovable-uploads/f4129986-fbcd-4495-9278-0cb990a75fb3.jpg" />
               </div>
             </div>
           </div>
         </section>
       <Testimonials />
       <CallToAction />
-    </>
-  );
+    </>;
 };
-
 export default Index;
