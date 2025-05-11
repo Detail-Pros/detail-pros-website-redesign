@@ -40,7 +40,7 @@ const About = () => {
                 </p>
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
-                <img src="/placeholder.svg" alt="Detail Pros Team" className="w-full h-full object-cover" />
+                <img alt="Detail Pros Team" className="w-full h-full object-cover" src="/lovable-uploads/e80f0d00-b325-40f9-80fd-05c9dad0cca0.jpg" />
               </div>
             </div>
           </div>
