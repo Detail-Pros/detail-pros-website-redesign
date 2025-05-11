@@ -1,3 +1,4 @@
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -112,8 +113,13 @@ html {
   }
 }
 
+/* Height-based offset for main content to account for both navbars */
+.main-content-offset {
+  padding-top: calc(36px + 72px);
+}
+
 @media (max-width: 768px) {
-  .mini-navbar {
-    display: none;
+  .main-content-offset {
+    padding-top: calc(36px + 72px); /* Account for both navbars on mobile */
   }
 }

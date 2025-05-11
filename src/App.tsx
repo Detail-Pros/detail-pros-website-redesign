@@ -44,34 +44,38 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <MiniNavbar />
-        <Navbar />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/ceramic-coating/*" element={<CeramicCoating />} />
-            <Route path="/ceramic-coating/automotive" element={<CeramicCoating />} />
-            <Route path="/ceramic-coating/marine" element={<CeramicCoatingMarine />} />
-            <Route path="/ceramic-coating/aviation" element={<CeramicCoating />} />
-            <Route path="/ceramic-coating/industrial" element={<CeramicCoating />} />
-            <Route path="/ceramic-coating/signage" element={<CeramicCoating />} />
-            <Route path="/paint-protection" element={<PaintProtection />} />
-            <Route path="/window-tinting/*" element={<WindowTinting />} />
-            <Route path="/window-tinting/automotive" element={<WindowTinting />} />
-            <Route path="/window-tinting/commercial" element={<WindowTinting />} />
-            <Route path="/window-tinting/residential" element={<WindowTinting />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/service-agreement" element={<ServiceAgreement />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        <Footer />
+        <div className="flex flex-col min-h-screen">
+          <MiniNavbar />
+          <Navbar />
+          <main className="flex-grow pt-[108px]"> {/* Combined height of MiniNavbar (36px) and Navbar (72px) */}
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/ceramic-coating/*" element={<CeramicCoating />} />
+              <Route path="/ceramic-coating/automotive" element={<CeramicCoating />} />
+              <Route path="/ceramic-coating/marine" element={<CeramicCoatingMarine />} />
+              <Route path="/ceramic-coating/aviation" element={<CeramicCoating />} />
+              <Route path="/ceramic-coating/industrial" element={<CeramicCoating />} />
+              <Route path="/ceramic-coating/signage" element={<CeramicCoating />} />
+              <Route path="/paint-protection" element={<PaintProtection />} />
+              <Route path="/window-tinting/*" element={<WindowTinting />} />
+              <Route path="/window-tinting/automotive" element={<WindowTinting />} />
+              <Route path="/window-tinting/commercial" element={<WindowTinting />} />
+              <Route path="/window-tinting/residential" element={<WindowTinting />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/service-agreement" element={<ServiceAgreement />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
