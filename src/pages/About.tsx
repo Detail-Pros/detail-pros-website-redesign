@@ -1,4 +1,3 @@
-
 import CallToAction from "@/components/home/CallToAction";
 import { Check, CircleCheck } from "lucide-react";
 
@@ -7,16 +6,14 @@ const About = () => {
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         {/* About Header */}
-        <section className="relative py-24 bg-detailpros-black">
-          <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-20"></div>
-          <div className="container mx-auto px-4 relative z-10">
+        <section className="py-20 bg-detailpros-black">
+          <div className="container mx-auto px-4">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                About <span className="text-detailpros-pink">Detail Pros</span>
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                About Us
               </h1>
-              <p className="text-lg text-white/90">
-                The Cayman Islands' premier automotive detailing and protection specialists, 
-                committed to excellence in every detail.
+              <p className="text-xl text-white/90">
+                Detail Pros is the premier choice for luxury car and boat detailing in the Cayman Islands.
               </p>
             </div>
           </div>
