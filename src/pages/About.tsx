@@ -4,17 +4,15 @@ const About = () => {
   return <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         {/* About Header */}
-        <section className="py-20 bg-detailpros-black">
+        <section className="bg-black text-white py-10">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl">
-              <h1 className="text-5xl font-bold text-white mb-6 md:text-5xl">
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">
                 About Us
               </h1>
               <p className="text-sm text-gray-400">
                 Detail Pros is the premier choice for luxury car and boat detailing in the Cayman Islands.
               </p>
             </div>
-          </div>
         </section>
 
         {/* Our Story */}
