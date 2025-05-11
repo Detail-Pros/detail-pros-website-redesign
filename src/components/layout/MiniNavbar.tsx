@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -104,19 +103,19 @@ const MiniNavbar = () => {
         </div>
         
         <div className="flex items-center space-x-3 md:space-x-4">
-          <Link to="https://facebook.com" aria-label="Facebook" className="text-black hover:text-detailpros-pink transition-colors">
+          <Link to="https://www.facebook.com/detailprosky" aria-label="Facebook" className="text-black hover:text-detailpros-pink transition-colors">
             <Facebook className="h-4 w-4" />
           </Link>
-          <Link to="https://instagram.com" aria-label="Instagram" className="text-black hover:text-detailpros-pink transition-colors">
+          <Link to="https://www.instagram.com/detailprosofficial/" aria-label="Instagram" className="text-black hover:text-detailpros-pink transition-colors">
             <Instagram className="h-4 w-4" />
           </Link>
           <Link to="https://wa.me/13459299840" aria-label="WhatsApp" className="text-black hover:text-detailpros-pink transition-colors">
             <MessageSquare className="h-4 w-4" />
           </Link>
-          <Link to="https://tiktok.com" aria-label="TikTok" className="text-black hover:text-detailpros-pink transition-colors">
+          <Link to="https://www.tiktok.com/@detailprosky" aria-label="TikTok" className="text-black hover:text-detailpros-pink transition-colors">
             <TikTokIcon />
           </Link>
-          <Link to="https://linkedin.com" aria-label="LinkedIn" className="text-black hover:text-detailpros-pink transition-colors">
+          <Link to="https://www.linkedin.com/company/detailpros/" aria-label="LinkedIn" className="text-black hover:text-detailpros-pink transition-colors">
             <Linkedin className="h-4 w-4" />
           </Link>
         </div>

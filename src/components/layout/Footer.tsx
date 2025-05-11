@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Apple, MessageSquare, LockKeyhole } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
@@ -226,19 +225,19 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
+            <a href="https://www.facebook.com/detailprosky" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
               <Facebook size={20} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
+            <a href="https://www.instagram.com/detailprosofficial/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
               <Instagram size={20} />
             </a>
             <a href="https://wa.me/13459299840" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
               <MessageSquare size={20} />
             </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
+            <a href="https://www.tiktok.com/@detailprosky" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
               <TikTok />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
+            <a href="https://www.linkedin.com/company/detailpros/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-detailpros-pink">
               <Linkedin size={20} />
             </a>
           </div>
