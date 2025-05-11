@@ -36,7 +36,14 @@ const MiniNavbar = () => {
           
           <div className="flex items-center">
             <MapPin className="text-detailpros-pink h-4 w-4 mr-2" />
-            <span className="hidden md:inline">E33 Kingbird Warehouses, 64 Kingbird Drive, George Town</span>
+            <a 
+              href="https://maps.app.goo.gl/igDHZFcRsJhJnp8E7" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hidden md:inline hover:text-detailpros-pink transition-colors"
+            >
+              E33 Kingbird Warehouses, 64 Kingbird Drive, George Town
+            </a>
           </div>
         </div>
         
