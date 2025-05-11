@@ -4,20 +4,19 @@ import { Card } from "@/components/ui/card";
 import CallToAction from "@/components/home/CallToAction";
 import { Anchor, Shield, Droplet, CircleCheck } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const CeramicCoatingMarine = () => {
   return <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="bg-black text-white py-16 md:py-24">
+      <section className="text-white py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             <div className="lg:w-2/3">
-              <h1 className="text-4xl md:text-6xl font-bold mb-2 uppercase">
+              <h1 className="text-4xl md:text-6xl font-bold mb-2 uppercase text-black">
                 THE MOST COMPLETE PROTECTIVE COATING FOR THE MARINE INDUSTRY
               </h1>
-              <p className="text-gray-400 mb-8 text-xl uppercase">NO OTHER COATING SYSTEM COMES CLOSE</p>
+              <p className="mb-8 text-xl uppercase text-gray-700">NO OTHER COATING SYSTEM COMES CLOSE</p>
               
-              <p className="text-gray-200 mb-8">
+              <p className="mb-8 font-normal text-black">
                 Ceramic Pro Marine is the worlds first all inclusive preventative maintenance product line specially designed for professionals. Our specialized application centers enables trained and certified professional installers to Apply Ceramic Pro Marine to all surfaces on your boat. Ceramic Pro Marine's cutting edge protective technology is the common sense choice in an industry where boat stands for "Bust Out Another Thousand." Stop spending thousands of dollars on aftercare.
               </p>
               
