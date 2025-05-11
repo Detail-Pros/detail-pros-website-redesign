@@ -33,6 +33,7 @@ const MiniNavbar = () => {
               className="hidden md:inline hover:text-detailpros-pink transition-colors"
             >
             <span className="hidden md:inline">(345) 929-9840</span>
+            </a>
           </div>
           
           <div className="flex items-center">
