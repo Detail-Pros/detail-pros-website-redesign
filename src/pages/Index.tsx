@@ -70,6 +70,16 @@ const Index = () => {
           </div>
         </section>
 
+      <section className="text-white py-16 relative">
+        {/* Gif Background */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img 
+            src="https://red-extensive-lungfish-931.mypinata.cloud/ipfs/bafybeiepxsfpdfp65ulzrg5lfszuib2wdmn2g3vspi7oiolep3led7o4ki" 
+            alt="Ceramic Pro ION Background" 
+            className="w-full h-full object-cover object-center z-0"
+          />
+        </div>
+
         {/* Ceramic Pro Coating */}
         <section id="ceramic-coating" className="py-20 bg-detailpros-gray">
           <div className="container mx-auto px-4">
