@@ -1,4 +1,4 @@
->
+
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -27,25 +27,24 @@ const MiniNavbar = () => {
           <div className="flex items-center">
             <Phone className="text-detailpros-pink h-4 w-4 mr-2" />
             <a 
-              tel="+1 (345) 929-9840" 
+              href="tel:+13459299840" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hidden md:inline hover:text-detailpros-pink transition-colors"
             >
-            <span className="hidden md:inline">(345) 929-9840</span>
+              <span className="hidden md:inline">(345) 929-9840</span>
             </a>
           </div>
           
           <div className="flex items-center">
             <Mail className="text-detailpros-pink h-4 w-4 mr-2" />
-            <span className="hidden md:inline">
-              <a 
-              mailto="contact@detailpros.ky" 
+            <a 
+              href="mailto:contact@detailpros.ky" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hidden md:inline hover:text-detailpros-pink transition-colors"
             >
-                contact@detailpros.ky</span>
+              contact@detailpros.ky
             </a>
           </div>
           
