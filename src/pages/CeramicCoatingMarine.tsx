@@ -56,6 +56,30 @@ const CeramicCoatingMarine = () => {
         </div>
       </section>
 
+       {/* Protection Content Section - Now separate from title */}
+      <section className="py-16 bg-white text-black">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div>
+              <p className="mb-4">
+                Ceramic Pro offers protection for both the underwater and above water parts of any boat or yacht. Harsh conditions of the underwater environment are a well-known problem to boat expert and lovers. Ceramic Pro offers protection against the corrosion created by salt water and the fouling on the hull caused by the accumulation of algae and/or shells.
+              </p>
+              <p>
+                Today's procedures to clean the boats' hull are exhausting and not very environmentally friendly. Our ceramic coating will make the surface so repellent to the harsh underwater elements that the cleaning process will no longer be a problem. Today, our Ceramic Pro products are protecting boats around world.
+              </p>
+            </div>
+            <div>
+              <p className="mb-4">
+                With the use of advanced nano-technology, Ceramic Pro delivers a product that will improve your vessels performance while protecting it from the elements. This product cannot be compared to anything currently on the market and has to be placed in its own category.
+              </p>
+              <p>
+                Once the Ceramic Pro marine system has been applied to a surface, the need for waxes and other off-the-shelf protective products becomes obsolete. Ceramic Pro is a clear, non-yellowing, liquid nano-ceramic coating. When cured, this technology will transform itself on the surface to become a rigid, flexible super-slick glass shield, bonding to and protecting the substrate. Ceramic Pro is not chemically removable by high-detergents or acids.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Unmatched Protection Title - Moved up 5 sections */}
       <section className="py-10 bg-detailpros-pink text-white">
         <div className="container mx-auto px-4">
@@ -110,17 +134,6 @@ const CeramicCoatingMarine = () => {
         </div>
       </section>
 
-       {/* The Ceramic Pro System - Moved up 2 positions */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-16 text-center uppercase">THE CERAMIC PRO SYSTEM</h2>
-          
-          <div className="flex justify-center mb-16">
-            <img alt="Ceramic Pro System Layers" className="max-w-full h-auto" src="/lovable-uploads/89207da3-0b9e-46cf-bf3e-dd6d7e1a14a0.jpg" />
-          </div>
-        </div>
-      </section>
-
       {/* Features Section 2 - Black Background */}
       <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-4">
@@ -162,6 +175,64 @@ const CeramicCoatingMarine = () => {
               <h3 className="text-xl font-bold uppercase mb-4">WARRANTY</h3>
               <p className="text-sm">
                 We offer proven and reliable warranties because we believe your experience with Ceramic Pro Marine should be the same on day one as years down the line.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       {/* The Ceramic Pro System - Moved up 2 positions */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-16 text-center uppercase">THE CERAMIC PRO SYSTEM</h2>
+          
+          <div className="flex justify-center mb-16">
+            <img alt="Ceramic Pro System Layers" className="max-w-full h-auto" src="/lovable-uploads/89207da3-0b9e-46cf-bf3e-dd6d7e1a14a0.jpg" />
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section 1 - Gold Background */}
+      <section className="py-16 bg-amber-300">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Shield className="h-12 w-12" />
+              </div>
+              <h3 className="text-xl font-bold uppercase mb-4">UV RAY SHIELD</h3>
+              <p className="text-sm">
+                Ceramic Pro Marine utilizes a revolutionary blend of UV inhibiting minerals to protect your vessel from the harshest sun rays on the planet.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Shield className="h-12 w-12" />
+              </div>
+              <h3 className="text-xl font-bold uppercase mb-4">OXIDATION BARRIER</h3>
+              <p className="text-sm">
+                Ceramic Pro Marine is a layerable product that starts with a penetrating foundation that can built up creating a protective layer that seals your gelcoat.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Anchor className="h-12 w-12" />
+              </div>
+              <h3 className="text-xl font-bold uppercase mb-4">FOULING RELEASE</h3>
+              <p className="text-sm">
+                Ceramic Pro Marine reduces the surface tension of your gelcoat preventing algae from planting roots into the pores of your gelcoat making growth very easy to remove.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Droplet className="h-12 w-12" />
+              </div>
+              <h3 className="text-xl font-bold uppercase mb-4">SELF CLEANING</h3>
+              <p className="text-sm">
+                Ceramic Pro Marine's protective layer reduces the surface tension of surfaces allowing bird droppings, fish blood, oil and other grime to be easily washed away.
               </p>
             </div>
           </div>
@@ -263,30 +334,6 @@ const CeramicCoatingMarine = () => {
               <h3 className="text-xl font-bold uppercase mb-4">Barrier against Saltwater, Scum, Oxidation, Exhaust, Stains & Chemicals</h3>
               <p className="text-sm">
                 Based on the "lotus-effect," this nano-ceramic allows us to create a smooth hydrophobic surface. This creates a consistent anti-stick factor making it easy to clean away fish gunk or other contaminants.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Protection Content Section - Now separate from title */}
-      <section className="py-16 bg-white text-black">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div>
-              <p className="mb-4">
-                Ceramic Pro offers protection for both the underwater and above water parts of any boat or yacht. Harsh conditions of the underwater environment are a well-known problem to boat expert and lovers. Ceramic Pro offers protection against the corrosion created by salt water and the fouling on the hull caused by the accumulation of algae and/or shells.
-              </p>
-              <p>
-                Today's procedures to clean the boats' hull are exhausting and not very environmentally friendly. Our ceramic coating will make the surface so repellent to the harsh underwater elements that the cleaning process will no longer be a problem. Today, our Ceramic Pro products are protecting boats around world.
-              </p>
-            </div>
-            <div>
-              <p className="mb-4">
-                With the use of advanced nano-technology, Ceramic Pro delivers a product that will improve your vessels performance while protecting it from the elements. This product cannot be compared to anything currently on the market and has to be placed in its own category.
-              </p>
-              <p>
-                Once the Ceramic Pro marine system has been applied to a surface, the need for waxes and other off-the-shelf protective products becomes obsolete. Ceramic Pro is a clear, non-yellowing, liquid nano-ceramic coating. When cured, this technology will transform itself on the surface to become a rigid, flexible super-slick glass shield, bonding to and protecting the substrate. Ceramic Pro is not chemically removable by high-detergents or acids.
               </p>
             </div>
           </div>
