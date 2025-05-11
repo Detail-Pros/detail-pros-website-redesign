@@ -38,12 +38,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow pt-16">
+      <main className="flex-grow">
         {/* Contact Header */}
-         <section className="bg-black text-white py-10">
+        <section className="bg-black text-white py-10">
           <div className="container mx-auto px-4">
               <h1 className="text-4xl md:text-5xl font-bold mb-2">
-                Contact
+                Contact Us
               </h1>
               <p className="text-sm text-gray-400">
                 Have questions or ready to book a service? Get in touch with our team and we'll respond promptly.
@@ -238,7 +238,7 @@ const Contact = () => {
               </div>
             </div>
           </div> */}
-        </section> */}
+        {/* </section> */} */}
       </main>
     </div>
   );
