@@ -79,6 +79,7 @@ const Index = () => {
             className="w-full h-full object-cover object-center z-0"
           />
         </div>
+      </section>
 
         {/* Ceramic Pro Coating */}
         <section id="ceramic-coating" className="py-20 bg-detailpros-gray">
