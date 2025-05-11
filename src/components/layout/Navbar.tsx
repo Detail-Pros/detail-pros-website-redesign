@@ -202,8 +202,16 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+        {/* Mobile Menu Button and Book Us button */}
+        <div className="md:hidden flex items-center gap-3">
+          <a 
+            href="https://book.detailpros.ky/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-[5px] text-sm font-medium bg-detailpros-pink hover:bg-opacity-90 text-white px-4 py-2"
+          >
+            Book Us
+          </a>
           <button
             className="text-detailpros-black"
             onClick={toggleMenu}
@@ -322,15 +330,6 @@ const Navbar = () => {
             <Link to="/faq" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
               FAQ
             </Link>
-            
-            <a 
-              href="https://book.detailpros.ky/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-[5px] text-sm font-medium bg-detailpros-pink hover:bg-opacity-90 text-white w-full py-2"
-            >
-              Book Us
-            </a>
           </div>
         </div>
       )}
