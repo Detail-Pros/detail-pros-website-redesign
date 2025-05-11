@@ -1,46 +1,56 @@
 
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
-// import { useState } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 const Contact = () => {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  //   phone: "",
-  //   service: "",
-  //   message: ""
-  // });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: ""
+  });
 
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-  //   const { name, value } = e.target;
-  //   setFormData(prev => ({
-  //     ...prev,
-  //     [name]: value
-  //   }));
-  // };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   console.log("Form submitted:", formData);
-  //   // In a real application, we would send this data to a server
-  //   toast.success("Thank you for your message! We'll be in touch soon.");
-  //   // Reset form
-  //   setFormData({
-  //     name: "",
-  //     email: "",
-  //     phone: "",
-  //     service: "",
-  //     message: ""
-  //   });
-  // };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    // In a real application, we would send this data to a server
+    toast.success("Thank you for your message! We'll be in touch soon.");
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      message: ""
+    });
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow pt-16">
         {/* Contact Header */}
-        <section className="relative py-24 bg-detailpros-black">
+         <section className="bg-black text-white py-10">
+          <div className="container mx-auto px-4">
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">
+                Contact
+              </h1>
+              <p className="text-sm text-gray-400">
+                Have questions or ready to book a service? Get in touch with our team and we'll respond promptly.
+              </p>
+            </div>
+        </section>
+        {/* <section className="relative py-24 bg-detailpros-black">
           <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-20"></div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl">
@@ -52,7 +62,7 @@ const Contact = () => {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Contact Info & Form Section */}
         <section className="py-20">
@@ -74,7 +84,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-bold text-lg mb-1">Phone</h3>
                       <p className="text-gray-600 mb-1">Call us directly:</p>
-                      <a href="tel:+13455551234" className="text-detailpros-pink hover:underline">(345) 929-9840</a>
+                      <a href="tel:+13455551234" className="text-detailpros-pink hover:underline">+1 345-555-1234</a>
                     </div>
                   </div>
                   
@@ -85,7 +95,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-bold text-lg mb-1">Email</h3>
                       <p className="text-gray-600 mb-1">Send us a message:</p>
-                      <a href="mailto:info@detailproscayman.com" className="text-detailpros-pink hover:underline">contact@detailpros.ky</a>
+                      <a href="mailto:info@detailproscayman.com" className="text-detailpros-pink hover:underline">info@detailproscayman.com</a>
                     </div>
                   </div>
                   
@@ -96,7 +106,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-bold text-lg mb-1">Location</h3>
                       <p className="text-gray-600 mb-1">Our mobile service covers all of Grand Cayman</p>
-                      <p className="text-gray-600">Main Office: Unit 33 Kingbird Warehouses, 64 Kingbird Drive, George Town, Grand Cayman</p>
+                      <p className="text-gray-600">Main Office: 123 West Bay Road, Grand Cayman</p>
                     </div>
                   </div>
                 </div>
@@ -106,11 +116,11 @@ const Contact = () => {
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span className="font-medium">Monday - Friday:</span>
-                      <span>8:00 AM - 5:00 PM</span>
+                      <span>8:00 AM - 6:00 PM</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Saturday:</span>
-                      <span>8:00 AM - 5:00 PM</span>
+                      <span>9:00 AM - 5:00 PM</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Sunday:</span>
@@ -124,8 +134,7 @@ const Contact = () => {
               <div>
                 <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
                   <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-                  <fieldd-lead-form code="EhQ16O"></fieldd-lead-form>
-                  {/* <form onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                         Your Name *
@@ -211,7 +220,7 @@ const Contact = () => {
                       <Send size={18} className="mr-2" />
                       Send Message
                     </Button>
-                  </form> */}
+                  </form>
                 </div>
               </div>
             </div>
@@ -219,17 +228,17 @@ const Contact = () => {
         </section>
 
         {/* Map Section */}
-        <section className="pb-20">
+        {/* <section className="pb-20">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl font-bold mb-6">Our Location</h2>
             <div className="h-96 w-full bg-gray-200 rounded-lg overflow-hidden shadow-md">
               {/* This would be replaced with an actual map component in production */}
-              <div className="w-full h-full flex items-center justify-center bg-gray-300">
+              {/* <div className="w-full h-full flex items-center justify-center bg-gray-300">
                 <p className="text-gray-600">Map of Grand Cayman location would be displayed here</p>
               </div>
             </div>
-          </div>
-        </section>
+          </div> */}
+        </section> */}
       </main>
     </div>
   );
