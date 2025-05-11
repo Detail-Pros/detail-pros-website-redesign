@@ -103,16 +103,16 @@ const Testimonials = () => {
           setReviews(googleReviews);
         } else {
           // If no reviews found, use fallback
-          console.log("No reviews found in API response, using fallbacks");
+          // console.log("No reviews found in API response, using fallbacks");
           setReviews(fallbackTestimonials);
         }
       } catch (error) {
-        console.error("Error fetching Google reviews:", error);
-        toast({
-          title: "Unable to load Google reviews",
-          description: "Showing our featured testimonials instead.",
-          variant: "destructive",
-        });
+        // console.error("Error fetching Google reviews:", error);
+        // toast({
+        //   title: "Unable to load Google reviews",
+        //   description: "Showing our featured testimonials instead.",
+        //   variant: "destructive",
+        // });
         setReviews(fallbackTestimonials);
       } finally {
         setIsLoading(false);
