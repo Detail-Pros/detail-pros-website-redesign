@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
@@ -5,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import CallToAction from "@/components/home/CallToAction";
 import { Anchor, Shield, Droplet, CircleCheck } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const CeramicCoatingMarine = () => {
   return <div className="min-h-screen flex flex-col">
       {/* Header Banner */}
