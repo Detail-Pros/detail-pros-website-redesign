@@ -1,6 +1,7 @@
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,18 +10,30 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const toggleSection = (sectionName: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [sectionName]: !prev[sectionName]
+    }));
+  };
+
   useEffect(() => {
     const handleScroll = () => {
-      // Add offset for mini navbar height (approximately 36px)
       if (window.scrollY > 10) {
         setIsScrolled(true);
       } else {
@@ -210,26 +223,48 @@ const Navbar = () => {
             </Link>
             
             {/* Company Dropdown */}
-            <div className="py-2 border-b border-gray-100">
-              <div className="font-medium text-detailpros-black mb-2">Company</div>
-              <div className="pl-4">
+            <Collapsible className="py-2 border-b border-gray-100">
+              <div className="flex justify-between items-center">
+                <div className="font-medium text-detailpros-black">Company</div>
+                <CollapsibleTrigger 
+                  onClick={() => toggleSection('company')} 
+                  className="focus:outline-none"
+                >
+                  {openSections.company ? 
+                    <ChevronUp size={20} className="text-detailpros-black" /> : 
+                    <ChevronDown size={20} className="text-detailpros-black" />
+                  }
+                </CollapsibleTrigger>
+              </div>
+              <CollapsibleContent className="pl-4 mt-2">
                 <Link to="/about" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   About Us
                 </Link>
                 <Link to="/careers" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Careers
                 </Link>
-              </div>
-            </div>
+              </CollapsibleContent>
+            </Collapsible>
             
             <Link to="/services" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
               Detailing
             </Link>
             
             {/* Ceramic Coating Dropdown */}
-            <div className="py-2 border-b border-gray-100">
-              <div className="font-medium text-detailpros-black mb-2">Ceramic Coating</div>
-              <div className="pl-4">
+            <Collapsible className="py-2 border-b border-gray-100">
+              <div className="flex justify-between items-center">
+                <div className="font-medium text-detailpros-black">Ceramic Coating</div>
+                <CollapsibleTrigger 
+                  onClick={() => toggleSection('ceramic')} 
+                  className="focus:outline-none"
+                >
+                  {openSections.ceramic ? 
+                    <ChevronUp size={20} className="text-detailpros-black" /> : 
+                    <ChevronDown size={20} className="text-detailpros-black" />
+                  }
+                </CollapsibleTrigger>
+              </div>
+              <CollapsibleContent className="pl-4 mt-2">
                 <Link to="/ceramic-coating/automotive" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Automotive
                 </Link>
@@ -245,8 +280,8 @@ const Navbar = () => {
                 <Link to="/ceramic-coating/signage" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Signage
                 </Link>
-              </div>
-            </div>
+              </CollapsibleContent>
+            </Collapsible>
             
             {/* Paint Protection Film (standalone link) */}
             <Link to="/paint-protection" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
@@ -254,9 +289,20 @@ const Navbar = () => {
             </Link>
             
             {/* Window Tinting Dropdown */}
-            <div className="py-2 border-b border-gray-100">
-              <div className="font-medium text-detailpros-black mb-2">Window Tinting</div>
-              <div className="pl-4">
+            <Collapsible className="py-2 border-b border-gray-100">
+              <div className="flex justify-between items-center">
+                <div className="font-medium text-detailpros-black">Window Tinting</div>
+                <CollapsibleTrigger 
+                  onClick={() => toggleSection('tinting')} 
+                  className="focus:outline-none"
+                >
+                  {openSections.tinting ? 
+                    <ChevronUp size={20} className="text-detailpros-black" /> : 
+                    <ChevronDown size={20} className="text-detailpros-black" />
+                  }
+                </CollapsibleTrigger>
+              </div>
+              <CollapsibleContent className="pl-4 mt-2">
                 <Link to="/window-tinting/automotive" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Automotive
                 </Link>
@@ -266,8 +312,8 @@ const Navbar = () => {
                 <Link to="/window-tinting/commercial" className="block py-1 text-sm text-detailpros-black hover:text-detailpros-pink" onClick={toggleMenu}>
                   Commercial
                 </Link>
-              </div>
-            </div>
+              </CollapsibleContent>
+            </Collapsible>
             
             <Link to="/contact" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
               Contact

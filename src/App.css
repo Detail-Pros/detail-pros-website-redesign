@@ -95,6 +95,37 @@ html {
   transition: opacity 300ms, transform 300ms;
 }
 
+/* Collapsible menu animations */
+[data-state="open"] .collapsible-content-animation {
+  animation: slideDown 300ms ease-out;
+}
+
+[data-state="closed"] .collapsible-content-animation {
+  animation: slideUp 300ms ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
 /* Mini navbar styles */
 .mini-navbar-social a:hover {
   transform: translateY(-2px);
