@@ -70,7 +70,7 @@ const Index = () => {
           </div>
         </section>
 
-      <section className="text-white py-16 relative">
+      <section className="text-white py-16 relative h-[500px]">
         {/* Gif Background */}
         <div className="absolute inset-0 w-full h-full z-0">
           <img 
@@ -207,3 +207,4 @@ const Index = () => {
 };
 
 export default Index;
+
