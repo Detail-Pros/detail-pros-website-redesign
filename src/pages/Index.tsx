@@ -1,4 +1,3 @@
-
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import Testimonials from "@/components/home/Testimonials";
@@ -70,13 +69,13 @@ const Index = () => {
           </div>
         </section>
 
-      <section className="text-white py-16 relative h-[500px]">
-        {/* Gif Background */}
-        <div className="absolute inset-0 w-full h-full z-0">
+      <section className="text-white py-16 relative flex justify-center items-center">
+        {/* Gif Background with Border */}
+        <div className="relative max-w-6xl mx-auto border-4 border-detailpros-pink rounded-lg overflow-hidden">
           <img 
             src="https://red-extensive-lungfish-931.mypinata.cloud/ipfs/bafybeigf5vkcxyqosbj2mmwwpqbvcrnxvbyuvnqjjcrizdqunfqjhiouye" 
             alt="Ceramic Pro ION Background" 
-            className="w-full h-full object-cover object-center z-0"
+            className="w-auto h-auto object-contain z-0"
           />
         </div>
       </section>
@@ -207,4 +206,3 @@ const Index = () => {
 };
 
 export default Index;
-
