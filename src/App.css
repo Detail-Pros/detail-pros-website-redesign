@@ -113,13 +113,14 @@ html {
   }
 }
 
-/* Height-based offset for main content to account for both navbars */
-.main-content-offset {
-  padding-top: calc(36px + 72px);
+/* Remove any padding/margin that could create space */
+body {
+  margin: 0;
+  padding: 0;
 }
 
-@media (max-width: 768px) {
-  .main-content-offset {
-    padding-top: calc(36px + 72px); /* Account for both navbars on mobile */
-  }
+/* Ensure navbars stack correctly with no gap */
+header {
+  margin: 0;
+  padding: 0;
 }
