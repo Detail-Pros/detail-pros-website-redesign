@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -16,8 +17,18 @@ const CeramicCoating = () => {
       </section>
 
       {/* ION Hero Section */}
-      <section className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
+      <section className="text-white py-16 relative">
+        {/* Gif Background */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <div className="absolute inset-0 bg-black/70 z-10"></div> {/* Overlay to ensure text is readable */}
+          <img 
+            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzY0NjZ4ejBzdTR6NGZsNnBham0zazcxYTNrZHE5dzd0c3RxZG95MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UYOtt2Fy8sAfO54MNE/giphy.gif" 
+            alt="Ceramic Pro ION Background" 
+            className="w-full h-full object-cover object-center z-0"
+          />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-20">
           {/* ION Hero Content */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
