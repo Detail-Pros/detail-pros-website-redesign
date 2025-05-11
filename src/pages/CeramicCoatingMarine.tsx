@@ -87,53 +87,6 @@ const CeramicCoatingMarine = () => {
         </div>
       </section>
 
-      {/* Features Section 1 - Gold Background */}
-      <section className="py-16 bg-amber-300">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <Shield className="h-12 w-12" />
-              </div>
-              <h3 className="text-xl font-bold uppercase mb-4">UV RAY SHIELD</h3>
-              <p className="text-sm">
-                Ceramic Pro Marine utilizes a revolutionary blend of UV inhibiting minerals to protect your vessel from the harshest sun rays on the planet.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <Shield className="h-12 w-12" />
-              </div>
-              <h3 className="text-xl font-bold uppercase mb-4">OXIDATION BARRIER</h3>
-              <p className="text-sm">
-                Ceramic Pro Marine is a layerable product that starts with a penetrating foundation that can built up creating a protective layer that seals your gelcoat.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <Anchor className="h-12 w-12" />
-              </div>
-              <h3 className="text-xl font-bold uppercase mb-4">FOULING RELEASE</h3>
-              <p className="text-sm">
-                Ceramic Pro Marine reduces the surface tension of your gelcoat preventing algae from planting roots into the pores of your gelcoat making growth very easy to remove.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <Droplet className="h-12 w-12" />
-              </div>
-              <h3 className="text-xl font-bold uppercase mb-4">SELF CLEANING</h3>
-              <p className="text-sm">
-                Ceramic Pro Marine's protective layer reduces the surface tension of surfaces allowing bird droppings, fish blood, oil and other grime to be easily washed away.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section 2 - Black Background */}
       <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-4">
