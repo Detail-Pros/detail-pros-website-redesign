@@ -12,8 +12,8 @@ const CallToAction = () => {
       
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Ready to Transform Your Vehicle or Vessel?</h2>
-          <p className="text-gray-700 text-lg mb-8 max-w-2xl mx-auto">Whether it's automotive, marine, or other surfaces - our team is ready to provide premium coating services throughout the Cayman Islands.</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Ready to Transform Your Investment?</h2>
+          <p className="text-gray-700 text-lg mb-8 max-w-2xl mx-auto">Whether it's automotive, marine, or other surfaces - our team is ready to provide premium services throughout the Cayman Islands.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/contact">
               <Button className="bg-detailpros-pink hover:bg-detailpros-pink/90 text-white h-14 px-8 rounded-[5px] w-full sm:w-auto">
