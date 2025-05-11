@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -5,16 +6,21 @@ import CallToAction from "@/components/home/CallToAction";
 import { CheckCircle, Droplets, Diamond, CircleDashed, TestTube } from "lucide-react";
 const CeramicCoating = () => {
   return <div className="min-h-screen flex flex-col">
-      {/* Hero Section */}
-      <section className="bg-black text-white py-16">
+      {/* Header Section */}
+      <section className="bg-black text-white py-10">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-2">
             Automotive Paint Protection
           </h1>
-          <p className="text-gray-400 mb-8">Industry leading solutions by Ceramic Pro</p>
+          <p className="text-gray-400">Industry leading solutions by Ceramic Pro</p>
+        </div>
+      </section>
 
+      {/* ION Hero Section */}
+      <section className="bg-black text-white py-16">
+        <div className="container mx-auto px-4">
           {/* ION Hero Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-6xl font-bold text-white mb-8">ION</h2>
               <p className="text-gray-300 mb-6">
