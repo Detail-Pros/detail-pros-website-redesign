@@ -11,7 +11,7 @@ const CeramicCoatingMarine = () => {
       <section className="w-full bg-black text-white py-16 relative z-10 mt-[-72px] md:mt-[-108px] pt-[100px] md:pt-[140px]">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl font-bold mb-4 md:text-5xl">Marine Surface Protection</h1>
-          <p className="text-xl max-w-2xl md:text-base">
+          <p className="text-xl max-w-2xl text-gray-400 md:text-sm">
             Ceramic Pro Marine provides excellent surface protection for your boat.
           </p>
         </div>
