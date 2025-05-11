@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
@@ -40,17 +41,6 @@ const CeramicCoatingMarine = () => {
                 <img src="/lovable-uploads/384ffb1a-2aa0-4dbe-940d-34dd72b25512.png" alt="Marine vessel on water" className="w-full h-full object-cover" />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Ceramic Pro System */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-16 text-center uppercase">THE CERAMIC PRO SYSTEM</h2>
-          
-          <div className="flex justify-center mb-16">
-            <img alt="Ceramic Pro System Layers" className="max-w-full h-auto" src="/lovable-uploads/89207da3-0b9e-46cf-bf3e-dd6d7e1a14a0.jpg" />
           </div>
         </div>
       </section>
@@ -264,6 +254,17 @@ const CeramicCoatingMarine = () => {
                 Based on the "lotus-effect," this nano-ceramic allows us to create a smooth hydrophobic surface. This creates a consistent anti-stick factor making it easy to clean away fish gunk or other contaminants.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Ceramic Pro System - Moved down 3 positions */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-16 text-center uppercase">THE CERAMIC PRO SYSTEM</h2>
+          
+          <div className="flex justify-center mb-16">
+            <img alt="Ceramic Pro System Layers" className="max-w-full h-auto" src="/lovable-uploads/89207da3-0b9e-46cf-bf3e-dd6d7e1a14a0.jpg" />
           </div>
         </div>
       </section>
