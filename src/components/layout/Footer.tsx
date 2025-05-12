@@ -105,7 +105,7 @@ const Footer = () => {
         {/* Map spanning across the component */}
         <div className="w-full h-[400px] bg-gray-200 rounded-md overflow-hidden mb-16">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.597187423721!2d-81.37641432412949!3d19.329869381913888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f258738d905adf3%3A0xc711ca9486afc56c!2sKingbird%20Dr%2C%20Cayman%20Islands!5e0!3m2!1sen!2sus!4v1715443037042!5m2!1sen!2sus" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4461.875424759378!2d-81.3622908!3d19.298592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f2587f2ea851a11%3A0xbd235f6837fe5929!2sDetail%20Pros!5e1!3m2!1sen!2suk!4v1747012358960!5m2!1sen!2suk" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
