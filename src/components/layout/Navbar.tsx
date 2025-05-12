@@ -58,138 +58,175 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
-          <Link to="/" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
-            Home
-          </Link>
-          
-          {/* Company Dropdown */}
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-large text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">Company</NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-white">
-                  <ul className="grid w-[200px] gap-2 p-4">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/about" className="block p-2 hover:bg-gray-100 rounded-md">
-                          About Us
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/careers" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Careers
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+       {/* Desktop Navigation */}
+<div className="hidden md:flex items-center space-x-2 lg:space-x-4">
+  <Link to="/" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
+    Home
+  </Link>
+  
+  {/* Company Dropdown */}
+  <NavigationMenu>
+    <NavigationMenuList>
+      <NavigationMenuItem>
+        <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">
+          Company
+        </NavigationMenuTrigger>
+        <NavigationMenuContent className="bg-white">
+          <ul className="grid w-[200px] gap-2 p-4">
+            <li>
+              <NavigationMenuLink asChild>
+                <Link
+                  to="/about"
+                  className="block p-2 hover:bg-gray-100 rounded-md font-medium text-detailpros-black text-base"
+                >
+                  About Us
+                </Link>
+              </NavigationMenuLink>
+            </li>
+            <li>
+              <NavigationMenuLink asChild>
+                <Link
+                  to="/careers"
+                  className="block p-2 hover:bg-gray-100 rounded-md font-medium text-detailpros-black text-base"
+                >
+                  Careers
+                </Link>
+              </NavigationMenuLink>
+            </li>
+          </ul>
+        </NavigationMenuContent>
+      </NavigationMenuItem>
+    </NavigationMenuList>
+  </NavigationMenu>
 
-          <Link to="/services" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
-            Detailing
-          </Link>
-          
-          {/* Ceramic Coating Dropdown */}
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">Ceramic Coating</NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-white">
-                  <ul className="grid w-[200px] gap-2 p-4">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/ceramic-coating/automotive" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Automotive
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/ceramic-coating/marine" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Marine
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/ceramic-coating/aviation" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Aviation
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/ceramic-coating/industrial" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Industrial
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/ceramic-coating/signage" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Signage
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+  <Link to="/services" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
+    Detailing
+  </Link>
+  
+  {/* Ceramic Coating Dropdown */}
+  <NavigationMenu>
+    <NavigationMenuList>
+      <NavigationMenuItem>
+        <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">
+          Ceramic Coating
+        </NavigationMenuTrigger>
+        <NavigationMenuContent className="bg-white">
+          <ul className="grid w-[200px] gap-2 p-4">
+            <li>
+              <NavigationMenuLink asChild>
+                <Link
+                  to="/ceramic-coating/automotive"
+                  className="block p-2 hover:bg-gray-100 rounded-md font-medium text-detailpros-black text-base"
+                >
+                  Automotive
+                </Link>
+              </NavigationMenuLink>
+            </li>
+            <li>
+              <NavigationMenuLink asChild>
+                <Link
+                  to="/ceramic-coating/marine"
+                  className="block p-2 hover:bg-gray-100 rounded-md font-medium text-detailpros-black text-base"
+                >
+                  Marine
+                </Link>
+              </NavigationMenuLink>
+            </li>
+            <li>
+              <NavigationMenuLink asChild>
+                <Link
+                  to="/ceramic-coating/aviation"
+                  className="block p-2 hover:bg-gray-100 rounded-md font-medium text-detailpros-black text-base"
+                >
+                  Aviation
+                </Link>
+              </NavigationMenuLink>
+            </li>
+            <li>
+              <NavigationMenuLink asChild>
+                <Link
+                  to="/ceramic-coating/industrial"
+                  className="block p-2 hover:bg-gray-100 rounded-md font-medium text-detailpros-black text-base"
+                >
+                  Industrial
+                </Link>
+              </NavigationMenuLink>
+            </li>
+            <li>
+              <NavigationMenuLink asChild>
+                <Link
+                  to="/ceramic-coating/signage"
+                  className="block p-2 hover:bg-gray-100 rounded-md font-medium text-detailpros-black text-base"
+                >
+                  Signage
+                </Link>
+              </NavigationMenuLink>
+            </li>
+          </ul>
+        </NavigationMenuContent>
+      </NavigationMenuItem>
+    </NavigationMenuList>
+  </NavigationMenu>
 
-          {/* Paint Protection Film (standalone link) */}
-          <Link to="/paint-protection" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
-            Paint Protection Film
-          </Link>
+  {/* Paint Protection Film (standalone link) */}
+  <Link to="/paint-protection" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
+    Paint Protection Film
+  </Link>
 
-          {/* Window Tinting Dropdown */}
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">Window Tinting</NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-white">
-                  <ul className="grid w-[200px] gap-2 p-4">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/window-tinting/automotive" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Automotive
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/window-tinting/residential" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Residential
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/window-tinting/commercial" className="block p-2 hover:bg-gray-100 rounded-md">
-                          Commercial
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+  {/* Window Tinting Dropdown */}
+  <NavigationMenu>
+    <NavigationMenuList>
+      <NavigationMenuItem>
+        <NavigationMenuTrigger className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors bg-transparent hover:bg-transparent px-1">
+          Window Tinting
+        </NavigationMenuTrigger>
+        <NavigationMenuContent className="bg-white">
+          <ul className="grid w-[200px] gap-2 p-4">
+            <li>
+              <NavigationMenuLink asChild>
+                <Link
+                  to="/window-tinting/automotive"
+                  className="block p-2 hover:bg-gray-100 rounded-md font-medium text-detailpros-black text-base"
+                >
+                  Automotive
+                </Link>
+              </NavigationMenuLink>
+            </li>
+            <li>
+              <NavigationMenuLink asChild>
+                <Link
+                  to="/window-tinting/residential"
+                  className="block p-2 hover:bg-gray-100 rounded-md font-medium text-detailpros-black text-base"
+                >
+                  Residential
+                </Link>
+              </NavigationMenuLink>
+            </li>
+            <li>
+              <NavigationMenuLink asChild>
+                <Link
+                  to="/window-tinting/commercial"
+                  className="block p-2 hover:bg-gray-100 rounded-md font-medium text-detailpros-black text-base"
+                >
+                  Commercial
+                </Link>
+              </NavigationMenuLink>
+            </li>
+          </ul>
+        </NavigationMenuContent>
+      </NavigationMenuItem>
+    </NavigationMenuList>
+  </NavigationMenu>
 
-          <Link to="/contact" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
-            Contact
-          </Link>
-          
-          <Link to="/faq" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
-            FAQ
-          </Link>
-        </div>
+  <Link to="/contact" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
+    Contact
+  </Link>
+  
+  <Link to="/faq" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
+    FAQ
+  </Link>
+</div>
+
 
         <div className="hidden md:flex items-center gap-3">
           <a 
