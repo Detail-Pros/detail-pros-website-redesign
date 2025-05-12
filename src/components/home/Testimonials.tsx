@@ -19,8 +19,8 @@ interface GoogleReview {
   time: number;
 }
 
-const PLACE_ID = "ChIJERqF6vKHJY8RKVn-N2hfI70"; // Replace with your actual Google Place ID
-// ChIJERqF6vKHJY8RKVn-N2hfI70
+const PLACE_ID = "AIzaSyAQFZJxKUB3zNqCkaLgHtJSrb-qw9fappg"; // Replace with your actual Google Place ID
+// AIzaSyAQFZJxKUB3zNqCkaLgHtJSrb-qw9fappg
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
