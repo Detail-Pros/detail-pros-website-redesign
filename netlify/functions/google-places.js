@@ -4,7 +4,7 @@
 exports.handler = async function(event, context) {
   try {
     const { placeId } = JSON.parse(event.body);
-    const apiKey = process.env.GOOGLE_API_KEY || '';
+    const apiKey = process.env.GOOGLE_API_KEY || 'AIzaSyAQFZJxKUB3zNqCkaLgHtJSrb-qw9fappg';
     
     if (!placeId) {
       return {
