@@ -19,7 +19,7 @@ interface GoogleReview {
   time: number;
 }
 
-const PLACE_ID = ""; // Replace with your actual Google Place ID
+const PLACE_ID = "ChIJERqF6vKHJY8RKVn-N2hfI70"; // Replace with your actual Google Place ID
 // ChIJERqF6vKHJY8RKVn-N2hfI70
 
 const Testimonials = () => {
@@ -104,7 +104,7 @@ const Testimonials = () => {
           setReviews(googleReviews);
         } else {
           // If no reviews found, use fallback
-          // console.log("No reviews found in API response, using fallbacks");
+          console.log("No reviews found in API response, using fallbacks");
           setReviews(fallbackTestimonials);
         }
       } catch (error) {
