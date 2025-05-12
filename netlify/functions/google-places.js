@@ -1,5 +1,6 @@
 
 // Netlify serverless function to proxy Google Places API requests
+
 exports.handler = async function(event, context) {
   try {
     const { placeId } = JSON.parse(event.body);
