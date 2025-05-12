@@ -3,7 +3,7 @@
 export default async function handler(req, res) {
   try {
     const { placeId } = req.method === 'POST' ? JSON.parse(req.body) : req.query;
-    const apiKey = process.env.GOOGLE_API_KEY || 'AIzaSyAQFZJxKUB3zNqCkaLgHtJSrb-qw9fappg';
+    const apiKey = process.env.GOOGLE_API_KEY || '';
     
     if (!placeId) {
       return res.status(400).json({ error: 'Place ID is required' });
