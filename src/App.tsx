@@ -12,7 +12,7 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import CeramicCoating from "./pages/CeramicCoating";
 import CeramicCoatingMarine from "./pages/CeramicCoatingMarine";
-import PaintProtectionFilm from "./pages/PaintProtection";
+import PaintProtectionFilm from "./pages/PaintProtectionFilm";
 import WindowTinting from "./pages/WindowTinting";
 import Careers from "./pages/Careers";
 import FAQ from "./pages/FAQ";
