@@ -109,11 +109,8 @@ const Testimonials = () => {
         }
       } catch (error) {
         console.error("Error fetching Google reviews:", error);
-        toast({
-          title: "Unable to load Google reviews",
-          description: "Showing our featured testimonials instead.",
-          variant: "destructive",
-        });
+        // Removed the toast notification that was showing the error
+        // Silently fall back to local testimonials
         setReviews(fallbackTestimonials);
       } finally {
         setIsLoading(false);
