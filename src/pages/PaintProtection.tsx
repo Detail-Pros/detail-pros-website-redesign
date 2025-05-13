@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import CallToAction from "@/components/home/CallToAction";
 import { CheckCircle, Shield } from "lucide-react";
 
-const PaintProtection = () => {
+const PaintProtectionFilm = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
@@ -311,4 +311,4 @@ const PaintProtection = () => {
   );
 };
 
-export default PaintProtection;
+export default PaintProtectionFilm;
