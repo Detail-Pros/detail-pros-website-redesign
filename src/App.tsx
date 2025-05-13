@@ -12,7 +12,7 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import CeramicCoating from "./pages/CeramicCoating";
 import CeramicCoatingMarine from "./pages/CeramicCoatingMarine";
-import PaintProtection from "./pages/PaintProtection";
+import PaintProtectionFilm from "./pages/PaintProtection";
 import WindowTinting from "./pages/WindowTinting";
 import Careers from "./pages/Careers";
 import FAQ from "./pages/FAQ";
@@ -62,7 +62,7 @@ const App = () => (
               <Route path="/ceramic-coating/aviation" element={<CeramicCoating />} />
               <Route path="/ceramic-coating/industrial" element={<CeramicCoating />} />
               <Route path="/ceramic-coating/signage" element={<CeramicCoating />} />
-              <Route path="/paint-protection" element={<PaintProtection />} />
+              <Route path="/paint-protection-film" element={<PaintProtectionFilm />} />
               <Route path="/window-tinting/*" element={<WindowTinting />} />
               <Route path="/window-tinting/automotive" element={<WindowTinting />} />
               <Route path="/window-tinting/commercial" element={<WindowTinting />} />
