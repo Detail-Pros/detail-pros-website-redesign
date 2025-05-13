@@ -169,7 +169,7 @@ const Navbar = () => {
   </NavigationMenu>
 
   {/* Paint Protection Film (standalone link) */}
-  <Link to="/paint-protection" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
+  <Link to="/paint-protection-film" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
     Paint Protection Film
   </Link>
 
