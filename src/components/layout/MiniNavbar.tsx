@@ -25,8 +25,8 @@ const MiniNavbar = () => {
   const isMobile = useIsMobile();
 
   return (
-    <div className="bg-white h-9 flex items-center text-black text-xs z-50 shadow-sm" role="navigation" aria-label="Contact Information">
-      <div className="container mx-auto flex justify-between items-center border-b-gray-950">
+    <div className="bg-white h-9 flex items-center text-black text-xs z-50 shadow-sm border-4 border-b-gray-950" role="navigation" aria-label="Contact Information">
+      <div className="container mx-auto flex justify-between items-center">
         <div className="flex space-x-4 md:space-x-6">
           <div className="flex items-center">
             {isMobile ? (
