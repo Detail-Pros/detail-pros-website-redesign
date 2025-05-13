@@ -4,15 +4,78 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import CallToAction from "@/components/home/CallToAction";
 import { CheckCircle, Droplets, Diamond, CircleDashed, TestTube } from "lucide-react";
+import SEO from "@/components/SEO";
+import { Link } from "react-router-dom";
+
 const CeramicCoating = () => {
+  // Structured data for this page
+  const ceramicCoatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Ceramic Pro Coating Services",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Detail Pros Cayman",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "E33 Kingbird Warehouses, 64 Kingbird Drive",
+        "addressLocality": "George Town",
+        "addressRegion": "Grand Cayman",
+        "addressCountry": "KY"
+      },
+      "telephone": "+13459299840",
+      "priceRange": "$$-$$$",
+      "image": "https://lovable.dev/opengraph-image-p98pqg.png",
+      "url": "https://detailpros.ky"
+    },
+    "serviceType": "Ceramic Coating",
+    "description": "Cayman Islands authorized Ceramic Pro installer providing ION next generation ceramic coating technology for cars, boats, planes and more.",
+    "areaServed": "Cayman Islands",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Ceramic Pro Coating Packages",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "ION Package"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Diamond ION Package"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Ultimate ION Package"
+          }
+        }
+      ]
+    }
+  };
+
   return <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Ceramic Pro Coating Cayman Islands | Authorized ION Installer" 
+        description="Official Ceramic Pro ION coating installer in Cayman Islands for automotive, marine, and aviation surfaces. Long-lasting protection with superior hardness and gloss." 
+        keywords="ceramic pro cayman, ceramic pro cayman islands, ION ceramic coating, ceramic coating cayman, car ceramic coating, boat ceramic coating, plane ceramic coating, nano ceramic coating, 9H ceramic coating"
+        canonicalUrl="https://detailpros.ky/ceramic-coating"
+        schema={ceramicCoatingSchema}
+      />
+
       {/* Header Section */}
       <section className="bg-black text-white py-10">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-2">
-            Automotive Paint Protection
+            Ceramic Pro Coating Cayman Islands
           </h1>
-          <p className="text-gray-400 text-sm">Industry leading solutions by Ceramic Pro</p>
+          <p className="text-gray-400 text-sm">Official Authorized Ceramic Pro ION Installer</p>
         </div>
       </section>
 
@@ -34,7 +97,7 @@ const CeramicCoating = () => {
             <div>
               <h2 className="text-6xl font-bold text-white mb-8">ION</h2>
               <p className="text-gray-300 mb-6">
-                Ceramic Pro ION is the next evolution in surface protection technology.
+                Ceramic Pro ION is the next evolution in surface protection technology, now available in the Cayman Islands.
               </p>
               
               <ul className="space-y-3 mb-8">
@@ -60,9 +123,11 @@ const CeramicCoating = () => {
                 </li>
               </ul>
 
-              <Button className="bg-detailpros-pink hover:bg-opacity-90">
-                Learn More
-              </Button>
+              <Link to="/contact">
+                <Button className="bg-detailpros-pink hover:bg-opacity-90">
+                  Get a Quote Today
+                </Button>
+              </Link>
             </div>
             <div className="flex justify-center">
               <div className="relative">
