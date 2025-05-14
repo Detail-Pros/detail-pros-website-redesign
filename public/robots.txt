@@ -5,16 +5,17 @@ Allow: /
 
 # Specific high-priority pages
 Allow: /
-Allow: /services
-Allow: /ceramic-coating
-Allow: /ceramic-coating/marine
+Allow: /detailing/automotive
 Allow: /ceramic-coating/automotive
+Allow: /ceramic-coating/automotive
+Allow: /ceramic-coating/marine
 Allow: /ceramic-coating/aviation
-Allow: /paint-protection
-Allow: /window-tinting
+Allow: /paint-protection-film
+Allow: /window-tinting/automotive
 Allow: /contact
 Allow: /gallery
 Allow: /about
+Allow: /faq
 
 # Disallow access to certain files
 Disallow: /*.json$
