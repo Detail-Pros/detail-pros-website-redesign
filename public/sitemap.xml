@@ -11,32 +11,31 @@
   <!-- Home Page -->
   <url>
     <loc>https://detailpros.ky/</loc>
-    <lastmod>2025-05-13</lastmod>
+    <lastmod>2025-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://lovable.dev/opengraph-image-p98pqg.png</image:loc>
-      <image:title>Detail Pros Cayman Islands - Mobile Car Wash, Boat Detailing, Ceramic Coating</image:title>
-      <image:caption>Premier Detailing Company of the Cayman Islands</image:caption>
+      <image:title>Detail Pros Cayman Islands - Home</image:title>
     </image:image>
   </url>
   
   <!-- Services Page -->
   <url>
     <loc>https://detailpros.ky/services</loc>
-    <lastmod>2025-05-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-05-11</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lovable.dev/opengraph-image-p98pqg.png</image:loc>
-      <image:title>Professional Mobile Car Wash and Detailing Services in Cayman Islands</image:title>
+      <image:title>Professional Detailing Services in Cayman Islands</image:title>
     </image:image>
   </url>
   
   <!-- About Page -->
   <url>
     <loc>https://detailpros.ky/about</loc>
-    <lastmod>2025-05-13</lastmod>
+    <lastmod>2025-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -44,114 +43,102 @@
   <!-- Gallery Page -->
   <url>
     <loc>https://detailpros.ky/gallery</loc>
-    <lastmod>2025-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://lovable.dev/opengraph-image-p98pqg.png</image:loc>
-      <image:title>Detail Pros Project Gallery - Car Wash, Detailing, Ceramic Coating Cayman</image:title>
+      <image:title>Detail Pros Project Gallery</image:title>
     </image:image>
   </url>
   
   <!-- Ceramic Coating Pages -->
   <url>
     <loc>https://detailpros.ky/ceramic-coating</loc>
-    <lastmod>2025-05-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-05-11</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lovable.dev/opengraph-image-p98pqg.png</image:loc>
-      <image:title>Ceramic Pro Coating Services Cayman Islands - Official Authorized Installer</image:title>
+      <image:title>Ceramic Pro Coating Services Cayman Islands</image:title>
     </image:image>
   </url>
   
   <url>
     <loc>https://detailpros.ky/ceramic-coating/marine</loc>
-    <lastmod>2025-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://lovable.dev/opengraph-image-p98pqg.png</image:loc>
-      <image:title>Marine Boat Detailing and Ceramic Coating Services Cayman Islands</image:title>
+      <image:title>Marine Ceramic Coating Services Cayman Islands</image:title>
     </image:image>
   </url>
   
   <url>
     <loc>https://detailpros.ky/ceramic-coating/automotive</loc>
-    <lastmod>2025-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://lovable.dev/opengraph-image-p98pqg.png</image:loc>
-      <image:title>Automotive Ceramic Coating in Cayman Islands - Ceramic Pro ION</image:title>
-    </image:image>
+    <lastmod>2025-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://detailpros.ky/ceramic-coating/aviation</loc>
-    <lastmod>2025-05-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://lovable.dev/opengraph-image-p98pqg.png</image:loc>
-      <image:title>Aviation Ceramic Coating and Plane Detailing in Cayman Islands</image:title>
-    </image:image>
+    <lastmod>2025-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://detailpros.ky/ceramic-coating/industrial</loc>
-    <lastmod>2025-05-13</lastmod>
+    <lastmod>2025-05-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://detailpros.ky/ceramic-coating/signage</loc>
-    <lastmod>2025-05-13</lastmod>
+    <lastmod>2025-05-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   
   <!-- PPF Page -->
   <url>
     <loc>https://detailpros.ky/paint-protection</loc>
-    <lastmod>2025-05-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-05-11</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lovable.dev/opengraph-image-p98pqg.png</image:loc>
-      <image:title>STEK Paint Protection Film Services Cayman Islands - PPF Installation</image:title>
+      <image:title>STEK Paint Protection Film Services Cayman Islands</image:title>
     </image:image>
   </url>
   
   <!-- Window Tinting Page -->
   <url>
     <loc>https://detailpros.ky/window-tinting</loc>
-    <lastmod>2025-05-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-05-11</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://lovable.dev/opengraph-image-p98pqg.png</image:loc>
-      <image:title>Window Tinting Services Cayman Islands - Automotive, Residential & Commercial</image:title>
+      <image:title>Window Tinting Services Cayman Islands</image:title>
     </image:image>
   </url>
   
   <!-- Contact Page -->
   <url>
     <loc>https://detailpros.ky/contact</loc>
-    <lastmod>2025-05-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-05-11</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://lovable.dev/opengraph-image-p98pqg.png</image:loc>
-      <image:title>Contact Detail Pros Cayman - Mobile Car Wash, Detailing & Ceramic Coating</image:title>
-    </image:image>
   </url>
   
   <!-- FAQ Page -->
   <url>
     <loc>https://detailpros.ky/faq</loc>
-    <lastmod>2025-05-13</lastmod>
+    <lastmod>2025-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -159,7 +146,7 @@
   <!-- Careers Page -->
   <url>
     <loc>https://detailpros.ky/careers</loc>
-    <lastmod>2025-05-13</lastmod>
+    <lastmod>2025-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -167,21 +154,21 @@
   <!-- Legal Pages -->
   <url>
     <loc>https://detailpros.ky/terms-of-service</loc>
-    <lastmod>2025-05-13</lastmod>
+    <lastmod>2025-05-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://detailpros.ky/privacy-policy</loc>
-    <lastmod>2025-05-13</lastmod>
+    <lastmod>2025-05-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://detailpros.ky/service-agreement</loc>
-    <lastmod>2025-05-13</lastmod>
+    <lastmod>2025-05-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

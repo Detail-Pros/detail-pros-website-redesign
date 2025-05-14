@@ -4,20 +4,15 @@ User-agent: *
 Allow: /
 
 # Specific high-priority pages
-Allow: /
 Allow: /services
 Allow: /ceramic-coating
-Allow: /ceramic-coating/marine
-Allow: /ceramic-coating/automotive
-Allow: /ceramic-coating/aviation
 Allow: /paint-protection
 Allow: /window-tinting
 Allow: /contact
-Allow: /gallery
-Allow: /about
 
 # Disallow access to certain files
 Disallow: /*.json$
+Disallow: /*.xml$
 Disallow: /api/
 
 # Sitemap location
@@ -26,11 +21,9 @@ Sitemap: https://detailpros.ky/sitemap.xml
 # Specific bot rules
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 5
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 5
 
 User-agent: Twitterbot
 Allow: /
