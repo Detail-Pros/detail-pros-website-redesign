@@ -52,7 +52,7 @@ const App = () => (
           <main className="flex-grow mt-[108px]"> {/* Combined height of MiniNavbar (36px) and Navbar (72px) */}
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/detailing" element={<Services />} />
+              <Route path="/detailing" element={<Detailing />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/gallery" element={<Gallery />} />
