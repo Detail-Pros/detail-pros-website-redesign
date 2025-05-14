@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Index from "./pages/Index";
-import Services from "./pages/Services";
+import Detailing from "./pages/Detailing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
@@ -52,7 +52,7 @@ const App = () => (
           <main className="flex-grow mt-[108px]"> {/* Combined height of MiniNavbar (36px) and Navbar (72px) */}
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/services" element={<Services />} />
+              <Route path="/detailing" element={<Services />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/gallery" element={<Gallery />} />

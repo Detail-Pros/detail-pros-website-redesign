@@ -4,7 +4,7 @@ import { Car, Brush, DropletIcon, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-const Services = () => {
+const Detailing = () => {
   return (
     <div className="min-h-screen flex flex-col">
         {/* Services Header */}
@@ -214,4 +214,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Detailing;
