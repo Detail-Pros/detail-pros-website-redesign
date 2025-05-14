@@ -6,7 +6,7 @@ Allow: /
 # Specific high-priority pages
 Allow: /
 Allow: /about
-Allow: /services
+Allow: /detailing
 Allow: /contact
 Allow: /ceramic-coating/automotive
 Allow: /ceramic-coating/marine
