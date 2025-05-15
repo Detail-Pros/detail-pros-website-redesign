@@ -124,17 +124,17 @@ const CeramicCoating = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* ION Package */}
             <div className="flex justify-center">
-              <img src="/lovable-uploads/0cd645cb-b6ba-4d74-acb7-cae20d67a6cd.png" alt="ION Package" className="w-full max-w-sm h-auto rounded-lg shadow-lg" />
+              <img src="/lovable-uploads/0cd645cb-b6ba-4d74-acb7-cae20d67a6cd.png" alt="ION Package" className="w-full max-w-sm h-auto rounded-lg" />
             </div>
             
             {/* Diamond ION Package */}
             <div className="flex justify-center">
-              <img src="/lovable-uploads/3076d845-a071-4ba8-aa36-214249acc84f.png" alt="Diamond ION Package" className="w-full max-w-sm h-auto rounded-lg shadow-lg" />
+              <img src="/lovable-uploads/3076d845-a071-4ba8-aa36-214249acc84f.png" alt="Diamond ION Package" className="w-full max-w-sm h-auto rounded-lg" />
             </div>
             
             {/* Ultimate ION Package */}
             <div className="flex justify-center">
-              <img src="/lovable-uploads/adbe8eb3-77e7-42e3-8398-50ef672bd91d.png" alt="Ultimate ION Package" className="w-full max-w-sm h-auto rounded-lg shadow-lg" />
+              <img src="/lovable-uploads/adbe8eb3-77e7-42e3-8398-50ef672bd91d.png" alt="Ultimate ION Package" className="w-full max-w-sm h-auto rounded-lg" />
             </div>
           </div>
         </div>
@@ -248,3 +248,4 @@ const CeramicCoating = () => {
     </div>;
 };
 export default CeramicCoating;
+
