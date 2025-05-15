@@ -121,20 +121,20 @@ const CeramicCoating = () => {
             This premium-grade ceramic coating is exclusively sold and installed by Ceramic Pro's approved elite dealer, Detail Pros.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* ION Package */}
             <div className="flex justify-center">
-              <img src="/lovable-uploads/f319da16-825f-4ae5-9dce-a16feecc0ef1.png" alt="ION Package" className="w-full max-w-xs h-auto" />
+              <img src="/lovable-uploads/0cd645cb-b6ba-4d74-acb7-cae20d67a6cd.png" alt="ION Package" className="w-full max-w-sm h-auto rounded-lg shadow-lg" />
             </div>
             
             {/* Diamond ION Package */}
             <div className="flex justify-center">
-              <img src="/lovable-uploads/f60a8d3f-bdad-4bb0-a272-cf9fd039f979.png" alt="Diamond ION Package" className="w-full max-w-xs h-auto" />
+              <img src="/lovable-uploads/3076d845-a071-4ba8-aa36-214249acc84f.png" alt="Diamond ION Package" className="w-full max-w-sm h-auto rounded-lg shadow-lg" />
             </div>
             
             {/* Ultimate ION Package */}
             <div className="flex justify-center">
-              <img src="/lovable-uploads/0e4212a8-f19b-41f2-9964-659a65b5197e.png" alt="Ultimate ION Package" className="w-full max-w-xs h-auto" />
+              <img src="/lovable-uploads/adbe8eb3-77e7-42e3-8398-50ef672bd91d.png" alt="Ultimate ION Package" className="w-full max-w-sm h-auto rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
