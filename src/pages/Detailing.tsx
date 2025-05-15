@@ -3,6 +3,9 @@ import CallToAction from "@/components/home/CallToAction";
 import { Car, Brush, DropletIcon, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Detailing = () => {
   return (
@@ -78,6 +81,273 @@ const Detailing = () => {
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
                 <img src="/placeholder.svg" alt="Mobile Detailing" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mobile Detailing Services & Pricing Section */}
+        <section id="mobile-detailing-services" className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Mobile Detailing Services</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Choose the perfect detailing service for your vehicle. We offer comprehensive packages
+                tailored to various vehicle types and your specific needs.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <Tabs defaultValue="inside-out" className="w-full">
+                <div className="flex justify-center mb-8">
+                  <TabsList className="grid grid-cols-3 w-full max-w-xl">
+                    <TabsTrigger value="inside-out" className="relative">
+                      <div className="flex flex-col items-center gap-2">
+                        <img 
+                          src="/lovable-uploads/dd7f3090-a164-4094-8203-d8c0f503414f.png" 
+                          alt="Inside & Out" 
+                          className="w-20 h-20 object-contain" 
+                        />
+                        <span>Inside & Out</span>
+                      </div>
+                    </TabsTrigger>
+                    <TabsTrigger value="exterior-only">
+                      <div className="flex flex-col items-center gap-2">
+                        <img 
+                          src="/lovable-uploads/0ba47bc7-3c87-4b93-92e5-efbe316aa969.png" 
+                          alt="Exterior Only" 
+                          className="w-20 h-20 object-contain" 
+                        />
+                        <span>Exterior Only</span>
+                      </div>
+                    </TabsTrigger>
+                    <TabsTrigger value="interior-only">
+                      <div className="flex flex-col items-center gap-2">
+                        <img 
+                          src="/lovable-uploads/85a41313-83c2-4644-8e39-4d1504770b91.png" 
+                          alt="Interior Only" 
+                          className="w-20 h-20 object-contain" 
+                        />
+                        <span>Interior Only</span>
+                      </div>
+                    </TabsTrigger>
+                  </TabsList>
+                </div>
+                
+                <TabsContent value="inside-out">
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="overflow-x-auto">
+                        <Table>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead className="w-1/3">Vehicle Type</TableHead>
+                              <TableHead>Description</TableHead>
+                              <TableHead className="text-right">Price</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/d98eebb7-e06e-48bf-aaaf-3fac841fe362.png" alt="Coupe" className="w-12 h-8 object-contain" />
+                                Coupe
+                              </TableCell>
+                              <TableCell>Our Full Mobile Express Detail service includes interior & exterior cleaning</TableCell>
+                              <TableCell className="text-right font-semibold">$35.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/d98eebb7-e06e-48bf-aaaf-3fac841fe362.png" alt="Sedan" className="w-12 h-8 object-contain" />
+                                Sedan
+                              </TableCell>
+                              <TableCell>Our Full Mobile Express Detail service includes interior & exterior cleaning</TableCell>
+                              <TableCell className="text-right font-semibold">$45.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/343ce067-29bc-42bb-bae4-34307ae5521d.png" alt="SUV 5-Seater" className="w-12 h-8 object-contain" />
+                                SUV 5-Seater
+                              </TableCell>
+                              <TableCell>Our Full Mobile Express Detail service includes interior & exterior cleaning</TableCell>
+                              <TableCell className="text-right font-semibold">$55.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/54752ea2-a146-4c59-b7a5-7c8f0d0581d9.png" alt="SUV 7-Seater" className="w-12 h-8 object-contain" />
+                                SUV 7-Seater
+                              </TableCell>
+                              <TableCell>Our Full Mobile Express Detail service includes interior & exterior cleaning</TableCell>
+                              <TableCell className="text-right font-semibold">$65.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/b1cddb91-3917-4776-8ec6-556216ea0334.png" alt="Truck" className="w-12 h-8 object-contain" />
+                                Truck
+                              </TableCell>
+                              <TableCell>Our Full Mobile Express Detail service includes interior & exterior cleaning</TableCell>
+                              <TableCell className="text-right font-semibold">$75.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/d99657f5-e4df-4f22-a980-670efe2e2c07.png" alt="Van" className="w-12 h-8 object-contain" />
+                                Van
+                              </TableCell>
+                              <TableCell>Our Full Mobile Express Detail service includes interior & exterior cleaning</TableCell>
+                              <TableCell className="text-right font-semibold">$100.00</TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                
+                <TabsContent value="exterior-only">
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="overflow-x-auto">
+                        <Table>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead className="w-1/3">Vehicle Type</TableHead>
+                              <TableHead>Description</TableHead>
+                              <TableHead className="text-right">Price</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/d98eebb7-e06e-48bf-aaaf-3fac841fe362.png" alt="Coupe" className="w-12 h-8 object-contain" />
+                                Coupe
+                              </TableCell>
+                              <TableCell>Our Exterior Mobile Express Detail service focuses on exterior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$25.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/d98eebb7-e06e-48bf-aaaf-3fac841fe362.png" alt="Sedan" className="w-12 h-8 object-contain" />
+                                Sedan
+                              </TableCell>
+                              <TableCell>Our Exterior Mobile Express Detail service focuses on exterior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$35.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/343ce067-29bc-42bb-bae4-34307ae5521d.png" alt="SUV 5-Seater" className="w-12 h-8 object-contain" />
+                                SUV 5-Seater
+                              </TableCell>
+                              <TableCell>Our Exterior Mobile Express Detail service focuses on exterior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$40.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/54752ea2-a146-4c59-b7a5-7c8f0d0581d9.png" alt="SUV 7-Seater" className="w-12 h-8 object-contain" />
+                                SUV 7-Seater
+                              </TableCell>
+                              <TableCell>Our Exterior Mobile Express Detail service focuses on exterior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$45.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/b1cddb91-3917-4776-8ec6-556216ea0334.png" alt="Truck" className="w-12 h-8 object-contain" />
+                                Truck
+                              </TableCell>
+                              <TableCell>Our Exterior Mobile Express Detail service focuses on exterior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$50.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/d99657f5-e4df-4f22-a980-670efe2e2c07.png" alt="Van" className="w-12 h-8 object-contain" />
+                                Van
+                              </TableCell>
+                              <TableCell>Our Exterior Mobile Express Detail service focuses on exterior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$60.00</TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                
+                <TabsContent value="interior-only">
+                  <Card>
+                    <CardContent className="pt-6">
+                      <div className="overflow-x-auto">
+                        <Table>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead className="w-1/3">Vehicle Type</TableHead>
+                              <TableHead>Description</TableHead>
+                              <TableHead className="text-right">Price</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/d98eebb7-e06e-48bf-aaaf-3fac841fe362.png" alt="Coupe" className="w-12 h-8 object-contain" />
+                                Coupe
+                              </TableCell>
+                              <TableCell>Our Interior Only Mobile Express Detail service focuses on interior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$20.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/d98eebb7-e06e-48bf-aaaf-3fac841fe362.png" alt="Sedan" className="w-12 h-8 object-contain" />
+                                Sedan
+                              </TableCell>
+                              <TableCell>Our Interior Only Mobile Express Detail service focuses on interior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$25.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/343ce067-29bc-42bb-bae4-34307ae5521d.png" alt="SUV 5-Seater" className="w-12 h-8 object-contain" />
+                                SUV 5-Seater
+                              </TableCell>
+                              <TableCell>Our Interior Only Mobile Express Detail service focuses on interior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$30.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/54752ea2-a146-4c59-b7a5-7c8f0d0581d9.png" alt="SUV 7-Seater" className="w-12 h-8 object-contain" />
+                                SUV 7-Seater
+                              </TableCell>
+                              <TableCell>Our Interior Only Mobile Express Detail service focuses on interior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$35.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/b1cddb91-3917-4776-8ec6-556216ea0334.png" alt="Truck" className="w-12 h-8 object-contain" />
+                                Truck
+                              </TableCell>
+                              <TableCell>Our Interior Only Mobile Express Detail service focuses on interior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$40.00</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium flex items-center gap-2">
+                                <img src="/lovable-uploads/d99657f5-e4df-4f22-a980-670efe2e2c07.png" alt="Van" className="w-12 h-8 object-contain" />
+                                Van
+                              </TableCell>
+                              <TableCell>Our Interior Only Mobile Express Detail service focuses on interior cleaning only</TableCell>
+                              <TableCell className="text-right font-semibold">$50.00</TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              </Tabs>
+
+              <div className="mt-8 text-center">
+                <p className="text-gray-600 mb-4">
+                  Contact us for custom requirements or additional detailing services.
+                </p>
+                <Link to="/contact">
+                  <Button className="bg-detailpros-pink hover:bg-opacity-90">
+                    Request A Quote
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
