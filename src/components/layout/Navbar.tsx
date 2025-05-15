@@ -99,7 +99,7 @@ const Navbar = () => {
     </NavigationMenuList>
   </NavigationMenu>
 
-  <Link to="/services" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
+  <Link to="/detailing" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
     Detailing
   </Link>
   
