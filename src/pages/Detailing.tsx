@@ -25,6 +25,16 @@ const Detailing = () => {
             </div>
           </div>
         </section>
+        <section className="bg-black text-white py-10">
+          <div className="container mx-auto px-4">
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">
+                Auto Detailing Services
+              </h1>
+              <p className="text-sm text-gray-400">
+                 Luxury detailing for your vehicle, delivered to your doorstep with precision and care.
+              </p>
+            </div>
+        </section>
 
         {/* Mobile Detailing */}
         <section id="detailing" className="py-20 bg-white">
