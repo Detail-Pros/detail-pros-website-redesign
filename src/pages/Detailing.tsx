@@ -11,7 +11,7 @@ const Detailing = () => {
   return (
     <div className="min-h-screen flex flex-col">
         {/* Services Header */}
-        <section className="bg-black text-white py-18">
+        <section className="bg-black text-white py-4">
           <div className="container mx-auto px-4">
               <h1 className="text-4xl md:text-5xl font-bold mb-2">
                 Auto Detailing Services
