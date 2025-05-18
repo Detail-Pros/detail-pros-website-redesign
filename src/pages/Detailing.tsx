@@ -11,21 +11,7 @@ const Detailing = () => {
   return (
     <div className="min-h-screen flex flex-col">
         {/* Services Header */}
-        <section className="relative py-24 bg-detailpros-black">
-          <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-20"></div>
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Our <span className="text-detailpros-pink">Services</span>
-              </h1>
-              <p className="text-lg text-white/90">
-                Detail Pros offers comprehensive automotive care services in the Cayman Islands, 
-                from mobile detailing to professional ceramic coating and paint protection film.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="bg-black text-white py-10">
+        <section className="bg-black text-white py-18">
           <div className="container mx-auto px-4">
               <h1 className="text-4xl md:text-5xl font-bold mb-2">
                 Auto Detailing Services
