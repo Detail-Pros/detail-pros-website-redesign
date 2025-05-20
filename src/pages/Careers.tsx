@@ -281,7 +281,7 @@ const Careers = () => {
           </p>
           <div className="inline-flex items-center justify-center gap-2 bg-black hover:bg-opacity-90 text-white px-6 py-3 rounded-md transition-colors">
             <Mail className="h-5 w-5" />
-            <a href="mailto:careers@detailpros.com" className="font-medium">
+            <a href="mailto:contact@detailpros.ky" className="font-medium">
               contact@detailpros.ky
             </a>
           </div>
