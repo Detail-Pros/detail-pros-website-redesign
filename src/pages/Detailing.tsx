@@ -1,6 +1,5 @@
-
 import CallToAction from "@/components/home/CallToAction";
-import { Car, Brush, DropletIcon, Check, Engine, Headlights, Seat, CigaretteOff, Dog, Clean, Droplet, Tree, Shield } from "lucide-react";
+import { Car, Brush, DropletIcon, Check, Sparkles, Zap, Armchair, CigaretteOff, Dog, Trash, Droplet, Trees, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
@@ -24,15 +23,15 @@ const Detailing = () => {
   const exteriorAddOns = [
     { name: "Ceramic Pro LUX", icon: <Droplet className="w-5 h-5 text-detailpros-pink" />, tag: "Ceramic Pro", price: "$500.00" },
     { name: "Undercarriage Wash", icon: <Car className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
-    { name: "Mold Remediation", icon: <Clean className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$75.00" },
-    { name: "Tree Sap Removal", icon: <Tree className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$75.00" },
+    { name: "Mold Remediation", icon: <Trash className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$75.00" },
+    { name: "Tree Sap Removal", icon: <Trees className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$75.00" },
     { name: "Clay Bar Treatment", icon: <Brush className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
-    { name: "Engine Wash", icon: <Engine className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
-    { name: "Headlight Restoration", icon: <Headlights className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$150.00" },
+    { name: "Engine Wash", icon: <Sparkles className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
+    { name: "Headlight Restoration", icon: <Zap className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$150.00" },
     { name: "Plastic Trim Restoration", icon: <Shield className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$75.00" },
     { name: "Iron Decontamination", icon: <Droplet className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$150.00" },
-    { name: "Wax", icon: <Clean className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$60.00" },
-    { name: "Polish and Wax", icon: <Clean className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$125.00" },
+    { name: "Wax", icon: <Trash className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$60.00" },
+    { name: "Polish and Wax", icon: <Trash className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$125.00" },
     { name: "3 Month Sealant", icon: <Shield className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$150.00" },
     { name: "One Step Paint Correction", icon: <Brush className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
     { name: "6 Month Ceramic Coating", icon: <Droplet className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$350.00" },
@@ -41,12 +40,12 @@ const Detailing = () => {
   // Interior Add-ons data
   const interiorAddOns = [
     { name: "Pet Hair - 15 mins extra", icon: <Dog className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$10.00" },
-    { name: "Sand Removal - 30 mins extra", icon: <Clean className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$15.00" },
-    { name: "Seat Shampoo - 1 Hour Extra", icon: <Seat className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
-    { name: "Floor Mat Shampoo - 15 Mins Extra", icon: <Clean className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
-    { name: "Seat + Floor Mat Shampoo - 1 Hour Extra", icon: <Seat className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$120.00" },
+    { name: "Sand Removal - 30 mins extra", icon: <Trash className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$15.00" },
+    { name: "Seat Shampoo - 1 Hour Extra", icon: <Armchair className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
+    { name: "Floor Mat Shampoo - 15 Mins Extra", icon: <Trash className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
+    { name: "Seat + Floor Mat Shampoo - 1 Hour Extra", icon: <Armchair className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$120.00" },
     { name: "Ozone Clean - 30 Mins Extra", icon: <CigaretteOff className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
-    { name: "Leather Conditioning - 15 Mins Extra", icon: <Seat className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
+    { name: "Leather Conditioning - 15 Mins Extra", icon: <Armchair className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
   ];
 
   // Filter add-ons based on search
@@ -690,4 +689,3 @@ const Detailing = () => {
 };
 
 export default Detailing;
-
