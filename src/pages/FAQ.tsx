@@ -306,7 +306,7 @@ const FAQ = () => {
             </div>
           {/* </div> */}
         </section>
-        <CallToAction />
+        {/* <CallToAction /> */}
       </main>
     </div>
   );
