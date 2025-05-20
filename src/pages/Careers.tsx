@@ -31,7 +31,7 @@ const jobs: JobPosting[] = [
       "Ability to work long hours, weekend and holidays",
       "Ability to work independently and manage time effectively"
     ],
-    salary: "$21,600 - $30,000" + "tips",
+    salary: "$21,600 - $30,000 + tips",
     postedDate: "May 15, 2025"
   },
   {
@@ -142,7 +142,7 @@ const Careers = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Join Our <span className="text-detailpros-pink">Team</span>
+              Join Our Team
             </h1>
             <p className="text-lg mb-6">
               We're looking for passionate people who share our mission to deliver the highest quality automotive detailing services in Miami.
