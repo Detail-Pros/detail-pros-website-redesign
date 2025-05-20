@@ -1,13 +1,58 @@
 
 import CallToAction from "@/components/home/CallToAction";
-import { Car, Brush, DropletIcon, Check } from "lucide-react";
+import { Car, Brush, DropletIcon, Check, Engine, Headlights, Seat, CigaretteOff, Dog, Clean, Droplet, Tree, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
 
 const Detailing = () => {
+  const [searchAddOns, setSearchAddOns] = useState("");
+  
+  // Filter function for add-ons
+  const filterAddOns = (items: any[], searchTerm: string) => {
+    if (!searchTerm) return items;
+    return items.filter(item => 
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  };
+  
+  // Exterior Add-ons data
+  const exteriorAddOns = [
+    { name: "Ceramic Pro LUX", icon: <Droplet className="w-5 h-5 text-detailpros-pink" />, tag: "Ceramic Pro", price: "$500.00" },
+    { name: "Undercarriage Wash", icon: <Car className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
+    { name: "Mold Remediation", icon: <Clean className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$75.00" },
+    { name: "Tree Sap Removal", icon: <Tree className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$75.00" },
+    { name: "Clay Bar Treatment", icon: <Brush className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
+    { name: "Engine Wash", icon: <Engine className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
+    { name: "Headlight Restoration", icon: <Headlights className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$150.00" },
+    { name: "Plastic Trim Restoration", icon: <Shield className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$75.00" },
+    { name: "Iron Decontamination", icon: <Droplet className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$150.00" },
+    { name: "Wax", icon: <Clean className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$60.00" },
+    { name: "Polish and Wax", icon: <Clean className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$125.00" },
+    { name: "3 Month Sealant", icon: <Shield className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$150.00" },
+    { name: "One Step Paint Correction", icon: <Brush className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
+    { name: "6 Month Ceramic Coating", icon: <Droplet className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$350.00" },
+  ];
+
+  // Interior Add-ons data
+  const interiorAddOns = [
+    { name: "Pet Hair - 15 mins extra", icon: <Dog className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$10.00" },
+    { name: "Sand Removal - 30 mins extra", icon: <Clean className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$15.00" },
+    { name: "Seat Shampoo - 1 Hour Extra", icon: <Seat className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
+    { name: "Floor Mat Shampoo - 15 Mins Extra", icon: <Clean className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
+    { name: "Seat + Floor Mat Shampoo - 1 Hour Extra", icon: <Seat className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$120.00" },
+    { name: "Ozone Clean - 30 Mins Extra", icon: <CigaretteOff className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
+    { name: "Leather Conditioning - 15 Mins Extra", icon: <Seat className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
+  ];
+
+  // Filter add-ons based on search
+  const filteredExteriorAddOns = filterAddOns(exteriorAddOns, searchAddOns);
+  const filteredInteriorAddOns = filterAddOns(interiorAddOns, searchAddOns);
+  
   return (
     <div className="min-h-screen flex flex-col">
         {/* Services Header */}
@@ -475,9 +520,174 @@ const Detailing = () => {
             </div>
           </div>
         </section>
+
+        {/* NEW SECTION: Add-on Services */}
+        <section id="add-on-services" className="py-16 bg-detailpros-gray">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Add-on Services & Pricing</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Enhance your detailing package with our premium add-on services, tailored to meet your specific vehicle needs.
+              </p>
+              
+              <div className="mt-6 max-w-md mx-auto">
+                <div className="relative">
+                  <Input
+                    type="text"
+                    placeholder="Search for add-on services..."
+                    className="pl-10 py-6"
+                    value={searchAddOns}
+                    onChange={(e) => setSearchAddOns(e.target.value)}
+                  />
+                  <svg
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div className="max-w-6xl mx-auto">
+              <Tabs defaultValue="exterior" className="w-full">
+                <TabsList className="w-full mb-8 flex justify-center">
+                  <TabsTrigger 
+                    value="exterior" 
+                    className="px-8 py-3 text-base font-medium data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink"
+                  >
+                    Exterior Add-ons
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="interior" 
+                    className="px-8 py-3 text-base font-medium data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink"
+                  >
+                    Interior Add-ons
+                  </TabsTrigger>
+                </TabsList>
+                
+                <TabsContent value="exterior">
+                  <div className="bg-white shadow-lg rounded-xl border border-gray-100 overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <TableHeader className="bg-gray-100">
+                          <TableRow>
+                            <TableHead className="w-1/12 py-4"></TableHead>
+                            <TableHead className="w-6/12 py-4">Service Name</TableHead>
+                            <TableHead className="w-3/12 py-4">Category</TableHead>
+                            <TableHead className="w-2/12 text-right py-4">Price</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {filteredExteriorAddOns.length === 0 ? (
+                            <TableRow>
+                              <TableCell colSpan={4} className="py-8 text-center text-gray-500">
+                                No matching services found. Please try a different search term.
+                              </TableCell>
+                            </TableRow>
+                          ) : (
+                            filteredExteriorAddOns.map((service, index) => (
+                              <TableRow key={index} className="hover:bg-gray-50 border-b border-gray-200">
+                                <TableCell className="py-4">
+                                  <div className="h-10 w-10 bg-detailpros-pink/10 rounded-full flex items-center justify-center">
+                                    {service.icon}
+                                  </div>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                  <span className="font-medium">{service.name}</span>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                    {service.tag}
+                                  </span>
+                                </TableCell>
+                                <TableCell className="text-right py-4">
+                                  <span className="font-bold text-lg text-detailpros-black">{service.price}</span>
+                                </TableCell>
+                              </TableRow>
+                            ))
+                          )}
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </div>
+                </TabsContent>
+                
+                <TabsContent value="interior">
+                  <div className="bg-white shadow-lg rounded-xl border border-gray-100 overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <TableHeader className="bg-gray-100">
+                          <TableRow>
+                            <TableHead className="w-1/12 py-4"></TableHead>
+                            <TableHead className="w-6/12 py-4">Service Name</TableHead>
+                            <TableHead className="w-3/12 py-4">Category</TableHead>
+                            <TableHead className="w-2/12 text-right py-4">Price</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {filteredInteriorAddOns.length === 0 ? (
+                            <TableRow>
+                              <TableCell colSpan={4} className="py-8 text-center text-gray-500">
+                                No matching services found. Please try a different search term.
+                              </TableCell>
+                            </TableRow>
+                          ) : (
+                            filteredInteriorAddOns.map((service, index) => (
+                              <TableRow key={index} className="hover:bg-gray-50 border-b border-gray-200">
+                                <TableCell className="py-4">
+                                  <div className="h-10 w-10 bg-detailpros-pink/10 rounded-full flex items-center justify-center">
+                                    {service.icon}
+                                  </div>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                  <span className="font-medium">{service.name}</span>
+                                </TableCell>
+                                <TableCell className="py-4">
+                                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                    {service.tag}
+                                  </span>
+                                </TableCell>
+                                <TableCell className="text-right py-4">
+                                  <span className="font-bold text-lg text-detailpros-black">{service.price}</span>
+                                </TableCell>
+                              </TableRow>
+                            ))
+                          )}
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </div>
+                </TabsContent>
+              </Tabs>
+              
+              <div className="mt-10 text-center">
+                <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                  Can't find the specific add-on service you're looking for? We offer custom solutions tailored to your unique vehicle care needs.
+                </p>
+                <Link to="/contact">
+                  <Button className="bg-detailpros-pink hover:bg-opacity-90 px-8 py-6 text-base">
+                    Request Custom Services
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
         <CallToAction />
     </div>
   );
 };
 
 export default Detailing;
+
