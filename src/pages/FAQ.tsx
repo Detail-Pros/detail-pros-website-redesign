@@ -194,26 +194,26 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow pt-24 md:pt-32">
+      <main className="flex-grow">
         <section className="bg-black text-white py-10">
           <div className="container mx-auto px-4">
               <h1 className="text-4xl md:text-5xl font-bold mb-2">
-                Contact Us
+                Frequently Asked Questions
               </h1>
               <p className="text-sm text-gray-400">
-                Have questions or ready to book a service? Get in touch with our team and we'll respond promptly.
+                Find answers to our most commonly asked questions about our services. If you can't find what you're looking for, please contact us.
               </p>
             </div>
         </section>
         <section className="py-16">
           {/* <div className="container mx-auto px-4"> */}
             <div className="max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+              {/* <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
                 Frequently Asked <span className="text-detailpros-pink">Questions</span>
               </h1>
               <p className="text-lg mb-10 text-center max-w-2xl mx-auto">
                 Find answers to our most commonly asked questions about our services. If you can't find what you're looking for, please contact us.
-              </p>
+              </p> */}
 
               {/* Search Box */}
               <div className="relative mb-10">
