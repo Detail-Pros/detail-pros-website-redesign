@@ -195,6 +195,16 @@ const FAQ = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow pt-24 md:pt-32">
+        <section className="bg-black text-white py-10">
+          <div className="container mx-auto px-4">
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">
+                Contact Us
+              </h1>
+              <p className="text-sm text-gray-400">
+                Have questions or ready to book a service? Get in touch with our team and we'll respond promptly.
+              </p>
+            </div>
+        </section>
         <section className="py-16">
           {/* <div className="container mx-auto px-4"> */}
             <div className="max-w-3xl mx-auto">
