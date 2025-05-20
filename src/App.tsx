@@ -23,6 +23,8 @@ import Footer from "./components/layout/Footer";
 import ServiceAgreement from "./pages/ServiceAgreement";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +71,8 @@ const App = () => (
               <Route path="/window-tinting/residential" element={<WindowTinting />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/service-agreement" element={<ServiceAgreement />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />

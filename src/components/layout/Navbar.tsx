@@ -218,6 +218,11 @@ const Navbar = () => {
     </NavigationMenuList>
   </NavigationMenu>
 
+  {/* Blog link (new) */}
+  <Link to="/blog" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
+    Blog
+  </Link>
+
   <Link to="/contact" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
     Contact
   </Link>
@@ -359,6 +364,11 @@ const Navbar = () => {
                 </Link>
               </CollapsibleContent>
             </Collapsible>
+            
+            {/* Blog link (new) */}
+            <Link to="/blog" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
+              Blog
+            </Link>
             
             <Link to="/contact" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
               Contact
