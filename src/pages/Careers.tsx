@@ -13,7 +13,7 @@ const jobs: JobPosting[] = [
     id: "detailer-1",
     title: "Automotive Detailer",
     department: "Mobile Detailing",
-    location: "Miami, FL",
+    location: "Grand Cayman, Cayman Islands",
     type: "Full-time",
     description: "We are seeking skilled Automotive Detailers to join our mobile detailing team. In this role, you'll provide exceptional service at our clients' locations throughout Miami.",
     responsibilities: [
@@ -24,20 +24,21 @@ const jobs: JobPosting[] = [
       "Ensure client satisfaction and address any concerns professionally"
     ],
     requirements: [
-      "1+ years of professional detailing experience preferred",
+      "3+ years of professional detailing experience preferred",
       "Valid driver's license with clean driving record",
       "Knowledge of proper detailing techniques and products",
       "Excellent customer service skills",
+      "Ability to work long hours, weekend and holidays",
       "Ability to work independently and manage time effectively"
     ],
-    salary: "$16-22/hr + tips",
-    postedDate: "May 15, 2023"
+    salary: "$21,600 - $30,000" + "tips",
+    postedDate: "May 15, 2025"
   },
   {
     id: "ceramic-specialist-1",
     title: "Ceramic Coating Specialist",
     department: "Ceramic Pro Installation",
-    location: "Miami, FL",
+    location: "Grand Cayman, Cayman Islands",
     type: "Full-time",
     description: "Join our team as a Ceramic Coating Specialist working with premium Ceramic Pro products. You'll be responsible for preparing, applying, and maintaining ceramic coatings on various vehicles.",
     responsibilities: [
@@ -48,20 +49,20 @@ const jobs: JobPosting[] = [
       "Stay updated on the latest ceramic coating technologies and techniques"
     ],
     requirements: [
-      "2+ years experience in professional detailing or automotive finishing",
+      "5+ years experience in professional detailing or automotive finishing",
       "Experience with paint correction and ceramic coating application",
       "Attention to detail and commitment to perfection",
       "Ability to stand for extended periods and work in various positions",
       "Willingness to complete Ceramic Pro certification training"
     ],
-    salary: "$45,000-60,000/year",
-    postedDate: "May 10, 2023"
+    salary: "$30,000 - $36,000/year",
+    postedDate: "May 15, 2025"
   },
   {
     id: "ppf-installer-1",
     title: "Paint Protection Film Installer",
     department: "PPF Installation",
-    location: "Miami, FL",
+    location: "Grand Cayman, Cayman Islands",
     type: "Full-time",
     description: "We are looking for an experienced Paint Protection Film (PPF) Installer to join our team. You will be responsible for installing premium STEK PPF products on high-end vehicles.",
     responsibilities: [
@@ -72,20 +73,20 @@ const jobs: JobPosting[] = [
       "Maintain a clean and organized workspace"
     ],
     requirements: [
-      "2+ years experience in PPF installation",
+      "7+ years experience in PPF installation",
       "Experience with plotter software and manual cutting techniques",
       "Knowledge of various PPF brands and their installation requirements",
       "Strong problem-solving skills and ability to adapt to challenging installations",
       "Portfolio of previous PPF installation work preferred"
     ],
-    salary: "$50,000-65,000/year",
-    postedDate: "May 5, 2023"
+    salary: "$30,000 - $36,000/year",
+    postedDate: "May 15, 2025"
   },
   {
     id: "window-tint-1",
     title: "Window Tinting Technician",
     department: "Window Tinting",
-    location: "Miami, FL",
+    location: "Grand Cayman, Cayman Islands",
     type: "Full-time",
     description: "Detail Pros is seeking an experienced Window Tinting Technician to install window films on automotive, residential, and commercial properties.",
     responsibilities: [
@@ -102,8 +103,8 @@ const jobs: JobPosting[] = [
       "Strong attention to detail and commitment to quality",
       "Professional appearance and excellent communication skills"
     ],
-    salary: "$40,000-55,000/year",
-    postedDate: "May 1, 2023"
+    salary: "$30,000 - $36,000/year",
+    postedDate: "May 15, 2025"
   }
 ];
 
