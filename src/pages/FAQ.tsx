@@ -197,7 +197,7 @@ const FAQ = () => {
       <main className="flex-grow pt-24 md:pt-32">
         <section className="py-16">
           {/* <div className="container mx-auto px-4"> */}
-            <div className="max-w-3xl mx-auto">
+            {/* <div className="max-w-3xl mx-auto"> */}
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
                 Frequently Asked <span className="text-detailpros-pink">Questions</span>
               </h1>
@@ -293,7 +293,7 @@ const FAQ = () => {
                   Contact Us
                 </a>
               </div>
-            </div>
+            {/* </div> */}
           {/* </div> */}
         </section>
         <CallToAction />
