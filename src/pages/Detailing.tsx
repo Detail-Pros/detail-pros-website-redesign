@@ -1,5 +1,5 @@
 import CallToAction from "@/components/home/CallToAction";
-import { Car, Brush, DropletIcon, Check, Sparkles, Zap, Armchair, CigaretteOff, Dog, Trash, Droplet, Trees, Shield } from "lucide-react";
+import { Car, Brush, DropletIcon, Check, Sparkles, Zap, Armchair, CigaretteOff, Dog, Trash, Droplet, Trees, Shield, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
@@ -122,6 +122,334 @@ const Detailing = () => {
               <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
                 <img src="/placeholder.svg" alt="Mobile Detailing" className="w-full h-full object-cover" />
               </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* NEW SECTION: Full Detailing Packages */}
+        <section id="full-detailing-packages" className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Full Detailing Packages</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Choose from our premium detailing packages designed to transform your vehicle with professional care and exceptional results.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* Silver Package */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-transform hover:scale-105">
+                <div className="p-6">
+                  <div className="flex justify-center mb-4">
+                    <img 
+                      src="/lovable-uploads/b96d1253-6ce1-45ec-9e35-a5d9ae8d96a0.png"
+                      alt="Silver Package" 
+                      className="h-24 w-24 object-contain" 
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-center mb-2">Silver Package</h3>
+                  <div className="text-3xl font-bold text-center text-detailpros-pink mb-6">$450</div>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-bold uppercase text-gray-800 mb-2">Interior</h4>
+                      <ul className="space-y-2">
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Interior Vacuum</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Stain Removal</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Clean and Protect Plastic</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Clean Windows and Mirrors</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Floor Carpet & Mats Detail</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Trunk Detail</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Seat, Dashboard, Center Console Shampoo</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold uppercase text-gray-800 mb-2">Exterior</h4>
+                      <ul className="space-y-2">
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Professional Hand Wash</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Detail Wheels</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Clean Door Jambs</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Plastic Trim and Tire Dressing</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Polish and Wax</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className="px-6 py-4 bg-gray-50">
+                  <Link to="/contact" className="w-full">
+                    <Button variant="outline" className="w-full border-detailpros-pink text-detailpros-pink hover:bg-detailpros-pink hover:text-white">
+                      Book Now
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Gold Package */}
+              <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-2 border-yellow-400 relative transition-transform hover:scale-105">
+                <div className="absolute top-0 right-0">
+                  <img 
+                    src="/lovable-uploads/2b0c4a6a-1444-468d-af43-920b7283cb36.png" 
+                    alt="Most Popular" 
+                    className="h-20 w-20 object-contain" 
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-center mb-4">
+                    <img 
+                      src="/lovable-uploads/2b0c4a6a-1444-468d-af43-920b7283cb36.png" 
+                      alt="Gold Package" 
+                      className="h-24 w-24 object-contain" 
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-center mb-2">Gold Package</h3>
+                  <div className="text-3xl font-bold text-center text-detailpros-pink mb-6">$700</div>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-bold uppercase text-gray-800 mb-2">Interior</h4>
+                      <ul className="space-y-2">
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Interior Vacuum</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Stain Removal</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Clean and Protect Plastic</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Clean Windows and Mirrors</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Seats - Deep Clean</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Leather Seat Treatment and Condition</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Floor Mats Detail</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Trunk Detail</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold uppercase text-gray-800 mb-2">Exterior</h4>
+                      <ul className="space-y-2">
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Professional Hand Wash</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Detail Wheels</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Clean Door Jambs</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Plastic Trim and Tire Dressing</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">One Step Paint Correction</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Engine Wash</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Headlight Restoration</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">3 Month Silicone Coating</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className="px-6 py-4 bg-yellow-50">
+                  <Link to="/contact" className="w-full">
+                    <Button className="w-full bg-detailpros-pink hover:bg-opacity-90">
+                      Book Now
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Diamond Package */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-transform hover:scale-105">
+                <div className="p-6">
+                  <div className="flex justify-center mb-4">
+                    <img 
+                      src="/lovable-uploads/f56b150a-b9e5-4c0b-8317-406fa1370ffb.png" 
+                      alt="Diamond Package" 
+                      className="h-24 w-24 object-contain" 
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-center mb-2">Diamond Package</h3>
+                  <div className="text-3xl font-bold text-center text-detailpros-pink mb-6">$850</div>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-bold uppercase text-gray-800 mb-2">Interior</h4>
+                      <ul className="space-y-2">
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Interior Vacuum</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Stain Removal</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Clean and Protect Plastic</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Clean Windows and Mirrors</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Seats - Deep Clean</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Leather Seat Treatment and Condition</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Floor Mats Detail</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Trunk Detail</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Ozone Disinfect</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold uppercase text-gray-800 mb-2">Exterior</h4>
+                      <ul className="space-y-2">
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Professional Hand Wash</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Detail Wheels</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Clean Door Jambs</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Plastic Trim and Tire Dressing</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Clay Bar Treatment</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Iron X Decontamination</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Two Step Paint Correction</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Engine Wash</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">Headlight Restoration</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-detailpros-pink mr-2 mt-1 flex-shrink-0" size={16} />
+                          <span className="text-sm">6 Month Ceramic Coating</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className="px-6 py-4 bg-gray-50">
+                  <Link to="/contact" className="w-full">
+                    <Button variant="outline" className="w-full border-detailpros-pink text-detailpros-pink hover:bg-detailpros-pink hover:text-white">
+                      Book Now
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center mt-12">
+              <p className="text-gray-600 mb-6">
+                All packages include free pickup and delivery within Grand Cayman. Contact us for custom requirements or fleet services.
+              </p>
+              <Link to="/contact">
+                <Button className="bg-detailpros-pink hover:bg-opacity-90 px-8 py-6 text-base">
+                  Contact Us For Custom Quotes
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
