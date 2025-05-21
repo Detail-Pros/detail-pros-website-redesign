@@ -11,7 +11,7 @@ const SAMPLE_BLOG_POSTS = [
   {
     id: '1',
     title: 'The Ultimate Guide to Ceramic Coating',
-    excerpt: 'Discover the long-lasting benefits of ceramic coating and why it's worth the investment for your vehicle.',
+    excerpt: "Discover the long-lasting benefits of ceramic coating and why it's worth the investment for your vehicle.",
     content: `
       <p>Ceramic coating has revolutionized the way we protect our vehicles' paintwork. Unlike traditional waxes and sealants that might last a few months, a professional ceramic coating can provide protection for years.</p>
       
@@ -93,7 +93,7 @@ const SAMPLE_BLOG_POSTS = [
     category: 'Paint Protection',
     imageUrl: '/lovable-uploads/145c28a8-c6c2-4297-b391-39186146a4fa.jpg',
     tags: ['paint protection film', 'ppf', 'luxury cars']
-  },
+  }
 ];
 
 const BlogPost = () => {
