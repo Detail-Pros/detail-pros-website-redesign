@@ -1,7 +1,6 @@
 
 // Netlify serverless function to handle job applications
 const nodemailer = require('nodemailer');
-const multer = require('multer');
 const { promisify } = require('util');
 
 exports.handler = async function(event, context) {
