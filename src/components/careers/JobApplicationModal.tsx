@@ -63,7 +63,9 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
       });
 
       if (!response.ok) {
-        throw new Error("Failed to submit application");
+        const errorData = await response.json();
+        console.error("Server error:", errorData);
+        throw new Error(errorData.error || "Failed to submit application");
       }
 
       toast({

@@ -78,8 +78,9 @@ exports.handler = async function(event, context) {
       `
     };
 
-    // Send the email
-    await transporter.sendMail(emailContent);
+    // Send the email to DetailPros
+    const sendMail = promisify(transporter.sendMail.bind(transporter));
+    await sendMail(emailContent);
 
     // Send an acknowledgement to the applicant
     const acknowledgement = {
@@ -108,7 +109,8 @@ exports.handler = async function(event, context) {
       `
     };
 
-    await transporter.sendMail(acknowledgement);
+    // Send the acknowledgement email
+    await sendMail(acknowledgement);
 
     return {
       statusCode: 200,
