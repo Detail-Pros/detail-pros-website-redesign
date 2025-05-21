@@ -26,29 +26,71 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
   const [resume, setResume] = useState<File | null>(null);
   const [coverLetter, setCoverLetter] = useState<File | null>(null);
   const [consentMarketing, setConsentMarketing] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would send the form data to a server
-    console.log({
-      jobId: job?.id,
-      firstName,
-      lastName,
-      email,
-      phone,
-      message,
-      resume,
-      coverLetter,
-      consentMarketing,
-    });
+    setIsSubmitting(true);
 
-    toast({
-      title: "Application Submitted",
-      description: "Thank you for your application. We will be in touch soon.",
-    });
+    try {
+      // Create form data for submission
+      const formData = new FormData();
+      
+      // Job details
+      formData.append("Job Title", job?.title || "");
+      formData.append("Job Department", job?.department || "");
+      formData.append("Job Location", job?.location || "");
+      formData.append("Job ID", job?.id || "");
+      
+      // Applicant details
+      formData.append("First Name", firstName);
+      formData.append("Last Name", lastName);
+      formData.append("Email", email);
+      formData.append("Phone", phone);
+      formData.append("Message", message);
+      formData.append("Marketing Consent", consentMarketing ? "Yes" : "No");
+      
+      // Add files if present
+      if (resume) {
+        formData.append("Resume", resume);
+      }
+      
+      if (coverLetter) {
+        formData.append("Cover Letter", coverLetter);
+      }
 
-    onClose();
-    resetForm();
+      // Add hidden fields for FormSubmit
+      formData.append("_subject", `Job Application: ${job?.title}`);
+      formData.append("_replyto", email);
+      formData.append("_template", "table");
+      
+      // Submit the form using formsubmit.co service
+      const response = await fetch("https://formsubmit.co/contact@detailpros.ky", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit application");
+      }
+
+      toast({
+        title: "Application Submitted",
+        description: "Thank you for your application. We will be in touch soon.",
+      });
+
+      onClose();
+      resetForm();
+    } catch (error) {
+      console.error("Error submitting application:", error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your application. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetForm = () => {
@@ -209,7 +251,9 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
             <Button variant="outline" type="button" onClick={onClose}>
               Cancel
             </Button>
-            <Button type="submit">Submit Application</Button>
+            <Button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Submit Application"}
+            </Button>
           </div>
         </form>
       </DialogContent>
