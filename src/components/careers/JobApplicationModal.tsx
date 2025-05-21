@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Upload, Check, X } from "lucide-react";
 import { JobPosting } from "./JobPostingCard";
 import { useToast } from "@/hooks/use-toast";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 interface JobApplicationModalProps {
   job: JobPosting | null;
@@ -27,12 +28,16 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
   const [coverLetter, setCoverLetter] = useState<File | null>(null);
   const [consentMarketing, setConsentMarketing] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmissionError(null);
 
     try {
+      console.log("Submitting application...");
+      
       // Create application data for submission
       const applicationData = {
         // Job details
@@ -53,6 +58,8 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
         hasAttachments: !!(resume || coverLetter)
       };
 
+      console.log("Application data:", applicationData);
+
       // Submit the application using our Netlify function
       const response = await fetch("/.netlify/functions/submit-application", {
         method: "POST",
@@ -62,10 +69,13 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
         body: JSON.stringify(applicationData),
       });
 
+      console.log("Response status:", response.status);
+      
+      const responseData = await response.json();
+      console.log("Response data:", responseData);
+
       if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Server error:", errorData);
-        throw new Error(errorData.error || "Failed to submit application");
+        throw new Error(responseData.error || responseData.details || "Failed to submit application");
       }
 
       toast({
@@ -77,9 +87,11 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
       resetForm();
     } catch (error) {
       console.error("Error submitting application:", error);
+      const errorMessage = error instanceof Error ? error.message : "There was an error submitting your application";
+      setSubmissionError(errorMessage);
       toast({
         title: "Submission Failed",
-        description: "There was an error submitting your application. Please try again later.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -96,6 +108,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
     setResume(null);
     setCoverLetter(null);
     setConsentMarketing(false);
+    setSubmissionError(null);
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>, setFile: React.Dispatch<React.SetStateAction<File | null>>) => {
@@ -166,6 +179,13 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
+          {submissionError && (
+            <Alert variant="destructive">
+              <AlertDescription>
+                {submissionError}
+              </AlertDescription>
+            </Alert>
+          )}
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label htmlFor="firstName">First Name</Label>

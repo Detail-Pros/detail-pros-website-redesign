@@ -16,16 +16,23 @@ exports.handler = async function(event, context) {
     // Parse the JSON body
     const data = JSON.parse(event.body);
     
-    // Setup email transporter
+    // Setup email transporter with more explicit configuration
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
+      port: parseInt(process.env.EMAIL_PORT || '465'),
       secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD
+      },
+      tls: {
+        // Do not fail on invalid certs
+        rejectUnauthorized: false
       }
     });
+    
+    // Promisify the sendMail method for async/await use
+    const sendMail = promisify(transporter.sendMail.bind(transporter));
 
     // Create the email content
     const jobInfo = `
@@ -79,7 +86,6 @@ exports.handler = async function(event, context) {
     };
 
     // Send the email to DetailPros
-    const sendMail = promisify(transporter.sendMail.bind(transporter));
     await sendMail(emailContent);
 
     // Send an acknowledgement to the applicant
