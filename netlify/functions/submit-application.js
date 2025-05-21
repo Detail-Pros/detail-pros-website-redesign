@@ -49,7 +49,7 @@ exports.handler = async function(event, context) {
     `;
 
     const emailContent = {
-      from: `"DetailPros Careers" <${process.env.EMAIL_USER}>`,
+      from: `"Detail Pros Careers" <${process.env.EMAIL_USER}>`,
       to: "contact@detailpros.ky",
       subject: `Job Application: ${data.jobTitle}`,
       text: `
@@ -65,7 +65,7 @@ exports.handler = async function(event, context) {
         
         Marketing Consent: ${data.consentMarketing ? "Yes" : "No"}
         
-        This is an automated message from the DetailPros careers page.
+        This is an automated message from the Detail Pros careers page.
         ${data.hasAttachments ? "\n\nThe applicant has attached files. Please contact them directly to request these files." : ""}
       `,
       html: `
@@ -80,7 +80,7 @@ exports.handler = async function(event, context) {
         
         <p><strong>Marketing Consent:</strong> ${data.consentMarketing ? "Yes" : "No"}</p>
         
-        <p><em>This is an automated message from the DetailPros careers page.</em></p>
+        <p><em>This is an automated message from the Detail Pros careers page.</em></p>
         ${data.hasAttachments ? "<p><strong>Note:</strong> The applicant has attached files. Please contact them directly to request these files.</p>" : ""}
       `
     };
@@ -90,7 +90,7 @@ exports.handler = async function(event, context) {
 
     // Send an acknowledgement to the applicant
     const acknowledgement = {
-      from: `"DetailPros Careers" <${process.env.EMAIL_USER}>`,
+      from: `"Detail Pros Careers" <${process.env.EMAIL_USER}>`,
       to: data.email,
       subject: "Thank you for your application",
       text: `
@@ -106,12 +106,12 @@ exports.handler = async function(event, context) {
       html: `
         <p>Dear ${data.firstName},</p>
         
-        <p>Thank you for applying for the <strong>${data.jobTitle}</strong> position at DetailPros.</p>
+        <p>Thank you for applying for the <strong>${data.jobTitle}</strong> position at Detail Pros.</p>
         
         <p>We have received your application and will review it shortly. If your qualifications match our requirements, we will contact you to schedule an interview.</p>
         
         <p>Best regards,<br>
-        The DetailPros Team</p>
+        The Detail Pros Team</p>
       `
     };
 
