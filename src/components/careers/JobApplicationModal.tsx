@@ -33,41 +33,33 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
     setIsSubmitting(true);
 
     try {
-      // Create form data for submission
-      const formData = new FormData();
-      
-      // Job details
-      formData.append("Job Title", job?.title || "");
-      formData.append("Job Department", job?.department || "");
-      formData.append("Job Location", job?.location || "");
-      formData.append("Job ID", job?.id || "");
-      
-      // Applicant details
-      formData.append("First Name", firstName);
-      formData.append("Last Name", lastName);
-      formData.append("Email", email);
-      formData.append("Phone", phone);
-      formData.append("Message", message);
-      formData.append("Marketing Consent", consentMarketing ? "Yes" : "No");
-      
-      // Add files if present
-      if (resume) {
-        formData.append("Resume", resume);
-      }
-      
-      if (coverLetter) {
-        formData.append("Cover Letter", coverLetter);
-      }
+      // Create application data for submission
+      const applicationData = {
+        // Job details
+        jobId: job?.id || "",
+        jobTitle: job?.title || "",
+        jobDepartment: job?.department || "",
+        jobLocation: job?.location || "",
+        
+        // Applicant details
+        firstName,
+        lastName,
+        email,
+        phone,
+        message,
+        consentMarketing,
+        
+        // Flag for attachments
+        hasAttachments: !!(resume || coverLetter)
+      };
 
-      // Add hidden fields for FormSubmit
-      formData.append("_subject", `Job Application: ${job?.title}`);
-      formData.append("_replyto", email);
-      formData.append("_template", "table");
-      
-      // Submit the form using formsubmit.co service
-      const response = await fetch("https://formsubmit.co/contact@detailpros.ky", {
+      // Submit the application using our Netlify function
+      const response = await fetch("/.netlify/functions/submit-application", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(applicationData),
       });
 
       if (!response.ok) {
