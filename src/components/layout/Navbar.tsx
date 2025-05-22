@@ -296,7 +296,7 @@ const Navbar = () => {
               </CollapsibleContent>
             </Collapsible>
             
-            <Link to="/services" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
+            <Link to="/detailing" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
               Detailing
             </Link>
             
