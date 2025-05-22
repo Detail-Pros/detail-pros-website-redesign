@@ -17,8 +17,8 @@ const Hero = () => {
           </p>
           
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-black leading-tight mb-10 max-w-5xl mx-auto hero-text" itemProp="name">
-            Welcome To The Premier Detailing<br />
-            Company Of The Cayman Islands
+            Welcome to the Premier Detailing<br />
+            Company of the Cayman Islands
           </h1>
           
           <div className="hidden">
