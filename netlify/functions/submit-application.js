@@ -12,11 +12,22 @@ exports.handler = async function(event, context) {
     };
   }
 
+  console.log("Function started");
+
   try {
     // Parse the JSON body
     const data = JSON.parse(event.body);
+    console.log("Received application data:", JSON.stringify(data));
     
-    // Setup email transporter with more explicit configuration
+    // Setup email transporter with explicit debugging
+    console.log("Setting up email transport with:", {
+      host: process.env.EMAIL_HOST,
+      port: parseInt(process.env.EMAIL_PORT || '465'),
+      auth: {
+        user: process.env.EMAIL_USER
+      }
+    });
+    
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: parseInt(process.env.EMAIL_PORT || '465'),
@@ -25,15 +36,10 @@ exports.handler = async function(event, context) {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD
       },
-      tls: {
-        // Do not fail on invalid certs
-        rejectUnauthorized: false
-      }
+      debug: true, // Enable debugging
+      logger: true // Log to console
     });
     
-    // Promisify the sendMail method for async/await use
-    const sendMail = promisify(transporter.sendMail.bind(transporter));
-
     // Create the email content
     const jobInfo = `
       Position: ${data.jobTitle}
@@ -85,45 +91,59 @@ exports.handler = async function(event, context) {
       `
     };
 
-    // Send the email to DetailPros
-    await sendMail(emailContent);
+    try {
+      console.log("Sending email to DetailPros");
+      await transporter.sendMail(emailContent);
+      console.log("Successfully sent email to DetailPros");
 
-    // Send an acknowledgement to the applicant
-    const acknowledgement = {
-      from: `"Detail Pros Careers" <${process.env.EMAIL_USER}>`,
-      to: data.email,
-      subject: "Thank you for your application",
-      text: `
-        Dear ${data.firstName},
-        
-        Thank you for applying for the ${data.jobTitle} position at DetailPros.
-        
-        We have received your application and will review it shortly. If your qualifications match our requirements, we will contact you to schedule an interview.
-        
-        Best regards,
-        The DetailPros Team
-      `,
-      html: `
-        <p>Dear ${data.firstName},</p>
-        
-        <p>Thank you for applying for the <strong>${data.jobTitle}</strong> position at Detail Pros.</p>
-        
-        <p>We have received your application and will review it shortly. If your qualifications match our requirements, we will contact you to schedule an interview.</p>
-        
-        <p>Best regards,<br>
-        The Detail Pros Team</p>
-      `
-    };
+      // Send an acknowledgement to the applicant
+      const acknowledgement = {
+        from: `"Detail Pros Careers" <${process.env.EMAIL_USER}>`,
+        to: data.email,
+        subject: "Thank you for your application",
+        text: `
+          Dear ${data.firstName},
+          
+          Thank you for applying for the ${data.jobTitle} position at Detail Pros.
+          
+          We have received your application and will review it shortly. If your qualifications match our requirements, we will contact you to schedule an interview.
+          
+          Best regards,
+          The Detail Pros Team
+        `,
+        html: `
+          <p>Dear ${data.firstName},</p>
+          
+          <p>Thank you for applying for the <strong>${data.jobTitle}</strong> position at Detail Pros.</p>
+          
+          <p>We have received your application and will review it shortly. If your qualifications match our requirements, we will contact you to schedule an interview.</p>
+          
+          <p>Best regards,<br>
+          The Detail Pros Team</p>
+        `
+      };
 
-    // Send the acknowledgement email
-    await sendMail(acknowledgement);
+      console.log("Sending acknowledgement email to applicant");
+      await transporter.sendMail(acknowledgement);
+      console.log("Successfully sent acknowledgement email");
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: "Application submitted successfully" })
-    };
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: "Application submitted successfully" })
+      };
+    } catch (emailError) {
+      console.error("Error sending email:", emailError);
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ 
+          error: "Failed to send email", 
+          details: emailError.message,
+          stack: emailError.stack
+        })
+      };
+    }
   } catch (error) {
-    console.error("Error submitting application:", error);
+    console.error("Error processing application:", error);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "Failed to submit application", details: error.message })
