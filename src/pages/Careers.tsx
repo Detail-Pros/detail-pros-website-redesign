@@ -15,7 +15,7 @@ const jobs: JobPosting[] = [
     department: "Mobile Detailing",
     location: "Grand Cayman, Cayman Islands",
     type: "Full-time",
-    description: "We are seeking skilled Automotive Detailers to join our mobile detailing team. In this role, you'll provide exceptional service at our clients' locations throughout Miami.",
+    description: "We are seeking skilled Automotive Detailers to join our mobile detailing team. In this role, you'll provide exceptional service at our clients' locations throughout Grand Cayman.",
     responsibilities: [
       "Travel to client locations to perform automotive detailing services",
       "Execute interior and exterior detailing procedures to meet Detail Pros' standards",
