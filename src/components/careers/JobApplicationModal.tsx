@@ -71,22 +71,35 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
 
       console.log("Response status:", response.status);
       
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Server error response:", errorData);
-        throw new Error(errorData.error || errorData.details || "Failed to submit application");
+      // Instead of trying to parse JSON response immediately, check content type first
+      const contentType = response.headers.get("content-type");
+      
+      if (response.ok) {
+        // Even if the response is OK but not JSON, we can still consider it successful
+        // and avoid the JSON parsing error
+        toast({
+          title: "Application Submitted",
+          description: "Thank you for your application. We will be in touch soon.",
+        });
+
+        onClose();
+        resetForm();
+        return;
       }
       
-      const responseData = await response.json();
-      console.log("Response data:", responseData);
-
-      toast({
-        title: "Application Submitted",
-        description: "Thank you for your application. We will be in touch soon.",
-      });
-
-      onClose();
-      resetForm();
+      let errorMessage = "Failed to submit application";
+      
+      // Try to get error details if possible
+      if (contentType && contentType.includes("application/json")) {
+        const errorData = await response.json();
+        errorMessage = errorData.error || errorData.details || errorMessage;
+      } else {
+        // If not JSON, use status text
+        errorMessage = `Server error: ${response.statusText || "Unknown error"}`;
+      }
+      
+      throw new Error(errorMessage);
+      
     } catch (error) {
       console.error("Error submitting application:", error);
       const errorMessage = error instanceof Error ? error.message : "There was an error submitting your application";

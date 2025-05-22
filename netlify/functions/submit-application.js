@@ -1,13 +1,15 @@
 
 // Netlify serverless function to handle job applications
 const nodemailer = require('nodemailer');
-const { promisify } = require('util');
 
 exports.handler = async function(event, context) {
   // Only allow POST method
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({ error: 'Method not allowed' })
     };
   }
@@ -37,7 +39,10 @@ exports.handler = async function(event, context) {
         pass: process.env.EMAIL_PASSWORD
       },
       debug: true, // Enable debugging
-      logger: true // Log to console
+      logger: true, // Log to console
+      tls: {
+        rejectUnauthorized: false // Only use in development/testing, not in production!
+      }
     });
     
     // Create the email content
@@ -129,12 +134,18 @@ exports.handler = async function(event, context) {
 
       return {
         statusCode: 200,
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({ message: "Application submitted successfully" })
       };
     } catch (emailError) {
       console.error("Error sending email:", emailError);
       return {
         statusCode: 500,
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({ 
           error: "Failed to send email", 
           details: emailError.message,
@@ -146,6 +157,9 @@ exports.handler = async function(event, context) {
     console.error("Error processing application:", error);
     return {
       statusCode: 500,
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({ error: "Failed to submit application", details: error.message })
     };
   }
