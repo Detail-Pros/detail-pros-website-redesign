@@ -7,53 +7,130 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
-
 const Detailing = () => {
   const [searchAddOns, setSearchAddOns] = useState("");
-  
+
   // Filter function for add-ons
   const filterAddOns = (items: any[], searchTerm: string) => {
     if (!searchTerm) return items;
-    return items.filter(item => 
-      item.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    return items.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
   };
-  
+
   // Exterior Add-ons data
-  const exteriorAddOns = [
-    { name: "Ceramic Pro LUX", icon: <Droplet className="w-5 h-5 text-detailpros-pink" />, tag: "Ceramic Pro", price: "$500.00" },
-    { name: "Undercarriage Wash", icon: <Car className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
-    { name: "Mold Remediation", icon: <Trash className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$75.00" },
-    { name: "Tree Sap Removal", icon: <Trees className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$75.00" },
-    { name: "Clay Bar Treatment", icon: <Brush className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
-    { name: "Engine Wash", icon: <Sparkles className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
-    { name: "Headlight Restoration", icon: <Zap className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$150.00" },
-    { name: "Plastic Trim Restoration", icon: <Shield className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$75.00" },
-    { name: "Iron Decontamination", icon: <Droplet className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$150.00" },
-    { name: "Wax", icon: <Trash className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$60.00" },
-    { name: "Polish and Wax", icon: <Trash className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$125.00" },
-    { name: "3 Month Sealant", icon: <Shield className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$150.00" },
-    { name: "One Step Paint Correction", icon: <Brush className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
-    { name: "6 Month Ceramic Coating", icon: <Droplet className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$350.00" },
-  ];
+  const exteriorAddOns = [{
+    name: "Ceramic Pro LUX",
+    icon: <Droplet className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Ceramic Pro",
+    price: "$500.00"
+  }, {
+    name: "Undercarriage Wash",
+    icon: <Car className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$25.00"
+  }, {
+    name: "Mold Remediation",
+    icon: <Trash className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$75.00"
+  }, {
+    name: "Tree Sap Removal",
+    icon: <Trees className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$75.00"
+  }, {
+    name: "Clay Bar Treatment",
+    icon: <Brush className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$100.00"
+  }, {
+    name: "Engine Wash",
+    icon: <Sparkles className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$100.00"
+  }, {
+    name: "Headlight Restoration",
+    icon: <Zap className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$150.00"
+  }, {
+    name: "Plastic Trim Restoration",
+    icon: <Shield className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$75.00"
+  }, {
+    name: "Iron Decontamination",
+    icon: <Droplet className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$150.00"
+  }, {
+    name: "Wax",
+    icon: <Trash className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$60.00"
+  }, {
+    name: "Polish and Wax",
+    icon: <Trash className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$125.00"
+  }, {
+    name: "3 Month Sealant",
+    icon: <Shield className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$150.00"
+  }, {
+    name: "One Step Paint Correction",
+    icon: <Brush className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$100.00"
+  }, {
+    name: "6 Month Ceramic Coating",
+    icon: <Droplet className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$350.00"
+  }];
 
   // Interior Add-ons data
-  const interiorAddOns = [
-    { name: "Pet Hair - 15 mins extra", icon: <Dog className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$10.00" },
-    { name: "Sand Removal - 30 mins extra", icon: <Trash className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$15.00" },
-    { name: "Seat Shampoo - 1 Hour Extra", icon: <Armchair className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$100.00" },
-    { name: "Floor Mat Shampoo - 15 Mins Extra", icon: <Trash className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
-    { name: "Seat + Floor Mat Shampoo - 1 Hour Extra", icon: <Armchair className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$120.00" },
-    { name: "Ozone Clean - 30 Mins Extra", icon: <CigaretteOff className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
-    { name: "Leather Conditioning - 15 Mins Extra", icon: <Armchair className="w-5 h-5 text-detailpros-pink" />, tag: "Service", price: "$25.00" },
-  ];
+  const interiorAddOns = [{
+    name: "Pet Hair - 15 mins extra",
+    icon: <Dog className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$10.00"
+  }, {
+    name: "Sand Removal - 30 mins extra",
+    icon: <Trash className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$15.00"
+  }, {
+    name: "Seat Shampoo - 1 Hour Extra",
+    icon: <Armchair className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$100.00"
+  }, {
+    name: "Floor Mat Shampoo - 15 Mins Extra",
+    icon: <Trash className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$25.00"
+  }, {
+    name: "Seat + Floor Mat Shampoo - 1 Hour Extra",
+    icon: <Armchair className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$120.00"
+  }, {
+    name: "Ozone Clean - 30 Mins Extra",
+    icon: <CigaretteOff className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$25.00"
+  }, {
+    name: "Leather Conditioning - 15 Mins Extra",
+    icon: <Armchair className="w-5 h-5 text-detailpros-pink" />,
+    tag: "Service",
+    price: "$25.00"
+  }];
 
   // Filter add-ons based on search
   const filteredExteriorAddOns = filterAddOns(exteriorAddOns, searchAddOns);
   const filteredInteriorAddOns = filterAddOns(interiorAddOns, searchAddOns);
-  
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
         {/* Services Header */}
         <section className="bg-black text-white py-10">
           <div className="container mx-auto px-4">
@@ -120,7 +197,7 @@ const Detailing = () => {
                 </div>
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
-                <img src="/placeholder.svg" alt="Mobile Detailing" className="w-full h-full object-cover" />
+                <img alt="Mobile Detailing" className="w-full h-full object-cover" src="/lovable-uploads/632c84e3-f2dd-49e6-a8d8-331ee9d14522.png" />
               </div>
             </div>
           </div>
@@ -141,44 +218,23 @@ const Detailing = () => {
               <Tabs defaultValue="inside-out" className="w-full">
                 <div className="mb-10">
                   <TabsList className="w-full grid grid-cols-3 gap-2">
-                    <TabsTrigger 
-                      value="inside-out" 
-                      className="flex flex-col gap-4 py-6 data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink rounded-lg"
-                    >
+                    <TabsTrigger value="inside-out" className="flex flex-col gap-4 py-6 data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink rounded-lg">
                       <div className="w-24 h-24 mx-auto bg-gray-100 rounded-full p-4 flex items-center justify-center">
-                        <img 
-                          src="/lovable-uploads/dd7f3090-a164-4094-8203-d8c0f503414f.png" 
-                          alt="Inside & Out" 
-                          className="w-16 h-16 object-contain" 
-                        />
+                        <img src="/lovable-uploads/dd7f3090-a164-4094-8203-d8c0f503414f.png" alt="Inside & Out" className="w-16 h-16 object-contain" />
                       </div>
                       <span className="font-medium">Inside & Out</span>
                     </TabsTrigger>
                     
-                    <TabsTrigger 
-                      value="exterior-only"
-                      className="flex flex-col gap-4 py-6 data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink rounded-lg"
-                    >
+                    <TabsTrigger value="exterior-only" className="flex flex-col gap-4 py-6 data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink rounded-lg">
                       <div className="w-24 h-24 mx-auto bg-gray-100 rounded-full p-4 flex items-center justify-center">
-                        <img 
-                          src="/lovable-uploads/0ba47bc7-3c87-4b93-92e5-efbe316aa969.png" 
-                          alt="Exterior Only" 
-                          className="w-16 h-16 object-contain" 
-                        />
+                        <img src="/lovable-uploads/0ba47bc7-3c87-4b93-92e5-efbe316aa969.png" alt="Exterior Only" className="w-16 h-16 object-contain" />
                       </div>
                       <span className="font-medium">Exterior Only</span>
                     </TabsTrigger>
                     
-                    <TabsTrigger 
-                      value="interior-only"
-                      className="flex flex-col gap-4 py-6 data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink rounded-lg"
-                    >
+                    <TabsTrigger value="interior-only" className="flex flex-col gap-4 py-6 data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink rounded-lg">
                       <div className="w-24 h-24 mx-auto bg-gray-100 rounded-full p-4 flex items-center justify-center">
-                        <img 
-                          src="/lovable-uploads/85a41313-83c2-4644-8e39-4d1504770b91.png" 
-                          alt="Interior Only" 
-                          className="w-16 h-16 object-contain" 
-                        />
+                        <img src="/lovable-uploads/85a41313-83c2-4644-8e39-4d1504770b91.png" alt="Interior Only" className="w-16 h-16 object-contain" />
                       </div>
                       <span className="font-medium">Interior Only</span>
                     </TabsTrigger>
@@ -531,28 +587,9 @@ const Detailing = () => {
               
               <div className="mt-6 max-w-md mx-auto">
                 <div className="relative">
-                  <Input
-                    type="text"
-                    placeholder="Search for add-on services..."
-                    className="pl-10 py-6"
-                    value={searchAddOns}
-                    onChange={(e) => setSearchAddOns(e.target.value)}
-                  />
-                  <svg
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    ></path>
+                  <Input type="text" placeholder="Search for add-on services..." className="pl-10 py-6" value={searchAddOns} onChange={e => setSearchAddOns(e.target.value)} />
+                  <svg className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                   </svg>
                 </div>
               </div>
@@ -561,16 +598,10 @@ const Detailing = () => {
             <div className="max-w-6xl mx-auto">
               <Tabs defaultValue="exterior" className="w-full">
                 <TabsList className="w-full mb-8 flex justify-center">
-                  <TabsTrigger 
-                    value="exterior" 
-                    className="px-8 py-3 text-base font-medium data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink"
-                  >
+                  <TabsTrigger value="exterior" className="px-8 py-3 text-base font-medium data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink">
                     Exterior Add-ons
                   </TabsTrigger>
-                  <TabsTrigger 
-                    value="interior" 
-                    className="px-8 py-3 text-base font-medium data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink"
-                  >
+                  <TabsTrigger value="interior" className="px-8 py-3 text-base font-medium data-[state=active]:border-b-4 data-[state=active]:border-detailpros-pink">
                     Interior Add-ons
                   </TabsTrigger>
                 </TabsList>
@@ -588,15 +619,11 @@ const Detailing = () => {
                           </TableRow>
                         </TableHeader>
                         <TableBody>
-                          {filteredExteriorAddOns.length === 0 ? (
-                            <TableRow>
+                          {filteredExteriorAddOns.length === 0 ? <TableRow>
                               <TableCell colSpan={4} className="py-8 text-center text-gray-500">
                                 No matching services found. Please try a different search term.
                               </TableCell>
-                            </TableRow>
-                          ) : (
-                            filteredExteriorAddOns.map((service, index) => (
-                              <TableRow key={index} className="hover:bg-gray-50 border-b border-gray-200">
+                            </TableRow> : filteredExteriorAddOns.map((service, index) => <TableRow key={index} className="hover:bg-gray-50 border-b border-gray-200">
                                 <TableCell className="py-4">
                                   <div className="h-10 w-10 bg-detailpros-pink/10 rounded-full flex items-center justify-center">
                                     {service.icon}
@@ -613,9 +640,7 @@ const Detailing = () => {
                                 <TableCell className="text-right py-4">
                                   <span className="font-bold text-lg text-detailpros-black">{service.price}</span>
                                 </TableCell>
-                              </TableRow>
-                            ))
-                          )}
+                              </TableRow>)}
                         </TableBody>
                       </Table>
                     </div>
@@ -635,15 +660,11 @@ const Detailing = () => {
                           </TableRow>
                         </TableHeader>
                         <TableBody>
-                          {filteredInteriorAddOns.length === 0 ? (
-                            <TableRow>
+                          {filteredInteriorAddOns.length === 0 ? <TableRow>
                               <TableCell colSpan={4} className="py-8 text-center text-gray-500">
                                 No matching services found. Please try a different search term.
                               </TableCell>
-                            </TableRow>
-                          ) : (
-                            filteredInteriorAddOns.map((service, index) => (
-                              <TableRow key={index} className="hover:bg-gray-50 border-b border-gray-200">
+                            </TableRow> : filteredInteriorAddOns.map((service, index) => <TableRow key={index} className="hover:bg-gray-50 border-b border-gray-200">
                                 <TableCell className="py-4">
                                   <div className="h-10 w-10 bg-detailpros-pink/10 rounded-full flex items-center justify-center">
                                     {service.icon}
@@ -660,9 +681,7 @@ const Detailing = () => {
                                 <TableCell className="text-right py-4">
                                   <span className="font-bold text-lg text-detailpros-black">{service.price}</span>
                                 </TableCell>
-                              </TableRow>
-                            ))
-                          )}
+                              </TableRow>)}
                         </TableBody>
                       </Table>
                     </div>
@@ -699,11 +718,7 @@ const Detailing = () => {
               <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-transform hover:scale-105 flex flex-col h-full">
                 <div className="p-6 flex-grow">
                   <div className="flex justify-center mb-4">
-                    <img 
-                      src="/lovable-uploads/b96d1253-6ce1-45ec-9e35-a5d9ae8d96a0.png"
-                      alt="Silver Package" 
-                      className="h-24 w-24 object-contain" 
-                    />
+                    <img src="/lovable-uploads/b96d1253-6ce1-45ec-9e35-a5d9ae8d96a0.png" alt="Silver Package" className="h-24 w-24 object-contain" />
                   </div>
                   <h3 className="text-2xl font-bold text-center mb-2">Silver Package</h3>
                   <div className="text-3xl font-bold text-center text-detailpros-pink mb-6">$450</div>
@@ -787,14 +802,10 @@ const Detailing = () => {
                     alt="Most Popular" 
                     className="h-20 w-20 object-contain" 
                   />
-                </div> */}
+                 </div> */}
                 <div className="p-6 flex-grow">
                   <div className="flex justify-center mb-4">
-                    <img 
-                      src="/lovable-uploads/2b0c4a6a-1444-468d-af43-920b7283cb36.png" 
-                      alt="Gold Package" 
-                      className="h-24 w-24 object-contain" 
-                    />
+                    <img src="/lovable-uploads/2b0c4a6a-1444-468d-af43-920b7283cb36.png" alt="Gold Package" className="h-24 w-24 object-contain" />
                   </div>
                   <h3 className="text-2xl font-bold text-center mb-2">Gold Package</h3>
                   <div className="text-3xl font-bold text-center text-detailpros-pink mb-6">$700</div>
@@ -890,11 +901,7 @@ const Detailing = () => {
               <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-transform hover:scale-105 flex flex-col h-full">
                 <div className="p-6 flex-grow">
                   <div className="flex justify-center mb-4">
-                    <img 
-                      src="/lovable-uploads/f56b150a-b9e5-4c0b-8317-406fa1370ffb.png" 
-                      alt="Diamond Package" 
-                      className="h-24 w-24 object-contain" 
-                    />
+                    <img src="/lovable-uploads/f56b150a-b9e5-4c0b-8317-406fa1370ffb.png" alt="Diamond Package" className="h-24 w-24 object-contain" />
                   </div>
                   <h3 className="text-2xl font-bold text-center mb-2">Diamond Package</h3>
                   <div className="text-3xl font-bold text-center text-detailpros-pink mb-6">$850</div>
@@ -1012,8 +1019,6 @@ const Detailing = () => {
           </div>
         </section>
         <CallToAction />
-    </div>
-  );
+    </div>;
 };
-
 export default Detailing;
