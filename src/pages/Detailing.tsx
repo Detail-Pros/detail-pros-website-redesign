@@ -781,13 +781,13 @@ const Detailing = () => {
               
               {/* Gold Package */}
               <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-2 border-yellow-400 relative transition-transform hover:scale-105 flex flex-col h-full">
-                <div className="absolute top-0 right-0">
+                {/* <div className="absolute top-0 right-0">
                   <img 
                     src="/lovable-uploads/2b0c4a6a-1444-468d-af43-920b7283cb36.png" 
                     alt="Most Popular" 
                     className="h-20 w-20 object-contain" 
                   />
-                </div>
+                </div> */}
                 <div className="p-6 flex-grow">
                   <div className="flex justify-center mb-4">
                     <img 
