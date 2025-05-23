@@ -3,13 +3,27 @@
 const nodemailer = require('nodemailer');
 
 exports.handler = async function(event, context) {
+  // Set CORS headers for all responses
+  const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Content-Type": "application/json"
+  };
+
+  // Handle preflight OPTIONS request
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 204,
+      headers,
+      body: ''
+    };
+  }
+
   // Only allow POST method
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers,
       body: JSON.stringify({ error: 'Method not allowed' })
     };
   }
@@ -30,6 +44,19 @@ exports.handler = async function(event, context) {
       auth: !!process.env.EMAIL_PASSWORD ? 'password provided' : 'missing password'
     });
     
+    // Check if required environment variables are present
+    if (!process.env.EMAIL_HOST || !process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
+      console.error("Missing required email configuration");
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({ 
+          error: "Server configuration error", 
+          details: "Email service is not properly configured"
+        })
+      };
+    }
+    
     // Create transporter with more detailed logging
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -43,7 +70,10 @@ exports.handler = async function(event, context) {
       logger: true,
       tls: {
         rejectUnauthorized: false // Only for development
-      }
+      },
+      connectionTimeout: 10000, // 10 seconds
+      greetingTimeout: 5000, // 5 seconds
+      socketTimeout: 10000 // 10 seconds
     });
     
     // Verify connection configuration
@@ -53,7 +83,14 @@ exports.handler = async function(event, context) {
       console.log("Email connection successful");
     } catch (verifyError) {
       console.error("Email connection verification failed:", verifyError);
-      throw new Error(`Email configuration error: ${verifyError.message}`);
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({ 
+          error: "Email server connection failed", 
+          details: verifyError.message
+        })
+      };
     }
     
     // Create the email content
@@ -145,9 +182,7 @@ exports.handler = async function(event, context) {
 
       return {
         statusCode: 200,
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers,
         body: JSON.stringify({ 
           message: "Application submitted successfully",
           mainEmail: mainEmailInfo.response,
@@ -168,9 +203,7 @@ exports.handler = async function(event, context) {
       
       return {
         statusCode: 500,
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers,
         body: JSON.stringify({ 
           error: "Failed to send email", 
           details: errorDetails
@@ -181,9 +214,7 @@ exports.handler = async function(event, context) {
     console.error("Error processing application:", error);
     return {
       statusCode: 500,
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers,
       body: JSON.stringify({ 
         error: "Failed to submit application", 
         details: error.message,

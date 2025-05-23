@@ -1,12 +1,12 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Upload, Check, X } from "lucide-react";
+import { Upload, Check, X, WifiOff } from "lucide-react";
 import { JobPosting } from "./JobPostingCard";
 import { useToast } from "@/hooks/use-toast";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -29,11 +29,38 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
   const [consentMarketing, setConsentMarketing] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionError, setSubmissionError] = useState<string | null>(null);
+  const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
+
+  // Monitor online status
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setSubmissionError(null);
+    
+    // Check if the user is online before attempting to submit
+    if (!isOnline) {
+      setSubmissionError("You appear to be offline. Please check your internet connection and try again.");
+      toast({
+        title: "Network Error",
+        description: "You appear to be offline. Please check your internet connection.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
       console.log("Submitting application...");
@@ -60,60 +87,84 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
 
       console.log("Application data:", applicationData);
 
-      // Submit the application using our Netlify function
-      const response = await fetch("/.netlify/functions/submit-application", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(applicationData),
-      });
+      // Submit the application using our Netlify function with timeout handling
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
 
-      console.log("Response status:", response.status);
-      
-      // Check content type first
-      const contentType = response.headers.get("content-type");
-      let responseData;
-      
-      // Try to parse the response as JSON if possible
-      if (contentType && contentType.includes("application/json")) {
-        responseData = await response.json();
-        console.log("Response data:", responseData);
-      }
-      
-      if (response.ok) {
-        toast({
-          title: "Application Submitted",
-          description: "Thank you for your application. We will be in touch soon.",
+      try {
+        const response = await fetch("/.netlify/functions/submit-application", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(applicationData),
+          signal: controller.signal
         });
-
-        onClose();
-        resetForm();
-        return;
-      }
-      
-      // Handle error response
-      let errorMessage = "Failed to submit application";
-      
-      if (responseData) {
-        // Extract detailed error from response if available
-        errorMessage = responseData.error || responseData.details || errorMessage;
         
-        // If there's a specific email error, provide more helpful guidance
-        if (responseData.details && typeof responseData.details === 'object') {
-          const details = responseData.details;
-          if (details.code === 'ECONNREFUSED') {
-            errorMessage = "Unable to connect to email server. Please try again later.";
-          } else if (details.code === 'EAUTH') {
-            errorMessage = "Email authentication failed. Please contact support.";
-          }
+        clearTimeout(timeoutId);
+        
+        console.log("Response status:", response.status);
+        
+        // Check content type first
+        const contentType = response.headers.get("content-type");
+        let responseData;
+        
+        // Try to parse the response as JSON if possible
+        if (contentType && contentType.includes("application/json")) {
+          responseData = await response.json();
+          console.log("Response data:", responseData);
+        } else {
+          console.warn("Response is not JSON:", await response.text());
+          throw new Error("Server returned an invalid response format");
         }
-      } else {
-        // If not JSON, use status text
-        errorMessage = `Server error: ${response.statusText || "Unknown error"}`;
+        
+        if (response.ok) {
+          toast({
+            title: "Application Submitted",
+            description: "Thank you for your application. We will be in touch soon.",
+          });
+
+          onClose();
+          resetForm();
+          return;
+        }
+        
+        // Handle error response
+        let errorMessage = "Failed to submit application";
+        
+        if (responseData) {
+          // Extract detailed error from response if available
+          errorMessage = responseData.error || responseData.details || errorMessage;
+          
+          // If there's a specific email error, provide more helpful guidance
+          if (responseData.details && typeof responseData.details === 'object') {
+            const details = responseData.details;
+            if (details.code === 'ECONNREFUSED') {
+              errorMessage = "Unable to connect to email server. Please try again later.";
+            } else if (details.code === 'EAUTH') {
+              errorMessage = "Email authentication failed. Please contact support.";
+            }
+          }
+        } else {
+          // If not JSON, use status text
+          errorMessage = `Server error: ${response.statusText || "Unknown error"}`;
+        }
+        
+        throw new Error(errorMessage);
+      } catch (fetchError) {
+        clearTimeout(timeoutId);
+        
+        if (fetchError.name === 'AbortError') {
+          throw new Error('Request timed out. Please try again later.');
+        }
+        
+        // Check if fetch error is due to being offline
+        if (!navigator.onLine) {
+          throw new Error('You appear to be offline. Please check your internet connection and try again.');
+        }
+        
+        throw fetchError;
       }
-      
-      throw new Error(errorMessage);
       
     } catch (error) {
       console.error("Error submitting application:", error);
@@ -208,14 +259,25 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
             Please fill out the form below to apply for this position
           </DialogDescription>
         </DialogHeader>
+        
+        {!isOnline && (
+          <Alert variant="destructive" className="mb-4">
+            <WifiOff className="h-4 w-4 mr-2" />
+            <AlertDescription>
+              You are currently offline. Please connect to the internet to submit your application.
+            </AlertDescription>
+          </Alert>
+        )}
+        
+        {submissionError && (
+          <Alert variant="destructive">
+            <AlertDescription>
+              {submissionError}
+            </AlertDescription>
+          </Alert>
+        )}
+        
         <form onSubmit={handleSubmit} className="space-y-4">
-          {submissionError && (
-            <Alert variant="destructive">
-              <AlertDescription>
-                {submissionError}
-              </AlertDescription>
-            </Alert>
-          )}
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label htmlFor="firstName">First Name</Label>
@@ -295,7 +357,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
             <Button variant="outline" type="button" onClick={onClose}>
               Cancel
             </Button>
-            <Button type="submit" disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting || !isOnline}>
               {isSubmitting ? "Submitting..." : "Submit Application"}
             </Button>
           </div>
