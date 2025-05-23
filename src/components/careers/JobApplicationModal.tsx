@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Upload, Check, X, WifiOff, Loader2 } from "lucide-react";
+import { Upload, Check, X, WifiOff, Loader2, AlertTriangle } from "lucide-react";
 import { JobPosting } from "./JobPostingCard";
 import { useToast } from "@/hooks/use-toast";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -31,6 +31,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
   const [submissionError, setSubmissionError] = useState<string | null>(null);
   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
   const [submissionAttempted, setSubmissionAttempted] = useState(false);
+  const [serverConfigError, setServerConfigError] = useState(false);
 
   // Monitor online status
   useEffect(() => {
@@ -38,6 +39,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
       setIsOnline(true);
       if (submissionAttempted && submissionError) {
         setSubmissionError("Your connection has been restored. You can try submitting again.");
+        setServerConfigError(false);
       }
     };
     const handleOffline = () => {
@@ -60,6 +62,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmissionError(null);
+    setServerConfigError(false);
     setSubmissionAttempted(true);
     
     // Check if the user is online before attempting to submit
@@ -102,7 +105,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
 
       // Submit the application using our Netlify function with timeout handling
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 20000); // 20 second timeout - increased from 15s
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout - increased from 20s
 
       try {
         const response = await fetch("/.netlify/functions/submit-application", {
@@ -123,11 +126,20 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
         if (!response.ok) {
           // Try to get the response content even if it's not OK
           let errorText;
+          let isConfigError = false;
           try {
             const contentType = response.headers.get("content-type");
             if (contentType && contentType.includes("application/json")) {
               const errorData = await response.json();
               errorText = errorData.error || errorData.details || `Server returned an error (${response.status})`;
+              
+              // Check for server configuration error
+              if (errorData.error === "Server configuration error" || 
+                  errorText.includes("configuration") || 
+                  errorText.includes("environment")) {
+                isConfigError = true;
+                errorText = "The application cannot be processed due to server configuration issues. Please contact the website administrator.";
+              }
             } else {
               errorText = await response.text();
               errorText = `Server error: ${response.status} - ${errorText.substring(0, 100)}`;
@@ -136,6 +148,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
             errorText = `Server error: ${response.status} ${response.statusText || ""}`;
           }
           
+          setServerConfigError(isConfigError);
           throw new Error(errorText);
         }
         
@@ -205,6 +218,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
     setConsentMarketing(false);
     setSubmissionError(null);
     setSubmissionAttempted(false);
+    setServerConfigError(false);
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>, setFile: React.Dispatch<React.SetStateAction<File | null>>) => {
@@ -270,6 +284,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
     if (isOpen) {
       setSubmissionError(null);
       setSubmissionAttempted(false);
+      setServerConfigError(false);
     }
   }, [isOpen]);
 
@@ -292,7 +307,16 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
           </Alert>
         )}
         
-        {submissionError && (
+        {serverConfigError && (
+          <Alert variant="destructive" className="mb-4">
+            <AlertTriangle className="h-4 w-4 mr-2 inline-block" />
+            <AlertDescription>
+              The application system is currently experiencing technical difficulties. Please try again later or contact us directly at contact@detailpros.ky.
+            </AlertDescription>
+          </Alert>
+        )}
+        
+        {submissionError && !serverConfigError && (
           <Alert variant={isOnline ? "destructive" : "default"}>
             <AlertDescription>
               {submissionError}
@@ -380,7 +404,11 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
             <Button variant="outline" type="button" onClick={onClose}>
               Cancel
             </Button>
-            <Button type="submit" disabled={isSubmitting || !isOnline} className="relative">
+            <Button 
+              type="submit" 
+              disabled={isSubmitting || !isOnline || serverConfigError} 
+              className="relative"
+            >
               {isSubmitting ? (
                 <>
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />

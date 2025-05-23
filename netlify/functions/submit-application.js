@@ -79,27 +79,30 @@ exports.handler = async function(event, context) {
       };
     }
     
-    // Log email credentials being used (without showing the password)
-    console.log("Email configuration:", {
-      host: process.env.EMAIL_HOST || 'missing host',
-      port: process.env.EMAIL_PORT || 'missing port',
-      secure: true,
-      user: process.env.EMAIL_USER || 'missing user',
-      auth: !!process.env.EMAIL_PASSWORD ? 'password provided' : 'missing password'
-    });
+    // Check if required environment variables are present BEFORE trying to use them
+    const requiredEnvVars = ['EMAIL_HOST', 'EMAIL_USER', 'EMAIL_PASSWORD', 'EMAIL_PORT'];
+    const missingEnvVars = requiredEnvVars.filter(varName => !process.env[varName]);
     
-    // Check if required environment variables are present
-    if (!process.env.EMAIL_HOST || !process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
-      console.error("Missing required email configuration");
+    if (missingEnvVars.length > 0) {
+      console.error(`Missing required environment variables: ${missingEnvVars.join(', ')}`);
       return {
         statusCode: 500,
         headers,
         body: JSON.stringify({ 
           error: "Server configuration error", 
-          details: "Email service is not properly configured"
+          details: `The server is missing required configuration: ${missingEnvVars.join(', ')}. Please contact the administrator.`
         })
       };
     }
+    
+    // Log email credentials being used (without showing the password)
+    console.log("Email configuration:", {
+      host: process.env.EMAIL_HOST,
+      port: process.env.EMAIL_PORT || '465',
+      secure: true,
+      user: process.env.EMAIL_USER,
+      auth: !!process.env.EMAIL_PASSWORD ? 'password provided' : 'missing password'
+    });
     
     // Create transporter with more detailed logging
     const transporter = nodemailer.createTransport({
@@ -115,9 +118,9 @@ exports.handler = async function(event, context) {
       tls: {
         rejectUnauthorized: false // Only for development
       },
-      connectionTimeout: 15000, // 15 seconds
-      greetingTimeout: 10000,  // 10 seconds
-      socketTimeout: 15000     // 15 seconds
+      connectionTimeout: 30000, // Extended to 30 seconds
+      greetingTimeout: 15000,   // Extended to 15 seconds
+      socketTimeout: 30000      // Extended to 30 seconds
     });
     
     // Verify connection configuration
@@ -127,12 +130,24 @@ exports.handler = async function(event, context) {
       console.log("Email connection successful");
     } catch (verifyError) {
       console.error("Email connection verification failed:", verifyError);
+      let errorMessage = "Email server connection failed";
+      let errorDetails = verifyError.message;
+      
+      // Provide more specific error messages based on common SMTP errors
+      if (verifyError.code === 'ECONNREFUSED') {
+        errorDetails = `Connection to ${process.env.EMAIL_HOST}:${process.env.EMAIL_PORT} was refused. Please verify the host and port are correct.`;
+      } else if (verifyError.code === 'ETIMEDOUT') {
+        errorDetails = `Connection to ${process.env.EMAIL_HOST}:${process.env.EMAIL_PORT} timed out. Please verify the host and port are correct and that the server is available.`;
+      } else if (verifyError.code === 'EAUTH') {
+        errorDetails = "Authentication failed. Please check the username and password.";
+      }
+      
       return {
         statusCode: 500,
         headers,
         body: JSON.stringify({ 
-          error: "Email server connection failed", 
-          details: verifyError.message
+          error: errorMessage, 
+          details: errorDetails
         })
       };
     }
@@ -245,11 +260,21 @@ exports.handler = async function(event, context) {
         response: emailError.response
       };
       
+      // Provide more specific error messages based on common SMTP errors
+      let errorMessage = "Failed to send email";
+      if (emailError.code === 'ECONNECTION') {
+        errorMessage = "Connection to email server failed";
+      } else if (emailError.code === 'ETIMEDOUT') {
+        errorMessage = "Email server connection timed out";
+      } else if (emailError.code === 'EAUTH') {
+        errorMessage = "Email authentication failed";
+      }
+      
       return {
         statusCode: 500,
         headers,
         body: JSON.stringify({ 
-          error: "Failed to send email", 
+          error: errorMessage, 
           details: errorDetails
         })
       };
