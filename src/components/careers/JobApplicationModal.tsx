@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Upload, Check, X, WifiOff } from "lucide-react";
+import { Upload, Check, X, WifiOff, Loader2 } from "lucide-react";
 import { JobPosting } from "./JobPostingCard";
 import { useToast } from "@/hooks/use-toast";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -30,11 +30,23 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionError, setSubmissionError] = useState<string | null>(null);
   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
+  const [submissionAttempted, setSubmissionAttempted] = useState(false);
 
   // Monitor online status
   useEffect(() => {
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
+    const handleOnline = () => {
+      setIsOnline(true);
+      if (submissionAttempted && submissionError) {
+        setSubmissionError("Your connection has been restored. You can try submitting again.");
+      }
+    };
+    const handleOffline = () => {
+      setIsOnline(false);
+      if (isSubmitting) {
+        setSubmissionError("You are offline. Please check your internet connection and try again.");
+        setIsSubmitting(false);
+      }
+    };
 
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
@@ -43,11 +55,12 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
     };
-  }, []);
+  }, [submissionAttempted, submissionError, isSubmitting]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmissionError(null);
+    setSubmissionAttempted(true);
     
     // Check if the user is online before attempting to submit
     if (!isOnline) {
@@ -89,7 +102,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
 
       // Submit the application using our Netlify function with timeout handling
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+      const timeoutId = setTimeout(() => controller.abort(), 20000); // 20 second timeout - increased from 15s
 
       try {
         const response = await fetch("/.netlify/functions/submit-application", {
@@ -98,12 +111,33 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
             "Content-Type": "application/json",
           },
           body: JSON.stringify(applicationData),
-          signal: controller.signal
+          signal: controller.signal,
+          // Adding cache control to prevent caching issues
+          cache: 'no-store',
         });
         
         clearTimeout(timeoutId);
         
         console.log("Response status:", response.status);
+        
+        if (!response.ok) {
+          // Try to get the response content even if it's not OK
+          let errorText;
+          try {
+            const contentType = response.headers.get("content-type");
+            if (contentType && contentType.includes("application/json")) {
+              const errorData = await response.json();
+              errorText = errorData.error || errorData.details || `Server returned an error (${response.status})`;
+            } else {
+              errorText = await response.text();
+              errorText = `Server error: ${response.status} - ${errorText.substring(0, 100)}`;
+            }
+          } catch (parseError) {
+            errorText = `Server error: ${response.status} ${response.statusText || ""}`;
+          }
+          
+          throw new Error(errorText);
+        }
         
         // Check content type first
         const contentType = response.headers.get("content-type");
@@ -118,49 +152,29 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
           throw new Error("Server returned an invalid response format");
         }
         
-        if (response.ok) {
-          toast({
-            title: "Application Submitted",
-            description: "Thank you for your application. We will be in touch soon.",
-          });
+        // Everything worked!
+        toast({
+          title: "Application Submitted",
+          description: "Thank you for your application. We will be in touch soon.",
+        });
 
-          onClose();
-          resetForm();
-          return;
-        }
-        
-        // Handle error response
-        let errorMessage = "Failed to submit application";
-        
-        if (responseData) {
-          // Extract detailed error from response if available
-          errorMessage = responseData.error || responseData.details || errorMessage;
-          
-          // If there's a specific email error, provide more helpful guidance
-          if (responseData.details && typeof responseData.details === 'object') {
-            const details = responseData.details;
-            if (details.code === 'ECONNREFUSED') {
-              errorMessage = "Unable to connect to email server. Please try again later.";
-            } else if (details.code === 'EAUTH') {
-              errorMessage = "Email authentication failed. Please contact support.";
-            }
-          }
-        } else {
-          // If not JSON, use status text
-          errorMessage = `Server error: ${response.statusText || "Unknown error"}`;
-        }
-        
-        throw new Error(errorMessage);
-      } catch (fetchError) {
+        onClose();
+        resetForm();
+        return;
+      } catch (fetchError: any) {
         clearTimeout(timeoutId);
         
-        if (fetchError.name === 'AbortError') {
-          throw new Error('Request timed out. Please try again later.');
+        // Special handling for network errors
+        if (!navigator.onLine) {
+          throw new Error('You are currently offline. Please check your internet connection and try again.');
         }
         
-        // Check if fetch error is due to being offline
-        if (!navigator.onLine) {
-          throw new Error('You appear to be offline. Please check your internet connection and try again.');
+        if (fetchError.name === 'AbortError') {
+          throw new Error('Request timed out. The server might be experiencing high traffic. Please try again later.');
+        }
+        
+        if (fetchError.message.includes('Failed to fetch')) {
+          throw new Error('Network connection issue. Please check your internet connection and try again.');
         }
         
         throw fetchError;
@@ -190,6 +204,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
     setCoverLetter(null);
     setConsentMarketing(false);
     setSubmissionError(null);
+    setSubmissionAttempted(false);
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>, setFile: React.Dispatch<React.SetStateAction<File | null>>) => {
@@ -250,6 +265,14 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
     </div>
   );
 
+  // Reset error when opening modal
+  useEffect(() => {
+    if (isOpen) {
+      setSubmissionError(null);
+      setSubmissionAttempted(false);
+    }
+  }, [isOpen]);
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
@@ -262,7 +285,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
         
         {!isOnline && (
           <Alert variant="destructive" className="mb-4">
-            <WifiOff className="h-4 w-4 mr-2" />
+            <WifiOff className="h-4 w-4 mr-2 inline-block" />
             <AlertDescription>
               You are currently offline. Please connect to the internet to submit your application.
             </AlertDescription>
@@ -270,7 +293,7 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
         )}
         
         {submissionError && (
-          <Alert variant="destructive">
+          <Alert variant={isOnline ? "destructive" : "default"}>
             <AlertDescription>
               {submissionError}
             </AlertDescription>
@@ -357,8 +380,15 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
             <Button variant="outline" type="button" onClick={onClose}>
               Cancel
             </Button>
-            <Button type="submit" disabled={isSubmitting || !isOnline}>
-              {isSubmitting ? "Submitting..." : "Submit Application"}
+            <Button type="submit" disabled={isSubmitting || !isOnline} className="relative">
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  <span>Submitting...</span>
+                </>
+              ) : (
+                "Submit Application"
+              )}
             </Button>
           </div>
         </form>

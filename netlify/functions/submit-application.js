@@ -3,15 +3,22 @@
 const nodemailer = require('nodemailer');
 
 exports.handler = async function(event, context) {
-  // Set CORS headers for all responses
+  // Set CORS headers for all responses - making sure they're very permissive
   const headers = {
     "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Content-Type": "application/json"
+    "Access-Control-Allow-Headers": "Content-Type, Accept, Origin, X-Requested-With",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Content-Type": "application/json",
+    "Cache-Control": "no-store, no-cache, must-revalidate"
   };
+
+  // Enhanced logging to help troubleshoot
+  console.log(`Function invoked with method: ${event.httpMethod}`);
+  console.log(`Headers: ${JSON.stringify(event.headers)}`);
 
   // Handle preflight OPTIONS request
   if (event.httpMethod === 'OPTIONS') {
+    console.log("Handling OPTIONS preflight request");
     return {
       statusCode: 204,
       headers,
@@ -21,6 +28,7 @@ exports.handler = async function(event, context) {
 
   // Only allow POST method
   if (event.httpMethod !== 'POST') {
+    console.log(`Rejecting ${event.httpMethod} method`);
     return {
       statusCode: 405,
       headers,
@@ -28,12 +36,48 @@ exports.handler = async function(event, context) {
     };
   }
 
-  console.log("Function started");
+  console.log("Processing POST request");
 
   try {
+    // Validate request body exists
+    if (!event.body) {
+      console.log("Missing request body");
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ error: "Missing request body" })
+      };
+    }
+    
     // Parse the JSON body
-    const data = JSON.parse(event.body);
-    console.log("Received application data:", JSON.stringify(data));
+    let data;
+    try {
+      data = JSON.parse(event.body);
+      console.log("Received application data:", JSON.stringify(data));
+    } catch (parseError) {
+      console.error("Failed to parse JSON:", parseError);
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ error: "Invalid JSON format", details: parseError.message })
+      };
+    }
+    
+    // Validate required fields
+    const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'message'];
+    const missingFields = requiredFields.filter(field => !data[field]);
+    
+    if (missingFields.length > 0) {
+      console.log(`Missing required fields: ${missingFields.join(', ')}`);
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ 
+          error: "Missing required fields", 
+          details: missingFields.join(', ')
+        })
+      };
+    }
     
     // Log email credentials being used (without showing the password)
     console.log("Email configuration:", {
@@ -71,9 +115,9 @@ exports.handler = async function(event, context) {
       tls: {
         rejectUnauthorized: false // Only for development
       },
-      connectionTimeout: 10000, // 10 seconds
-      greetingTimeout: 5000, // 5 seconds
-      socketTimeout: 10000 // 10 seconds
+      connectionTimeout: 15000, // 15 seconds
+      greetingTimeout: 10000,  // 10 seconds
+      socketTimeout: 15000     // 15 seconds
     });
     
     // Verify connection configuration
