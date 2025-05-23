@@ -138,8 +138,8 @@ const Detailing = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* Silver Package */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-transform hover:scale-105">
-                <div className="p-6">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-transform hover:scale-105 flex flex-col h-full">
+                <div className="p-6 flex-grow">
                   <div className="flex justify-center mb-4">
                     <img 
                       src="/lovable-uploads/b96d1253-6ce1-45ec-9e35-a5d9ae8d96a0.png"
@@ -212,7 +212,7 @@ const Detailing = () => {
                     </div>
                   </div>
                 </div>
-                <div className="px-6 py-4 bg-gray-50">
+                <div className="px-6 py-4 bg-gray-50 mt-auto">
                   <Link to="/contact" className="w-full">
                     <Button variant="outline" className="w-full border-detailpros-pink text-detailpros-pink hover:bg-detailpros-pink hover:text-white">
                       Book Now
@@ -222,7 +222,7 @@ const Detailing = () => {
               </div>
               
               {/* Gold Package */}
-              <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-2 border-yellow-400 relative transition-transform hover:scale-105">
+              <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-2 border-yellow-400 relative transition-transform hover:scale-105 flex flex-col h-full">
                 <div className="absolute top-0 right-0">
                   <img 
                     src="/lovable-uploads/2b0c4a6a-1444-468d-af43-920b7283cb36.png" 
@@ -230,7 +230,7 @@ const Detailing = () => {
                     className="h-20 w-20 object-contain" 
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex-grow">
                   <div className="flex justify-center mb-4">
                     <img 
                       src="/lovable-uploads/2b0c4a6a-1444-468d-af43-920b7283cb36.png" 
@@ -319,7 +319,7 @@ const Detailing = () => {
                     </div>
                   </div>
                 </div>
-                <div className="px-6 py-4 bg-yellow-50">
+                <div className="px-6 py-4 bg-yellow-50 mt-auto">
                   <Link to="/contact" className="w-full">
                     <Button className="w-full bg-detailpros-pink hover:bg-opacity-90">
                       Book Now
@@ -329,8 +329,8 @@ const Detailing = () => {
               </div>
               
               {/* Diamond Package */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-transform hover:scale-105">
-                <div className="p-6">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-transform hover:scale-105 flex flex-col h-full">
+                <div className="p-6 flex-grow">
                   <div className="flex justify-center mb-4">
                     <img 
                       src="/lovable-uploads/f56b150a-b9e5-4c0b-8317-406fa1370ffb.png" 
@@ -431,7 +431,7 @@ const Detailing = () => {
                     </div>
                   </div>
                 </div>
-                <div className="px-6 py-4 bg-gray-50">
+                <div className="px-6 py-4 bg-gray-50 mt-auto">
                   <Link to="/contact" className="w-full">
                     <Button variant="outline" className="w-full border-detailpros-pink text-detailpros-pink hover:bg-detailpros-pink hover:text-white">
                       Book Now
