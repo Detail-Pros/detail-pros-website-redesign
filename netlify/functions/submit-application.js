@@ -21,15 +21,16 @@ exports.handler = async function(event, context) {
     const data = JSON.parse(event.body);
     console.log("Received application data:", JSON.stringify(data));
     
-    // Setup email transporter with explicit debugging
-    console.log("Setting up email transport with:", {
-      host: process.env.EMAIL_HOST,
-      port: parseInt(process.env.EMAIL_PORT || '465'),
-      auth: {
-        user: process.env.EMAIL_USER
-      }
+    // Log email credentials being used (without showing the password)
+    console.log("Email configuration:", {
+      host: process.env.EMAIL_HOST || 'missing host',
+      port: process.env.EMAIL_PORT || 'missing port',
+      secure: true,
+      user: process.env.EMAIL_USER || 'missing user',
+      auth: !!process.env.EMAIL_PASSWORD ? 'password provided' : 'missing password'
     });
     
+    // Create transporter with more detailed logging
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: parseInt(process.env.EMAIL_PORT || '465'),
@@ -38,12 +39,22 @@ exports.handler = async function(event, context) {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD
       },
-      debug: true, // Enable debugging
-      logger: true, // Log to console
+      debug: true,
+      logger: true,
       tls: {
-        rejectUnauthorized: false // Only use in development/testing, not in production!
+        rejectUnauthorized: false // Only for development
       }
     });
+    
+    // Verify connection configuration
+    try {
+      console.log("Verifying email connection...");
+      await transporter.verify();
+      console.log("Email connection successful");
+    } catch (verifyError) {
+      console.error("Email connection verification failed:", verifyError);
+      throw new Error(`Email configuration error: ${verifyError.message}`);
+    }
     
     // Create the email content
     const jobInfo = `
@@ -98,8 +109,8 @@ exports.handler = async function(event, context) {
 
     try {
       console.log("Sending email to DetailPros");
-      await transporter.sendMail(emailContent);
-      console.log("Successfully sent email to DetailPros");
+      const mainEmailInfo = await transporter.sendMail(emailContent);
+      console.log("Successfully sent email to DetailPros:", mainEmailInfo.response);
 
       // Send an acknowledgement to the applicant
       const acknowledgement = {
@@ -129,18 +140,32 @@ exports.handler = async function(event, context) {
       };
 
       console.log("Sending acknowledgement email to applicant");
-      await transporter.sendMail(acknowledgement);
-      console.log("Successfully sent acknowledgement email");
+      const ackEmailInfo = await transporter.sendMail(acknowledgement);
+      console.log("Successfully sent acknowledgement email:", ackEmailInfo.response);
 
       return {
         statusCode: 200,
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ message: "Application submitted successfully" })
+        body: JSON.stringify({ 
+          message: "Application submitted successfully",
+          mainEmail: mainEmailInfo.response,
+          ackEmail: ackEmailInfo.response
+        })
       };
     } catch (emailError) {
       console.error("Error sending email:", emailError);
+      
+      // Try to extract the most useful error information
+      const errorDetails = {
+        message: emailError.message,
+        code: emailError.code,
+        command: emailError.command,
+        responseCode: emailError.responseCode,
+        response: emailError.response
+      };
+      
       return {
         statusCode: 500,
         headers: {
@@ -148,8 +173,7 @@ exports.handler = async function(event, context) {
         },
         body: JSON.stringify({ 
           error: "Failed to send email", 
-          details: emailError.message,
-          stack: emailError.stack
+          details: errorDetails
         })
       };
     }
@@ -160,7 +184,11 @@ exports.handler = async function(event, context) {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ error: "Failed to submit application", details: error.message })
+      body: JSON.stringify({ 
+        error: "Failed to submit application", 
+        details: error.message,
+        stack: error.stack 
+      })
     };
   }
 };

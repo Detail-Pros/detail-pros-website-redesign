@@ -71,12 +71,17 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
 
       console.log("Response status:", response.status);
       
-      // Instead of trying to parse JSON response immediately, check content type first
+      // Check content type first
       const contentType = response.headers.get("content-type");
+      let responseData;
+      
+      // Try to parse the response as JSON if possible
+      if (contentType && contentType.includes("application/json")) {
+        responseData = await response.json();
+        console.log("Response data:", responseData);
+      }
       
       if (response.ok) {
-        // Even if the response is OK but not JSON, we can still consider it successful
-        // and avoid the JSON parsing error
         toast({
           title: "Application Submitted",
           description: "Thank you for your application. We will be in touch soon.",
@@ -87,12 +92,22 @@ const JobApplicationModal = ({ job, isOpen, onClose }: JobApplicationModalProps)
         return;
       }
       
+      // Handle error response
       let errorMessage = "Failed to submit application";
       
-      // Try to get error details if possible
-      if (contentType && contentType.includes("application/json")) {
-        const errorData = await response.json();
-        errorMessage = errorData.error || errorData.details || errorMessage;
+      if (responseData) {
+        // Extract detailed error from response if available
+        errorMessage = responseData.error || responseData.details || errorMessage;
+        
+        // If there's a specific email error, provide more helpful guidance
+        if (responseData.details && typeof responseData.details === 'object') {
+          const details = responseData.details;
+          if (details.code === 'ECONNREFUSED') {
+            errorMessage = "Unable to connect to email server. Please try again later.";
+          } else if (details.code === 'EAUTH') {
+            errorMessage = "Email authentication failed. Please contact support.";
+          }
+        }
       } else {
         // If not JSON, use status text
         errorMessage = `Server error: ${response.statusText || "Unknown error"}`;
