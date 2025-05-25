@@ -218,6 +218,11 @@ const Navbar = () => {
     </NavigationMenuList>
   </NavigationMenu>
 
+  {/* Blog link (new) */}
+  <Link to="/blog" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
+    Blog
+  </Link>
+
   <Link to="/contact" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors px-1">
     Contact
   </Link>
@@ -247,7 +252,7 @@ const Navbar = () => {
             rel="noopener noreferrer" 
             className="inline-flex items-center justify-center whitespace-nowrap rounded-[5px] text-sm font-medium bg-detailpros-pink hover:bg-opacity-90 text-white px-4 py-2"
           >
-            Book Us
+            Book Now
           </a>
           <button
             className="text-detailpros-black"
@@ -291,7 +296,7 @@ const Navbar = () => {
               </CollapsibleContent>
             </Collapsible>
             
-            <Link to="/services" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
+            <Link to="/detailing" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
               Detailing
             </Link>
             
@@ -359,6 +364,11 @@ const Navbar = () => {
                 </Link>
               </CollapsibleContent>
             </Collapsible>
+            
+            {/* Blog link (new) */}
+            <Link to="/blog" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
+              Blog
+            </Link>
             
             <Link to="/contact" className="font-medium text-detailpros-black hover:text-detailpros-pink transition-colors py-2 border-b border-gray-100" onClick={toggleMenu}>
               Contact
