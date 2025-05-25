@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Apple, MessageSquare, LockKeyhole } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
@@ -138,7 +137,6 @@ const Footer = () => {
               <li><ScrollToTopLink to="/about" className="text-gray-300 hover:text-detailpros-pink">About Us</ScrollToTopLink></li>
               <li><ScrollToTopLink to="/contact" className="text-gray-300 hover:text-detailpros-pink">Contact Us</ScrollToTopLink></li>
               <li><ScrollToTopLink to="/careers" className="text-gray-300 hover:text-detailpros-pink">Careers</ScrollToTopLink></li>
-              <li><ScrollToTopLink to="/blog" className="text-gray-300 hover:text-detailpros-pink">Blog</ScrollToTopLink></li>
               <li><ScrollToTopLink to="/faq" className="text-gray-300 hover:text-detailpros-pink">FAQ</ScrollToTopLink></li>
             </ul>
           </div>
