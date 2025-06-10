@@ -808,7 +808,7 @@ const Detailing = () => {
                     <img src="/lovable-uploads/2b0c4a6a-1444-468d-af43-920b7283cb36.png" alt="Gold Package" className="h-24 w-24 object-contain" />
                   </div>
                   <h3 className="text-2xl font-bold text-center mb-2">Gold Package</h3>
-                  <div className="text-3xl font-bold text-center text-detailpros-pink mb-6">$700</div>
+                  <div className="text-3xl font-bold text-center text-detailpros-pink mb-6">$600</div>
                   
                   <div className="space-y-4">
                     <div>
